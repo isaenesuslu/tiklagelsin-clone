@@ -1,0 +1,129 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trend & Eğlence | Tıkla Gelsin® Blog</title>
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    data-purpose="Layout StyleSheet"
+    title="Web Awesome"
+    href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+  >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    >
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{% static 'blog.css' %}" />
+  </head>
+  <body>
+    {% include 'partials/blog/_navbarblog.html' %}
+
+    <div class="mini-header">
+      <div class="container">
+        <ul>
+          <li class="me-2"><a href="/">Ana sayfa</a></li>
+          <span class="me-1"><i class="fa-light fa-angle-right fa-sm"></i></span>
+          <li class="me-2"><a href="/blog">Blog</a></li>
+          <span class="me-1"><i class="fa-light fa-angle-right fa-sm"></i></span>
+          <li>Trend & Eğlence</li>
+        </ul>
+      </div>
+    </div>
+
+    <article>
+      <div class="container">
+        <div class="top d-flex justify-content-around p-1 pt-4">
+        <h4 style="color: #333; margin-right:10rem; margin-top:0.3rem;">Trend & Eğlence</h4>
+        <div>
+        </div>
+        <div class="blog-search">
+          <input type="text" placeholder="İçerik arayın">
+          <i class="fa-light fa-magnifying-glass fa-lg" style="color: #5f5d5d;"></i>
+        </div>
+      </div>
+      <div class="container bottom">
+        <div class="row py-4">
+
+          {% for i in trendeglence_list %}
+          <div class="col-xl-12 col-lg-12 col-md-6 d-flex justify-content-center">
+            <a href="detaylar/{{ i.slug }}">
+            <div class="card mb-3">
+              <div class="row g-0">
+                <div class="col-md-4 col-img">
+                  <div style="height: 100%; position:relative">
+                  <img
+                    src="{{ i.image.url }}"
+                    alt="Trendy Pants and Shoes"
+                    class="img-fluid rounded-start h-100" style="object-fit: cover;"
+                  />
+                  <div class="time-icon">
+                    <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+                    <p class="text-white m-0 mt-2">{{ i.read_time }} dk</p>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-8 h-body">
+                  <div class="card-body">
+                    <h6 class="card-title">{{ i.title }}</h6>
+                    <p class="card-text">
+                      {{ i.subtitle }}
+                    </p>
+                  </div>
+                  <p class="next">
+                    <small>Devamı</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </a>
+          </div>
+          {% endfor %}
+            
+        </div>
+      </div>
+    </div>
+    </div>
+    </article>
+
+    {% include 'partials/blog/_footerblog.html' %}
+    <!-- MDB -->
+    <script
+      type="text/javascript" 
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+    ></script>
+    <script src="{% static 'app.js'%}"></script>
+  </body>
+</html>

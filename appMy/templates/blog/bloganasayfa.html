@@ -1,0 +1,273 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tıkla Gelsin® Blog | En Lezzetli Blog, En Eğlenceli İçerikler</title>
+        <!-- Font Awesome -->
+        <link
+        rel="stylesheet"
+        data-purpose="Layout StyleSheet"
+        title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+      >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+        >
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="{% static 'blog.css' %}" />
+    </head>
+<body>
+
+
+{% include 'partials/blog/_navbarblog.html' %}
+
+  <div class="container">
+    <article>
+      <div class="top d-flex justify-content-around p-1 pt-4">
+        <h4 style="color: #333; margin-right:10rem; margin-top:0.3rem;">Ana Sayfa</h4>
+        <div>
+        </div>
+        <div class="blog-search">
+          <input type="text" placeholder="İçerik arayın">
+          <i class="fa-light fa-magnifying-glass fa-lg" style="color: #5f5d5d;"></i>
+        </div>
+      </div>  
+    </article>
+
+    <div class="row remove-class px-5">
+      <div class="col col-lg-12 col-md-12 col-sm-12">    
+        <div class="carousel-bas">
+      <div id="carouselExampleIndicators" class="carousel slide" style="width: 100%;" data-mdb-ride="carousel" data-mdb-carousel-init>
+      
+       <div class="carousel-indicators carousel-buttons-2">
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="4"
+          aria-label="Slide 5"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="5"
+          aria-label="Slide 6"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="6"
+          aria-label="Slide 7"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="7"
+          aria-label="Slide 8"
+        ></button>
+        <button
+          type="button"
+          data-mdb-target="#carouselExampleIndicators"
+          data-mdb-slide-to="8"
+          aria-label="Slide 9"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="detaylar/{{ sonkart.slug }}">
+            <div class="py-4 px-5" style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url( {{sonkart.image.url}} ); background-size:cover; width:100%; height:450px">
+              <div class="h-100">
+                <img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftg-blog-slider.bf351203.png&w=384&q=75" alt="" width="165px" height="25px">
+                <div class="d-flex align-items-start justify-content-end h-100 pb-5" style="flex-direction: column;">
+                  <div class="d-flex">
+                    <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+                    <p class="c-category text-white">{{ sonkart.category }}</p>
+                  </div>
+                  <div class="text-white">
+                    <p>{{ sonkart.title }}</p>
+                    <p style="font-size: 14px !important;">{{ sonkart.subtitle }}</p>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </a>
+        </div>
+
+        
+        {% for i in carousel_list %}
+        <div class="carousel-item">
+          <a href="detaylar/{{ i.slug }}">
+            <div class="py-4 px-5" style="background:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url( {{i.image.url}} ); background-size:cover; width:100%; height:450px">
+              <div class="h-100">
+                <img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftg-blog-slider.bf351203.png&w=384&q=75" alt="" width="165px" height="25px">
+                <div class="d-flex align-items-start justify-content-end h-100 pb-5" style="flex-direction: column;">
+                  <div class="d-flex">
+                    <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+                    <p class="c-category text-white">{{ i.category }}</p>
+                  </div>
+                  <div class="text-white">
+                    <p>{{ i.title }}</p>
+                    <p style="font-size: 14px !important;">{{ i.subtitle }}</p>
+                  </div>
+                </div>
+              </div>  
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+        <button class="carousel-control-prev mx-5 control-2 " type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
+          <i class="fa-light fa-chevron-left fa-xl prev-icon" aria-hidden="true"></i>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next mx-5 control-2" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
+          <i class="fa-light fa-chevron-right fa-xl next-icon" style="color: #203356;" aria-hidden="true"></i>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+        </div>
+      </div>
+
+    
+      
+      {% for i in carousel_list %}
+      <div class="col col-xl-4 col-lg-6 col-md-6">
+        <a href="detaylar/{{ i.slug }}">
+           <div class="card p-3" style="height: 447px; width:356px;">
+    <div style="height: fit-content; position:relative">
+      <img
+        src="{{ i.image.url }}"
+        alt="Trendy Pants and Shoes"
+        class="img-fluid rounded-start" style="object-fit: cover; height:237px; border-radius:0px;"
+      />
+      <div class="time-icon">
+          <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+          <p class="text-white m-0 mt-2">{{ i.read_time }} dk</p>
+      </div>
+    </div>
+    <div class="d-flex mt-3">
+      <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+      <p class="c-category">{{ i.category }}</p>
+    </div>
+    <p>{{ i.title }}</p>
+    <p class="c-icerik">{{ i.subtitle|truncatechars:120 }}</p>
+  </div> 
+        </a>
+
+      </div>
+      {% endfor %}
+        
+
+    <div class="col col-lg-12 d-flex justify-content-center">
+  <a href="detaylar/{{ sonkart.slug }}">
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-4 col-img">
+        <div style="height: 100%; position:relative;">
+          <img
+            src="{{ sonkart.image.url }}"
+            alt="Trendy Pants and Shoes"
+            class="img-fluid rounded-start h-100" style="object-fit: cover; width:320px;"
+          />
+          <div class="time-icon">
+              <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+              <p class="text-white m-0 mt-2">3 dk</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8 h-body">
+        <div class="card-body">
+          <p class="card-text p-0">
+            <div class="d-flex">
+              <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+              <p class="c-category">{{ sonkart.category }}</p>
+            </div>
+            <h6 class="card-title">{{ sonkart.title }}</h6>
+            <p>{{ sonkart.subtitle|truncatechars:150 }}</p>
+          </p>
+        </div>
+        <p class="next">
+          <small>Devamı</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+    </div>
+
+    </div>
+
+</div>
+
+{% include 'partials/blog/_footerblog.html' %}
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+<script>// Initialization for ES Users
+  import { Carousel, initMDB } from "mdb-ui-kit";
+  
+  initMDB({ Carousel });</script>
+  <script src="{% static 'app.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<header class="header">
+  <div class="header-sec container">
+    <div class="left d-flex align-items-center" style="height: 40px">
+      <a href="#"
+        ><img
+          src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftg-blog.5991f21a.png&w=256&q=75"
+          class="img-fluid"
+          alt="..."
+          width="165px"
+      /></a>
+    </div>
+    <div class="input-hero">
+      <input type="text" class="input-m" placeholder="İçerik arayın">
+      <i class="fa-light fa-circle-xmark fa-lg" onclick="inputExit()" style="color: #383838;"></i>
+    </div>
+    <div class="search-mobil">
+      <i class="fa-light fa-magnifying-glass fa-lg search-m me-3" onclick="searchFunc()" style="color: #000000;"></i>
+      <i class="fa-regular fa-bars fa-lg bar-1" onclick="barsFunc()" style="color: #000000; cursor:pointer;"></i>
+    </div>
+    <div class="middle me-3 pt-3">
+      <ul class="d-flex" style="list-style: none">
+        <li><a href="/menuler" class="me-3"style="{% if request.path == '/menuler' %} color: #e91d34; font-weight:700 {% endif %}">Menüler</a></li>
+        <li>
+          <span style="color: rgb(73, 73, 73); opacity: 0.1" class="pe-1"
+            >|</span
+          ><a href="/tarifler" class="me-2 ms-1"style="{% if request.path == '/tarifler' %} color: #e91d34; font-weight:700 {% endif %}">Tarifler</a>
+        </li>
+        <li>
+          <span style="color: rgb(73, 73, 73); opacity: 0.1" class="pe-1"
+            >|</span
+          ><a href="/trend-eglence" class="ms-1"style="{% if request.path == '/trend-eglence' %} color: #e91d34; font-weight:700 {% endif %}">Trend & Eğlence</a>
+        </li>
+      </ul>
+    </div>
+    <div class="right">
+      <img
+        src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftg-logo.0033a8c0.png&w=96&q=75"
+        class="img-fluid"
+        alt="..."
+        width="71px"
+      />
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12 p-3">
+      <a href="/menuler" class="d-flex justify-content-between text-black">
+        <p>Menüler</p>
+        <i class="fa-regular fa-angle-right fa-lg pt-2"></i>
+      </a>
+      <hr style="margin: 0;">
+    </div>
+    <div class="col-12 p-3">
+      <a href="/tarifler" class="d-flex justify-content-between text-black">
+        <p>Tarifler</p>
+        <i class="fa-regular fa-angle-right fa-lg pt-2"></i>
+      </a>
+      <hr style="margin: 0;">
+    </div>
+    <div class="col-12 p-3">
+      <a href="/trend-eglence" class="d-flex justify-content-between text-black">
+        <p>Trend & Eğlence</p>
+        <i class="fa-regular fa-angle-right fa-lg pt-2"></i>
+      </a>
+      <hr style="margin: 0;">
+    </div>
+    <div class="col-12"><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftg-logo.0033a8c0.png&w=256&q=75" class="img-fluid" alt="" width="71px" height="40px"></div>
+  </div>
+</header>

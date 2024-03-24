@@ -1,0 +1,475 @@
+*{
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+body {
+    background: #f2f2f2;
+}
+
+/** NAVBAR BAŞLANGIÇ */
+.header { /* Anasayfa ve Blog için */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background-color: white;
+    border-bottom: 1px solid red;
+    padding: 1.2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    z-index: 9;
+    overflow: hidden;
+}
+.header-sec {
+    display: flex;
+    justify-content: space-around;    
+    align-items: center;
+}
+.h-logo {
+    max-width: 100px;
+    max-height: 56px;
+}
+.left input {
+    width: 453px;
+    height: 43px;
+    font-size: 14px;
+    border: 1px solid #d8d8d8;
+    padding: 1.3rem 0.75rem;
+    border-radius: 10px;
+    transition: all .3s ease-in-out;
+}
+.left input:focus {
+    outline: 0;
+    border-color: #8d8783
+}
+.left input::placeholder {
+    color: #b1afaf;
+}
+#search {
+    position: relative;
+    padding-top: 0.5rem;
+}
+#search i {
+    position: absolute;
+    right: 15px;
+    top: 29px;
+}
+.h-icons::before {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.2);
+    padding: 8px 9px;
+    border-radius: 50%;
+}
+.sepetim {
+    position: relative;
+    background-color: #e91d34;
+    padding: 0.7rem 1.7rem 0.7rem 0.1rem;
+    border-radius: 22px;
+    transition: all .2s ease-in-out;
+}
+.sepetim i::before {
+    background-color: #dc1a2f;
+    padding: 0.7rem;
+    border-radius: 22px 0 0 22px;
+}
+.search-mobil {
+    display: none;
+}
+/*? Blog header */
+.middle ul li a {
+    color: #333;
+}
+.middle ul li a:hover{
+    text-decoration: underline;
+}
+/** NAVBAR BİTİŞ */
+
+/** MINI HEADER BAŞLANGIÇ */
+.mini-header {
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.mini-header ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 44px;
+    font-size: 12px;
+    margin: 0;
+    margin-left: 5rem;
+}
+.mini-header ul li a:nth-child(1):hover, .mini-header ul li a:nth-child(2):hover {
+    text-decoration: underline;
+}
+.mini-header ul li a:nth-child(1), .mini-header ul li a:nth-child(2), .mini-header ul li a:nth-child(3) {
+    color: #e91d34;
+}
+/** MINI HEADER BİTİŞ */
+
+/** BLOG ANA SAYFA BAŞLANGIÇ */
+
+.col{
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+/** BLOG ANA SAYFA BİTİŞ */
+
+
+
+/** ARTICLE BAŞLANGIÇ */
+article input {
+    border: 0;
+    border-radius: 10px;
+    width: 320px;
+    height: 42px;
+    padding: 12px 16px;
+    font-size: 14px;
+    box-shadow: 0 7px 6px -10px #000
+}
+article input:focus {
+    outline: none;
+    border: 1px solid #333;
+    box-shadow: 0 2px 3px -8px #000;
+}
+article input:hover{
+    box-shadow: 0 3px 7px -5px #000;
+}
+.blog-search {
+    position: relative;
+}
+.blog-search i {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    cursor: pointer;
+}
+.card{
+    width: 1050px;
+    height: 220px;
+    border-radius: 4px;
+    box-shadow: 0 1px 18px -10px #000;
+    cursor: pointer;
+}
+.card:hover {
+    box-shadow: 0 5px 20px -10px #000;
+}
+.card .row {
+    height: 100%;
+}
+.col-img {
+    padding: 1rem 0.4rem 1rem 2rem;
+    width: fit-content;
+}
+.col-img img {
+    width: 240px;
+}
+.card-body {
+    padding-left: 0.6rem;
+    padding-top: 1rem;
+}
+.card-title {
+    color: black;
+    font-size: 16px;
+    font-weight: 400;
+}
+.card-text {
+    font-size: 14px;
+    color: #333;
+    padding-top: .5rem;
+}
+.next {
+    color: #e91d34;
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-left: .4rem;
+}
+.h-body {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.input-hero{
+    display: none;
+}
+.time-icon {
+    position: absolute;
+    width: 60px;
+    height: 62px;
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0;
+    bottom: 0;
+}
+/** ARTICLE BİTİŞ */
+
+
+/** İÇERİK BAŞLANGIÇ */
+.icerik {
+    box-shadow: 0 1px 15px -13px #000;
+    background-color: white;
+}
+.icerik-sosyal {
+    padding: 0;
+}
+.icerik li {
+    margin-right: 10px;
+}
+.icerik-sosyal li a img {
+    width: 32px;
+    height: 32px;
+}
+/** İÇERİK BİTİŞ */
+
+
+/** FOOTER BAŞLANGIÇ */
+footer {
+    background-color: white;
+    border-top: 1px solid red;
+}
+footer hr{
+    width: 100%;
+    margin: 20px auto 16px;
+}
+.footer-menu li,a {
+    list-style: none;
+    color: #333;
+}
+.footer-menu li {
+    font-weight: 700;
+
+}
+.footer-menu li:hover {
+    text-decoration: underline 2px;
+}
+.sosyal ul {
+    list-style: none;
+}
+.sosyal li {
+    margin-right: 1rem;
+    width: 32px;
+    height: 32px;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/** FOOTER BİTİŞ */
+
+/** CAROUSEL BAŞLANGIÇ */
+.carousel-hero {
+    width: 1110px;
+    position: relative;
+}
+.carousel-indicators {
+    margin: 0;
+}
+.control {
+    width: fit-content;
+    height: fit-content;
+    position: static;
+    z-index: 4;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    background: #f7f7f7;
+    box-shadow: 0 5px 18px -11px #000;
+    padding: 1.2rem 0.7rem;
+    margin-top: 1rem;
+    color: #333!important;
+}
+.control-2 {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 200px;
+    border: 1px solid #eaeaea;
+    border-radius: 50%;
+    background: #f7f7f7;
+    box-shadow: 0 5px 18px -11px #000;
+    padding: 1.2rem 0.7rem;
+    margin-top: 1rem;
+    color: #333!important;
+    opacity: 2;
+}
+.carousel-buttons [data-mdb-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #b4b4b4;
+}
+.carousel-buttons-2 [data-mdb-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.2;
+    background-color: #ffffff;
+}
+.carousel-buttons .active {
+    opacity: 1;
+    background-color: #666;
+}
+.carousel-buttons-2 .active {
+    opacity: 1;
+    background-color: #ffffff;
+}
+.next-icon, .prev-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card {
+    box-shadow: 0 1px 15px -13px #000;
+}
+.card:hover {
+        box-shadow: 0 5px 17px -10px #000;
+}
+.c-category {
+    font-size: 14px;
+    margin-left: 3px;
+}
+.c-icerik {
+    font-size: 14px;
+    margin-top: -10px;
+}
+.carousel-bas {
+    width: 1160px;
+    background-color: white;
+    padding: 1rem;
+}
+/** CAROUSEL BİTİŞ */
+
+.icerik {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+     margin-right: 3rem !important;
+    margin-left: 3rem !important;
+}
+.con-detay {
+    padding-left: 4.3rem;
+}
+
+@media only screen and (max-width:991px) {
+    .card {
+        width: 343px;
+    height: 447px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    }
+    .middle {
+        display: none;
+    }
+    .top h4, .top .blog-search{
+        display: none;
+    }
+    .mini-header ul {
+        margin: 0;
+        padding: 1rem;
+    }
+    .mini-header .container {
+        margin: 0;
+        padding: 0;
+    }
+    .header .container {
+        justify-content: space-between;
+        align-items: center;
+    }
+    .col-img, .col-img img, .card .row{
+        height: 240px;
+    }
+    .col-img {
+        width: 100%;
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .col-img img {
+        width: 303px;
+    }
+    .h-body {
+        width: 100%;
+    }
+    .h-body .card-body {
+        padding-left: 1.3rem;
+    }
+    .next {
+        margin-left: 1.5rem;
+    } 
+    .header-sec {
+        justify-content: space-between;
+    }
+    .right {
+        display: none;
+    }
+    .search-mobil {
+        display: block;
+    }
+    .input-hero {
+        position: absolute;
+        width: 100%;
+        padding-right: 2rem;
+    }
+    .input-m {
+        width: 100%;
+        padding: 9px 16px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 7px 6px -10px #000;
+        font-size: 14px;
+    }
+    .input-m:focus{
+
+        outline: 1px solid #333;
+    }
+    .input-m:hover{
+        box-shadow: 0 3px 13px -8px #000;
+    }
+    .input-hero i {
+        position: absolute;
+        right: 50px;
+        top: 20px;
+    }
+    .footer-second, .footer-menu, .footer-end {
+        flex-direction: column;
+    }
+    .footer-menu {
+        align-items: center;
+        padding: 0;
+    }
+    .footer-menu li {
+        margin-bottom: 13px;
+    }
+    .sosyal ul {
+        padding: 0;
+    }
+    .control-2 {
+        display: none;
+    }
+    .icerik {
+        margin: 0 !important;
+        padding: 0.4rem !important;
+    }
+    .con-detay {
+        padding: 0 !important;
+    }
+    .container-sec {
+        height: 489px;
+        overflow: hidden;
+    }
+    .carousel-buttons-mobil {
+        top: 440px;
+    }
+    .card-mobil {
+        margin-top: 5rem;
+    }
+} 
+
+@media only screen and (min-width:992px) and (max-width:1199) {
+
+}

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- Font Awesome -->
+        <link
+        rel="stylesheet"
+        data-purpose="Layout StyleSheet"
+        title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+      >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+        >
+    
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+        />
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            .container{
+                height: 50rem;
+                padding-top: 10px;
+                padding-left: 160px;
+                padding-right: 160px;
+            }
+            .container-inner{
+                padding-right: 16px;
+            }
+            .inner-container-menu{
+                padding: 4px 2px 0;
+            }
+            .inner-container-menu .container-item{
+                padding: 0;
+                min-width: max-content;
+            }
+            .container-item{
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 1rem;
+                list-style-type: none;
+            }
+            .container-item .cont-item a, span{
+                font-size: 14px;
+                font-weight: 400;
+                color: #666;
+            }
+            .container-item .cont-item:first-child{
+                text-decoration: underline;
+            }
+            .container-item .cont-item:nth-child(2) a{
+                cursor: text !important;
+            }
+            .menus-container{
+                display: flex;
+            }
+            .menu-tabs{
+                display: flex;
+                flex-direction: column;
+                flex: none;
+                width: 8.5rem;
+                height: 27.8rem;
+                background-color: #e91d34;
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+
+            .menus-container h1, .menus-container span{
+                font-weight: 700;
+                font-size: 14px;
+                margin: 0;
+                padding: 8px 0;
+                display: inline-block;
+                color: white;
+                
+            }
+            .menu-tabs .menu-tabs-link{
+                border: 1px solid white;
+                
+                
+            }
+
+            .menu-tabs-link:nth-child(1):hover{
+                border-top-right-radius: 20px;
+                border-top-left-radius: 20px;
+            }
+            .menu-tabs-link:nth-child(8):hover{
+                border-bottom-left-radius: 20px;
+                border-bottom-right-radius: 20px;
+            }
+            .menu-tabs-link:hover{
+                background-color: #EF6474;
+            }
+        
+
+
+            .cards-menu{
+                width: 100%;
+                height: fit-content;
+                padding: 0 10px 0 45px;
+            }
+            .cards-menu .row{
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 15px;
+                margin-right: 15px;
+            }
+            .cards-menu .card-body:hover{
+                opacity: .75;
+                background-color: #e0dfdf;
+                transition: .5s;
+            }
+            .point{
+                cursor: pointer;
+            }
+            .card{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                background-clip: border-box;
+                min-width: 0;
+            }
+            .product-card{
+                width: 100%;
+                height: 100%;
+                background-color: transparent;
+                transition: .4s;
+            }
+            .product-card .card-body{
+                height: 100%;
+                background-color: white;
+                padding: 10px;
+                margin: 20px 10px 0;
+                border-radius: 10px;
+                
+            }
+            .product-card .card-img{
+                display: flex;
+                justify-content: center;
+                float: column;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                width: 100%;
+            }
+            .product-card .card-img img{
+                object-fit: contain;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .product-card .card-bottom .card-price{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                padding-right: 6px;
+                padding-left: 4px;
+                margin-bottom: 10px;
+            }
+            .product-card .price-text{
+                color: #e91d34;
+                font-size: 18px;
+            }
+            .card-title h3{
+                font-size: 18px;
+                text-align: center;
+                font-weight: 700;
+            }
+            .sepet-button{
+                width: 36px;
+                height: 36px;
+                align-items: center;
+                justify-content: center;
+                border: 0;
+                background-color: #e91d34;
+                border-radius: 1rem;
+            }
+            .sepet-button>span>i{
+                color: white !important;
+                font-size: 1.35rem;
+                border-radius: 5px;
+
+            }
+        </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="container-inner" >
+            <nav class="inner-container-menu">
+                <ol class="container-item">
+                    <li class="cont-item">
+                        <a href="">Anasayfa</a>
+                        <i style="margin-left: 0.5rem; margin-right: 0.5rem;" class="fa-thin fa-chevron-right"></i>
+                    </li>
+                    <li class="cont-item">
+                      <span >Burger King®</span> 
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div class="menus-container">
+            <div class="menu-tabs">
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <h1>Popüler Ürünler</h1>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Menüler</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Burgerler</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Kids Menüler</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Çıtır Lezzetler</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Tatlılar</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>Soslar</span>
+                </a>
+                <a class="menu-tabs-link p-2 d-flex justify-content-center" href="">
+                    <span>İçecekler</span>
+                </a>
+            </div>
+
+
+            <!-- BURASI SAĞDAKİ CARDS KISIMLARI -->
+            <div class="cards-menu">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Whopper® Menü Alana Whopper® Menü Bedava</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/whopper_menu_alana_whopper_menu_bedava_4cc633a8fd.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">180.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Tıkla Gelsin® Özel Big King® Menü</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/tikla_gelsin_ozel_big_king_menu_0e66d0e424.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">170.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Whopper® Menü Alana Whopper® Menü Bedava</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/3lu_whopper_firsati_b77b9c5a7e.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">180.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Whopper® Menü Alana Whopper® Menü Bedava</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/tikla_gelsin_ozel_benim_ikilim_2cede7df9a.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">255.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Whopper® Menü Alana Whopper® Menü Bedava</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/kral_ikili_a68fca6955.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">205.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-12 point">
+                        <a href="#!">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <h3>Whopper® Menü Alana Whopper® Menü Bedava</h3>
+                                    </div>
+                                    <div class="card-img">
+                                        <img class="img-fluid" width="100%" height="150" src="https://d3vkdqr0qjxhag.cloudfront.net/burger-king/2li_big_king_firsati_f8f3a3eaae.webp" alt="">
+                                    </div>
+                                    <div class="card-bottom">
+                                        <div class="card-price">
+                                            <span class="price-text">290.00 TL</span>
+                                            <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+  ></script>
+</body>
+</html>

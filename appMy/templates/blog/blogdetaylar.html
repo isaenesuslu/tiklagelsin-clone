@@ -1,0 +1,242 @@
+<!DOCTYPE html> {% load static %}
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{{ detay.title }}</title>
+        <!-- Font Awesome -->
+        <link
+        rel="stylesheet"
+        data-purpose="Layout StyleSheet"
+        title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+      >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+        >
+    
+        <link
+          rel="stylesheet"
+          href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+        >
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="{% static 'blog.css' %}" />
+</head>
+<body>
+
+
+  {% include 'partials/blog/_navbarblog.html' %}
+
+  <div class="mini-header">
+    <div class="container">
+      <ul>
+        <li class="me-2"><a href="/">Ana sayfa</a></li>
+        <span class="me-1"><i class="fa-light fa-angle-right fa-sm"></i></span>
+        <li class="me-2"><a href="/blog">Blog</a></li>
+        <span class="me-1"><i class="fa-light fa-angle-right fa-sm"></i></span>
+        <li class="me-2"><a href="/{{ detay.category|lower|slugify }}">{{ detay.category }}</a></li>
+        <span class="me-1"><i class="fa-light fa-angle-right fa-sm"></i></span>
+        <li>{{ detay.title }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <main>
+    <div class="container con-detay">
+      <div class="top p-1 pt-3 px-5">
+        <h4 style="color: #333; margin-top:0.3rem;">{{ detay.title }}</h4>
+        <div>
+        </div>
+      </div>
+      <div class="icerik p-1 pt-5">
+        <p style="font-size: 14px;"> {{ detay.date }} | {{ detay.read_time }} Dakika Okuma Süresi</p>
+        <img src="{{ detay.image.url }}" alt="" class="img-fluid">
+        <p>{{ detay.text|linebreaks }}</p>
+        <hr class="mt-4">
+        <p style="font-weight:700; color:#333;">Paylaş</p>
+        <ul class="icerik-sosyal d-flex" style="list-style: none;">
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Flinkedin.eeabea6a.png&w=96&q=75" alt=""></a></li>
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftwitter.85e4e2ef.png&w=96&q=75" alt=""></a></li>
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ffacebook.fedebb07.png&w=96&q=75" alt=""></a></li>
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Fwhatsapp.bc9de41d.png&w=96&q=75" alt=""></a></li>
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Ftelegram.fafeb64f.png&w=96&q=75" alt=""></a></li>
+          <li><a href=""><img src="https://www.tiklagelsin.com/blog/_next/image?url=%2Fblog%2F_next%2Fstatic%2Fmedia%2Fmail.c664471d.png&w=96&q=75" alt=""></a></li>
+        </ul>
+      </div>
+      <h4 class="px-5" style="color: #333; margin-top:1.5rem; font-size:22px;">İlginizi çekebilecek içerikler</h4>
+
+    </div>
+
+    <div class="container container-sec con-detay">
+      <div style="width: 100%;" class="display1 d-flex justify-content-center">
+        <div class="carousel-hero mt-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+          <div class="carousel-indicators carousel-buttons carousel-buttons-mobil">
+            <button
+              type="button"
+              data-mdb-target="#carouselExampleIndicators"
+              data-mdb-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-mdb-target="#carouselExampleIndicators"
+              data-mdb-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-mdb-target="#carouselExampleIndicators"
+              data-mdb-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row">
+
+                
+                {% for i in carousel_list %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="{{ i.slug }}">
+                     <div class="card p-3" style="height: 447px; width:356px;">
+                    <div style="height: fit-content; position:relative">
+                      <img
+                        src="{{ i.image.url }}"
+                        alt="Trendy Pants and Shoes"
+                        class="img-fluid rounded-start" style="object-fit: cover; height:237px; border-radius:0px;"
+                      />
+                      <div class="time-icon">
+                          <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+                          <p class="text-white m-0 mt-2">{{ i.read_time }} dk</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                      <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+                      <p class="c-category">{{ i.category }}</p>
+                    </div>
+                    <p>{{ i.title }}</p>
+                    <p class="c-icerik">{{ i.subtitle|truncatechars:120 }}</p>
+                  </div>
+                  </a>
+                 
+                </div>
+                {% endfor %}
+                  
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                {% for i in carousel_list2 %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="{{ i.slug }}">
+                     <div class="card p-3" style="height: 447px; width:356px;">
+                    <div style="height: fit-content; position:relative">
+                      <img
+                        src="{{ i.image.url }}"
+                        alt="Trendy Pants and Shoes"
+                        class="img-fluid rounded-start" style="object-fit: cover; height:237px; border-radius:0px;"
+                      />
+                      <div class="time-icon">
+                          <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+                          <p class="text-white m-0 mt-2">{{ i.read_time }} dk</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                      <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+                      <p class="c-category">{{ i.category }}</p>
+                    </div>
+                    <p>{{ i.title }}</p>
+                    <p class="c-icerik">{{ i.subtitle|truncatechars:70 }}</p>
+                  </div>
+                  </a>
+                 
+                </div>
+                {% endfor %} 
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row">
+                {% for i in carousel_list3 %}
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <a href="{{ i.slug }}">
+                     <div class="card p-3" style="height: 447px; width:356px;">
+                    <div style="height: fit-content; position:relative">
+                      <img
+                        src="{{ i.image.url }}"
+                        alt="Trendy Pants and Shoes"
+                        class="img-fluid rounded-start" style="object-fit: cover; height:237px; border-radius:0px;"
+                      />
+                      <div class="time-icon">
+                          <i class="fa-sharp fa-regular fa-timer fa-lg mt-2" style="color: #ffffff;"></i>
+                          <p class="text-white m-0 mt-2">{{ i.read_time }} dk</p>
+                      </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                      <div style="border-left: 2px solid #e91d34; height:18px; width:4px;"></div>
+                      <p class="c-category">{{ i.category }}</p>
+                    </div>
+                    <p>{{ i.title }}</p>
+                    <p class="c-icerik">{{ i.subtitle|truncatechars:70 }}</p>
+                  </div>
+                  </a>
+                 
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <button class="carousel-control-prev control mx-5" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="prev">
+              <i class="fa-light fa-chevron-left fa-xl prev-icon" aria-hidden="true"></i>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next control mx-5" type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide="next">
+              <i class="fa-light fa-chevron-right fa-xl next-icon" style="color: #203356;" aria-hidden="true"></i>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </main>
+      
+  {% include 'partials/blog/_footerblog.html' %}
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+  <script src="{% static 'app.js'%}"></script>
+</body>
+</html>
