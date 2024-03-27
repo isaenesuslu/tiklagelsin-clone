@@ -22,8 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', Anasayfa),
-    path('blog', blogPage),
+    path('', Anasayfa, name="Anasayfa"),
+    path('blog', blogPage, name="blogPage"),
     path('menuler', Menuler),
     path('tarifler', Tarifler),
     path('trend-eglence', TrendEglence),
