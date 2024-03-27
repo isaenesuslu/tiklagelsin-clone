@@ -239,7 +239,7 @@ li{
 }
 
 .footer{
-    height: 643px;
+    height: fit-content;
     background-color: white;
     border-top: 1px solid red;
 }
@@ -278,9 +278,7 @@ li{
 .footer-main-page-4 ul {
     padding: 0px;
 }
-.footer-main-page-4 ul li a{
 
-}
 /* accordion */
 
 
@@ -345,6 +343,11 @@ button:focus:not(:focus-visible) {
     color: #666;
 }
 
+.accordion-body ul li a:hover {
+    text-decoration: underline !important;
+    color: #007bff !important;
+}
+
 .accordion-body {
     padding-top: 0;
     padding-bottom: 0;
@@ -369,6 +372,11 @@ button:focus:not(:focus-visible) {
     border-radius: 50%;
     padding: 0.4rem;
     margin: 0.5rem;
+}
+
+.s-hover:hover {
+    text-decoration: underline !important;
+    color: #007bff !important;
 }
 
 /* accordion fn */
