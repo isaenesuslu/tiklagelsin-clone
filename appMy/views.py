@@ -136,3 +136,38 @@ def TemplatePage(request):
 def burgerPage(request):
     context = {}
     return render(request, 'anasayfa/burgerking.html', context)
+
+
+# HESAP AYARLARI
+
+def hesabimPage(request):
+    context = {}
+    return render(request, 'hesabim/hesabim.html', context)
+
+def adressPage(request):
+    context = {}
+    return render(request, 'hesabim/adress.html', context)
+
+def cuzdanimPage(request):
+    context = {}
+    return render(request, 'hesabim/cuzdanim.html', context)
+
+def kuponlarimPage(request):
+    context = {}
+    return render(request, 'hesabim/kuponlarim.html', context)
+
+def odemePage(request):
+    context = {}
+    return render(request, 'hesabim/odemebilgilerim.html', context)
+
+def profilPage(request):
+    context = {}
+    return render(request, 'hesabim/profilbilgilerim.html', context)
+
+def tiklaparamPage(request):
+    context = {}
+    return render(request, 'hesabim/tiklaparam.html', context)
+
+def settingsPage(request):
+    context = {}
+    return render(request, 'hesabim/.html', context)

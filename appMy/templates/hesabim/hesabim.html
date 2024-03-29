@@ -1,0 +1,274 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesabım</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    {% include 'partials/anasayfa/_navbar.html' %}
+    <div id="arka-yapi">
+        <div class="container-yapi container d-flex align-items-center justify-content-center">
+            <div class="d-flex align-items-center justify-content-center" style="max-width: 1140px;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container-sayfa mb-3">
+                            <div class="row">
+                                <div class="p-0 pl-3 col">
+                                    <div class="d-flex align-items-center">
+                                        <div class="baslik">
+                                            <h4>Hesabım</h4>
+                                        </div>
+                                        <div class="p-2 d-none d-xl-block">
+                                            <a class="link-renk" href="https://www.tiklagelsin.com/a/account/help-center?tab=faq">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="help-center">
+                                                        <i class="fa-thin fa-user-hair-buns fa-xs"></i>
+                                                    </div>
+                                                    <span>Yardım Merkezi</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="p-2 d-none d-xl-block davet-button">
+                                            <button type="button" class="davet-buton">
+                                                <div class="d-flex">
+                                                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAiCAMAAAAJbCvNAAAASFBMVEVHcEzqHTTsIDbqHTTqHTTqHTT4LT/qHTXqHzXrHjbqHTXqHTTqHTTqHTXsHzfqHTTvIznqHjXqHjXrHjXqHTXrHjTqHTTpHTSKT/j6AAAAF3RSTlMA2zLC6vQKsFJBofvOhCS4Fm13ZXxbj4v/02IAAAEdSURBVBgZncFJQuMwAATA1m7tkmWn//9TIjwDMSgXqvClBB11KHhnGE6mY20jnW8+kCdWmuaBqVM3LHQmXBR3LARmXHY6LFQOXE4qLAQ+cMl0WDipG6amObCSqBqAViksVmSkDnvQpMeaF5yExzt2r6nuFn/WRlBChb1hqbjIf6rEbzlSh00WuQVDPizurGPMFhf7iFQWN5Xa45s3rHh10Ei88srDlmJxkeTAD9IZMlaJyVHhhx55OQAU0uPO88sOdArcWc2npPgUCxwz7nZOeXB6QNDjTnHKg5OAZnWvDghSjFPK3hNpoHmnIEh97L70rkiDst15VE755JTw2+CUT04HFhKfROKTsFiQkf95LHnNT2bDG/ZIxqTcAHwAEKQY0kR/2AYAAAAASUVORK5CYII=" alt="" class="davet-icon">
+                                                    Arkadaşını Davet Et, Tıkla Para Kazan
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>                            
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="h-100 row">
+                                        <div class="d-flex align-items-stretch yapi col-md-12 col-sm-6 col-6">
+                                            <a class="link-renk kart-link" href="tiklaparam.html">
+                                                <div class="hesap-kart kirmizi">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="icon">
+                                                                <i class="fa-solid fa-star fa-xl" style="color: #ffffff;"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="fiyat d-none d-md-block text-end">
+                                                                <span>0,00 TL</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kart-icerik">
+                                                        <div class="icerik">
+                                                            <div style="font-weight: bold; margin-top: 28px">Tıkla Param</div>
+                                                            <p class="detay d-none d-md-block">Tıkla Paranla eşsiz lezzetler tat</p>
+                                                        </div>
+                                                        <div class="ok d-none d-md-block">
+                                                            <i class="fa-light fa-arrow-right fa-lg"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-items-stretch yapi col-md-12 col-sm-6 col-6">
+                                            <a class="link-renk kart-link" href="cuzdanim.html">
+                                                <div class="hesap-kart">
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <div class="icon">
+                                                                <i class="fa-duotone fa-wallet fa-2xl" style="--fa-primary-color: #e91d34; --fa-secondary-color: #ff0000;"></i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col">
+                                                            <div class="fiyat d-none d-md-block text-end">
+                                                                <span style="color: #e91d34;">0,00 TL</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="kart-icerik">
+                                                        <div class="icerik">
+                                                            <div style="font-weight: bold; margin-top: 28px">Cüzdanım</div>
+                                                            <p class="detay d-none d-md-block">Cüzdanına para yükle, ekstreni incele</p>
+                                                        </div>
+                                                        <div class="ok d-none d-md-block">
+                                                            <i class="fa-light fa-arrow-right fa-lg" style="color:#e91d34"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="row">
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="adress.html" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-light fa-location-dot"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Adreslerim</h6>
+                                                            <p class="d-none d-md-block">Kayıtlı adreslerini görüntüle ya da yeni bir adres ekle</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="/a/account/address" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-light fa-basket-shopping"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Siparişlerim</h6>
+                                                            <p class="d-none d-md-block">Geçmiş siparişlerini incele, yeniden sipariş ver</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="profilbilgilerim.html" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-light fa-user"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Profil Bilgilerim</h6>
+                                                            <p class="d-none d-md-block">Profil bilgilerini düzenle ya da görüntüle</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="odemebilgilerim.html" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-light fa-credit-card"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Ödeme Bilgilerim</h6>
+                                                            <p class="d-none d-md-block">Yeni kart ekle ya da var olan kartlarını yönet</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="kuponlarim.html" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-light fa-ticket"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Kuponlarım</h6>
+                                                            <p class="d-none d-md-block">Kupon kodu kullan ya da geçmiş kuponlarını görüntüle</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
+                                            <a class="link-renk d-flex align-items-stretch" href="settings.html" style="width: 100%;">
+                                                <div class="same-card">
+                                                    <div class="col-md-3">
+                                                        <div class="ikon-kutu">
+                                                            <div class="ikon-sarma">
+                                                                <div class="ikon">
+                                                                    <i class="fa-regular fa-gear-complex"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="kutu-icerik">
+                                                            <h6>Ayarlarım</h6>
+                                                            <p class="d-none d-md-block">Ayarlarını düzenle ya da görüntüle</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    {% include 'partials/anasayfa/_footer.html' %}
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+        <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"></script>
+</body>
+
+</html>
