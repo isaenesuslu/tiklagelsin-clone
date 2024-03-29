@@ -1,0 +1,146 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    {% include 'partials/anasayfa/_navbar.html' %}
+    <div id="arka-yapi">
+        <div class="container-yapi container">
+            <div class="min-50 row">
+                <div class="min-50 col-12">
+                    <nav aria-label="breadcrumb" class="breadcrumb-yapi">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-menu">
+                                <a class="a" href="">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-menu">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                <a class="a" href="hesabim.html">Hesabım</a>
+                            </li>
+                            <li class="breadcrumb-menu" style="color: #666;">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                Tıkla Param
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="ust-title">
+                        <div class="alt-title">Tıkla Param</div>
+                        <div>
+                            <button type="button" class="yeni-adres">
+                                Tıkla Para Kodu Ekle
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mb-4 row">
+                        <div class="col-12">
+                            <div class="tikla-param-card">
+                                <div class="tikla-param-card-title">
+                                    <div class="title-row">
+                                        <div class="yazi">
+                                            <div class="tikla-param-card-yazi-ici">
+                                                <div class="icon">
+                                                    <i class="fa-solid fa-star fa-lg" style="color: #e91d34; ;"></i>
+                                                    Kullanılabilir Tıkla Param
+                                                    <div class="unlem-icon">
+                                                        <i class="fa-light fa-circle-exclamation fa-rotate-180 fa-lg"
+                                                            style="color: #e91d34;"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="red-line" style="width: 233px;"></div>
+                                    <div class="white-line"></div>
+                                </div>
+                                <div class="tikla-param-card-content">
+                                    <div class="tikla-param-bakiye">
+                                        <div class="tikla-param-anlik">
+                                            0,00 TL
+                                        </div>
+                                        <div class="tikla-param-ekstre" role="button">
+                                            <i class="fa-solid fa-clipboard-list-check fa-lg"></i>
+                                            Ekstre
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="tikla-param-card">
+                                <div class="tikla-param-card-title">
+                                    <div class="title-row">
+                                        <div class="yazi">
+                                            <div class="tikla-param-card-yazi-ici">
+                                                <div class="icon">
+                                                    <i class="fa-sharp fa-solid fa-gift fa-lg"
+                                                        style="color: #e91d34;"></i>
+                                                    Avantajlar
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="red-line" style="width: 120px"></div>
+                                    <div class="white-line"></div>
+                                </div>
+                                <div class="tikla-param-card-content">
+
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Restoran’da QR okutarak veya Gel Al'da ilk 180 TL ve üzeri siparişinde
+                                        <strong>30 TL İndirim</strong> kazan! (Kazanım 1 defa olacaktır.)
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Burger King®’den yapacağın her alışverişte Sana Gelsin ve Gel Al siparişlerine
+                                        özel <strong>%5 Tıkla Para, </strong> restoranda <strong>%2.5 Tıkla
+                                            Para</strong> kazan!
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Popeyes®, Arby's® ve Subway®'de yapacağın her alışverişte Sana Gelsin ve Gel Al
+                                        siparişlerine özel <strong>%7 Tıkla Para, </strong> restoranda <strong>%3.5
+                                            Tıkla Para</strong> kazan!
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Sbarro®, Usta Dönerci® ve Usta Pideci® ’de yapacağın her alışverişte Sana Gelsin
+                                        ve Gel Al siparişlerine özel <strong> %7 Tıkla Para,</strong> restoranda
+                                        <strong>%5 Tıkla Para</strong> kazan!
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Amasya Et Ürünleri’nden yapacağın her alışverişte siparişlerine özel <strong>%3
+                                            Tıkla Para</strong>  kazan! (Tıkla Para kazanımları kampanyalı ürünlerde geçerli değildir.)
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Restoranda QR okutarak 1 günde maksimum 1, Gel Al ile maksimum 3, Sana Gelsin ile maksimum 5 işlemden Tıkla Para kazanılacaktır.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/anasayfa/_footer.html' %}
+</body>
+</html>

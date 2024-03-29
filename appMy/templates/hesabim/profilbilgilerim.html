@@ -1,0 +1,177 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    {% include 'partials/anasayfa/_navbar.html' %}
+    <div id="arka-yapi">
+        <div class="container-yapi container">
+            <div class="min-50 row">
+                <div class="min-50 col-12">
+                    <nav aria-label="breadcrumb" class="breadcrumb-yapi">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-menu">
+                                <a class="a" href="">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-menu">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                <a class="a" href="hesabim.html">Hesabım</a>
+                            </li>
+                            <li class="breadcrumb-menu" style="color: #666;">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                Profil Bilgilerim
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="ust-title">
+                        <div class="alt-title">Profil Bilgilerim</div>
+                    </div>
+                    <div class="ana-site">
+                        <div class="container">
+                            <div class="justify-content-md-center row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-grup">
+                                        <div class="form-label">Ad</div>
+                                        <input type="text" class="form-kontrol" value="">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-grup">
+                                        <div class="form-label">Soyad</div>
+                                        <input type="text" class="form-kontrol" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="justify-content-md-center row">
+                                <div class="col-lg-8 col-12">
+                                    <div class="form-grup">
+                                        <div class="form-label">E-posta adresi</div>
+                                        <input type="text" class="form-kontrol" value="">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="justify-content-md-center row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="telefon-input">
+                                        <div class="form-label">Telefon Numarası*</div>
+                                        <div class="TelefonInput">
+                                            <div class="TelefonInputUlkeler">
+                                                <select name="telefonNumaraUlkeler" class="TelefonInputUlkeSecimi">
+                                                    <option value="">England</option>
+                                                    <option value="">France</option>
+                                                    <option value="">Russia</option>
+                                                    <option value="">Romania</option>
+                                                    <option value="">Saint Helena</option>
+                                                    <option value="">Turkey</option>
+                                                </select>
+                                                <div class="TelefonInputUlkeIcon">
+                                                    <img class="TelefonInputUlkeIconImg"
+                                                        src="https://purecatamphetamine.github.io/country-flag-icons/3x2/TR.svg"
+                                                        alt="Turkey">
+                                                </div>
+                                                <div class="TelefonInputUlkeIconSecimOku">
+                                                    <i class="fa-duotone fa-arrow-down fa-2xs"
+                                                        style="--fa-primary-color: #000000; --fa-secondary-color: #ffffff;"></i>
+                                                </div>
+                                            </div>
+                                            <input type="tel" autocomplete="tel" id="phoneNumber" maxlength="17"
+                                                class="TelefonInputInput" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-12">
+                                    <div class="form-grup">
+                                        <div class="form-label">Doğum Tarihi</div>
+                                        <div class="date-box">
+                                            <input type="date">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="justify-content-md-center row">
+                                <div class="col-lg-4 col-12">
+                                    <div class="">
+                                        <div class="form-label">Cinsiyet</div>
+                                        <div class="cins-box">
+                                            <select name="" id="">
+                                                <option value="">Erkek</option>
+                                                <option value="">Kadın</option>
+                                                <option value="">Belirtmek İstemiyorum</option>
+                                            </select>
+                                            <div class="red-arrow">
+                                                <i class="fa-duotone fa-arrow-down-long fa-2xl"
+                                                    style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-12 mb-3">
+                                    <div class="">
+                                        <div class="form-label">Takım</div>
+                                        <div class="cins-box">
+                                            <select name="" id="">
+                                                <option value="">Boluspor</option>
+                                                <option value="">Gençler Birliği</option>
+                                                <option value="">Altay</option>
+                                                <option value="">Göztepe</option>
+                                                <option value="">Altınordu</option>
+                                            </select>
+                                            <div class="red-arrow">
+                                                <i class="fa-duotone fa-arrow-down-long fa-2xl"
+                                                    style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="justify-content-md-center row">
+                                <div class="col-lg-8 col-12">
+                                    <p class="profil-text">
+                                        Yukarıda yer verilen cinsiyet, doğum tarihi ve tutulan takım bilgilerini
+                                        doldurarak, TıklaGelsin'in sizi daha iyi tanıyabilmesi için sunulan hizmetlerin
+                                        size uygun şekilde özelleştirilmesi ile ilgili bilgilerinizin işlenmesine açık
+                                        rıza vermiş olursunuz. Aydınlatma metnini okumak için Açık rızanızı dilediğiniz
+                                        zaman profil bilgilerim sayfasından değiştirebilirsiniz.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="profil-buton-container col-lg-10 col-12">
+                                    <button type="button" class="profil-buton">Profilimi Güncelle</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/anasayfa/_footer.html' %}
+    <!-- MDB -->
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+</body>
+</html>

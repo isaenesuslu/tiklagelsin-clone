@@ -1,0 +1,135 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    {% include 'partials/anasayfa/_navbar.html' %}
+    <div id="arka-yapi">
+        <div class="container-yapi container">
+            <div class="min-50 row">
+                <div class="min-50 col-12">
+                    <nav aria-label="breadcrumb" class="breadcrumb-yapi">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-menu">
+                                <a class="a" href="">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-menu">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                <a class="a" href="hesabim.html">Hesabım</a>
+                            </li>
+                            <li class="breadcrumb-menu" style="color: #666;">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                Ayarlar
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="ust-title">
+                        <div class="alt-title">Ayarlar</div>
+                    </div>
+                    <div class="ana-site">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="mb-2">
+                                    Cüzdan Ayarları
+                                </div>
+                                <div class="form-grup">
+                                    <div class="form-label">
+                                        Tek kredi kartı ile tek seferde yüklenebilecek maksimum tutar
+                                    </div>
+                                    <input type="text" class="form-kontrol" value="500,00 TL">
+                                </div>
+                                <div class="form-grup">
+                                    <div class="form-label">
+                                        Cüzdan'da bulundurulabilecek bakiye üst limiti
+                                    </div>
+                                    <input type="text" class="form-kontrol" value="2.500,00 TL">
+                                </div>
+                                <div style="font-size: 12px; margin-bottom: 2rem;">Bu limitler Tıkla Gelsin tarafından
+                                    belirlenmiştir.</div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div style="margin-bottom: 2rem;">Fırsatlardan haberdar olmak için</div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">E-posta</div>
+                                            <div class="degisim-sarmal col">
+                                                <label class="degisim-tus">
+                                                    <input type="checkbox">
+                                                    <span class="degisim"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cizgi"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">SMS</div>
+                                            <div class="degisim-sarmal col">
+                                                <label class="degisim-tus">
+                                                    <input type="checkbox">
+                                                    <span class="degisim"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cizgi"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="row">
+                                            <div class="col">Bildirim</div>
+                                            <div class="degisim-sarmal col">
+                                                <label class="degisim-tus">
+                                                    <input type="checkbox">
+                                                    <span class="degisim"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cizgi"></div>
+                                </div>
+                                <div style="font-size: 12px; margin-bottom: 1rem;">Fırsatlar ile ilgili bildirimleri
+                                    kapattığında üyelik ya da siparişlerinle ilgili SMS, E-posta ya da telefon ile
+                                    bildirim almaya devam edebilirsin.</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 font-14">
+                            <b>Ata Express Elektronik İletişim Tanıtım Pazarlama Dağıtım Sanayi ve Ticaret A.Ş.</b> tarafından ticari elektronik ileti gönderimi kapsamında işlenecek olan kişisel verilerinize yönelik bilgilendirmeyi <span style="color: #3b99fc;">Tıkla Gelsin Üyelik Aydınlatma Metni</span>'nde bulabilirsiniz.
+                        </div>
+                        <div class="mb-3 font-14">
+                            <b>Ata Express Elektronik İletişim Tanıtım Pazarlama Dağıtım Sanayi ve Ticaret A.Ş.</b> tarafından ticari elektronik ileti kapsamında işlenecek kişisel verilerinize yönelik bilgilendirmeyi <span style="color: #3b99fc;">okumak için tıklayınız.</span>
+                        </div>
+                        <div class="mb-3 font-14">
+                            <b>Ata Express Elektronik İletişim Tanıtım Pazarlama Dağıtım Sanayi ve Ticaret A.Ş.</b> Anlık bildirimler kapsamında işlenecek kişisel verilerinize yönelik bilgilendirmeyi <span style="color: #3b99fc;">okumak için tıklayınız.</span>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <button class="yeni-adres">Çıkış Yap</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/anasayfa/_footer.html' %}
+</body>
+</html>

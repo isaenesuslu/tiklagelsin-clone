@@ -1,0 +1,172 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
+        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    {% include 'partials/anasayfa/_navbar.html' %}
+    <div id="arka-yapi">
+        <div class="container-yapi container">
+            <div class="min-50 row">
+                <div class="min-50 col-12">
+                    <nav aria-label="breadcrumb" class="breadcrumb-yapi">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-menu">
+                                <a class="a" href="">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-menu">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                <a class="a" href="hesabim.html">Hesabım</a>
+                            </li>
+                            <li class="breadcrumb-menu" style="color: #666;">
+                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
+                                Cüzdanım
+                            </li>
+                        </ol>
+                    </nav>
+                    <div class="ust-title">
+                        <div class="alt-title">Cüzdanım</div>
+                    </div>
+                    <div class="mb-4 row">
+                        <div class="col-12">
+                            <div class="tikla-param-card">
+                                <div class="tikla-param-card-title">
+                                    <div class="title-row">
+                                        <div class="yazi">
+                                            <div class="tikla-param-card-yazi-ici">
+                                                <div class="icon">
+                                                    <i class="fa-duotone fa-wallet fa-lg m-1"
+                                                        style="--fa-primary-color: #e91d34; --fa-secondary-color: #e91d34;"></i>
+                                                    Kullanılabilir Bakiye
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="red-line" style="width: 233px;"></div>
+                                    <div class="white-line"></div>
+                                </div>
+                                <div class="tikla-param-card-content">
+                                    <div class="tikla-param-bakiye">
+                                        <div class="tikla-param-anlik">
+                                            0,00 TL
+                                        </div>
+                                        <div class="tikla-param-ekstre" role="button">
+                                            <i class="fa-solid fa-clipboard-list-check fa-lg"></i>
+                                            Ekstre
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="tikla-param-card">
+                                <div class="title-row">
+                                    <span class="yazi">
+                                        <div class="tikla-param-card-yazi-ici">
+                                            <i class="fa-duotone fa-wallet fa-lg m-2"
+                                                style="--fa-primary-color: #e91d34; --fa-secondary-color: #e91d34;"></i>
+                                            Para Yükle
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="red-line" style="width: 129px;"></div>
+                                <div class="white-line"></div>
+                                <div class="cuzdan-icerik">
+                                    <div class="cuzdan-para-yukleme">
+                                        <p class="m-1">
+                                            Yüklemek istediğin <strong>tutarı seç</strong>
+                                        </p>
+                                        <ul class="yukleme-miktarlari">
+                                            <li class="yukleme-miktari">
+                                                <button type="button" class="yukleme-miktari-butonu">150,00 TL</button>
+                                            </li>
+                                            <li class="yukleme-miktari">
+                                                <button type="button" class="yukleme-miktari-butonu">250,00 TL</button>
+                                            </li>
+                                            <li class="yukleme-miktari">
+                                                <button type="button" class="yukleme-miktari-butonu">350,00 TL</button>
+                                            </li>
+                                            <li class="yukleme-miktari">
+                                                <button type="button" class="yukleme-miktari-butonu">500,00 TL</button>
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            Ya da tutarı <strong>kendin belirle</strong>
+                                        </p>
+                                        <div class="form-grup mb-3">
+                                            <input placeholder="Tutarı girin" type="text" class="form-kontrol">
+                                        </div>
+
+                                        <div class="yukle-masterpas">
+                                            <div class="masterpas-img">
+                                                <img src="data:image/png;base64,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"
+                                                    width="20" height="20" alt="">
+                                            </div>
+                                            MasterPass ile Yükle
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-12">
+                            <div class="tikla-param-card">
+                                <div class="title-row">
+                                    <span class="yazi">
+                                        <div class="tikla-param-card-yazi-ici">
+                                            <i class="fa-solid fa-gift fa-xl m-2" style="color: #e91d34;"></i>
+                                            Avantajlar
+                                        </div>
+                                    </span>
+                                    <div class="red-line" style="width: 124px;"></div>
+                                    <div class="white-line"></div>
+                                </div>
+                                <div class="tikla-param-card-content">
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        <strong>İlk yüklemeye özel;</strong>
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        150-250 TL arasına <strong>25</strong> Tıkla Para,
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        250-350 Tl arasına <strong>40</strong> Tıkla Para,
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        350-500 TL arasına <strong>60</strong> Tıkla Para,
+                                    </p>
+                                    <p>
+                                        <i class="fa-solid fa-circle fa-2xs" style="color: #e91d34;"></i>
+                                        Sonraki <strong>her 150 TL ve üzeri</strong> yüklemenden <strong>%5 Tıkla
+                                            Para</strong> kazan! Bu kampanyadan <strong>50 Tıkla Para</strong>'ya kadar
+                                        kazanabilirsin.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'partials/anasayfa/_footer.html' %}
+</body>
+</html>

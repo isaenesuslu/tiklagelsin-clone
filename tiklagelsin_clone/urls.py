@@ -23,11 +23,21 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Anasayfa, name="Anasayfa"),
+    path('template', TemplatePage),
+    path('burger', burgerPage),
+    # BLOG
     path('blog', blogPage, name="blogPage"),
     path('menuler', Menuler),
     path('tarifler', Tarifler),
     path('trend-eglence', TrendEglence),
     path('detaylar/<slug>', BlogDetaylar),
-    path('template', TemplatePage),
-    path('burger', burgerPage),
+    # HESAP AYARLARI
+    path('hesabim', hesabimPage),
+    path('adreslerim', adressPage),
+    path('cuzdanim', cuzdanimPage),
+    path('kuponlarim', kuponlarimPage),
+    path('odeme-bilgilerim', odemePage),
+    path('profil-bilgilerim', profilPage),
+    path('tiklaparam', tiklaparamPage),
+    path('ayarlarim', settingsPage),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
