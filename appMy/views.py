@@ -170,4 +170,4 @@ def tiklaparamPage(request):
 
 def settingsPage(request):
     context = {}
-    return render(request, 'hesabim/.html', context)
+    return render(request, 'hesabim/settings.html', context)
