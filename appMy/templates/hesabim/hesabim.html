@@ -63,7 +63,7 @@
                                 <div class="col-md-4 col-sm-12">
                                     <div class="h-100 row">
                                         <div class="d-flex align-items-stretch yapi col-md-12 col-sm-6 col-6">
-                                            <a class="link-renk kart-link" href="tiklaparam.html">
+                                            <a class="link-renk kart-link" href="{% url 'tiklaparamPage' %}">
                                                 <div class="hesap-kart kirmizi">
                                                     <div class="row">
                                                         <div class="col-3">
@@ -90,7 +90,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-items-stretch yapi col-md-12 col-sm-6 col-6">
-                                            <a class="link-renk kart-link" href="cuzdanim.html">
+                                            <a class="link-renk kart-link" href="{% url 'cuzdanimPage' %}">
                                                 <div class="hesap-kart">
                                                     <div class="row">
                                                         <div class="col-3">
@@ -121,7 +121,7 @@
                                 <div class="col-md-8 col-sm-12">
                                     <div class="row">
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="adress.html" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="{% url 'adressPage' %}" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -142,7 +142,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="/a/account/address" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="#" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -163,7 +163,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="profilbilgilerim.html" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="{% url 'profilPage' %}" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -184,7 +184,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="odemebilgilerim.html" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="{% url 'odemePage' %}" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -205,7 +205,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="kuponlarim.html" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="{% url 'kuponPage' %}" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -226,7 +226,7 @@
                                             </a>
                                         </div>
                                         <div class="d-flex align-self-stretch yapi col-sm-6 col-4">
-                                            <a class="link-renk d-flex align-items-stretch" href="settings.html" style="width: 100%;">
+                                            <a class="link-renk d-flex align-items-stretch" href="{% url 'settingsPage' %}" style="width: 100%;">
                                                 <div class="same-card">
                                                     <div class="col-md-3">
                                                         <div class="ikon-kutu">
@@ -253,18 +253,12 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 
     {% include 'partials/anasayfa/_footer.html' %}
     <!-- MDB -->
     <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
-        <script
-        type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

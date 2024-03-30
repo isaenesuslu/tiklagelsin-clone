@@ -27,12 +27,12 @@
                 <div class="min-50 col-12">
                     <nav aria-label="breadcrumb" class="breadcrumb-yapi">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-menu">
-                                <a class="a" href="">Anasayfa</a>
+                            <li class="breadcrumb-menu"> 
+                                <a class="a" href="{% url 'Anasayfa' %}">Anasayfa</a>
                             </li>
                             <li class="breadcrumb-menu">
                                 <i class="fa-solid fa-angle-right" style="color: #666;"></i>
-                                <a class="a" href="hesabim.html">Hesabım</a>
+                                <a class="a" href="{% url 'hesabimPage' %}">Hesabım</a>
                             </li>
                             <li class="breadcrumb-menu" style="color: #666;">
                                 <i class="fa-solid fa-angle-right" style="color: #666;"></i>
@@ -63,5 +63,11 @@
         </div>
     </div>
     {% include 'partials/anasayfa/_footer.html' %}
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"></script>
 </body>
 </html>
