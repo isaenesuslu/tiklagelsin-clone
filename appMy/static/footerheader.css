@@ -379,4 +379,14 @@ button:focus:not(:focus-visible) {
     color: #007bff !important;
 }
 
+
+.carouselHead {
+    padding: 0.2rem 0.2rem;
+    background-color: white;
+    border-radius: 22px;
+}
+
+.carousel-inner {
+    border-radius: 15px;
+}
 /* accordion fn */
