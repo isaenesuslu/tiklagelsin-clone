@@ -255,6 +255,11 @@ li{
 .footer-main-page-1 a{
     margin-top: 15px; text-decoration: none;
 }
+
+.footer-main-page-1{
+    position: relative;
+}
+
 .footer-main-page-2 ul{
     list-style: none;
     padding: 0;
@@ -387,12 +392,29 @@ button:focus:not(:focus-visible) {
 }
 
 .dikey-y {
-    border-right: 1px solid black;
+    border-right: 1px solid #33333313;
+    width: 10px;
+    height: 200px;
+    position: absolute;
+    right: 18%;
 }
 .row-t {
     border-top: 1px solid #33333313;
 }
 .row-b {
     border-bottom: 1px solid #33333313;
+}
+
+.redline {
+    position: relative;
+    width: 89px;
+    border-bottom: 2px solid #e91d34;
+}
+
+.whiteline {
+    position: absolute;
+    bottom: 0;
+    width: 160px;
+    border-bottom: 1px solid #f2f2f2;
 }
 /* accordion fn */
