@@ -426,13 +426,23 @@ button:focus:not(:focus-visible) {
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
     background-image: none;
-    background: red;
+    background: #e91d34;
     border-radius: 50%;
     display: flex;
     justify-content: center;
-    align-items: center;
-}.carousel-control-next:hover, .carousel-control-prev:hover,
+    align-items: center; 
+}
+.carousel-control-next,.carousel-control-prev {
+    opacity: 0.6;
+}
+.carousel-control-next:hover, .carousel-control-prev:hover,
  .carousel-control-next:focus, .carousel-control-prev:focus{
-    opacity: 0.5;
+    opacity: 0.6;
+}
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: #e91d34;
+}.control-none {
+    display: none;
 }
 /* accordion fn */
