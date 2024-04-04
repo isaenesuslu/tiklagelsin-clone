@@ -385,8 +385,10 @@ button:focus:not(:focus-visible) {
     border-radius: 22px;
 }
 
-.carousel-inner {
+.carousel-inner-yan {
     border-radius: 15px;
+    padding-bottom: 1.9rem;
+    background-color: white;
 }
 
 .dikey-y {
@@ -444,5 +446,25 @@ button:focus:not(:focus-visible) {
     background-color: #e91d34;
 }.control-none {
     display: none;
+}
+.carousel-indicators-yan [data-mdb-target] {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #e91d34;
+    opacity: .75;
+}.carousel-indicators-yan {
+    margin: 0;
+    margin-right: 10px;
+    justify-content: end;
+    align-items: center;
+}.carousel-indicators-yan .active {
+    border: 2px solid #e91d34;
+    background-color: white;
+}
+
+.marka {
+    position: absolute;
+    left: 10px;
 }
 /* accordion fn */
