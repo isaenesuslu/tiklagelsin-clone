@@ -436,6 +436,7 @@ button:focus:not(:focus-visible) {
 }
 .carousel-control-next,.carousel-control-prev {
     opacity: 0.6;
+    width: 8%;
 }
 .carousel-control-next:hover, .carousel-control-prev:hover,
  .carousel-control-next:focus, .carousel-control-prev:focus{
