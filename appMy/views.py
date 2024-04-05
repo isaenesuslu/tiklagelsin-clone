@@ -12,6 +12,7 @@ def blogPage(request):
     import random
     
     carousel_list = []
+    carousel_list2 = []
     detay_list = []
     sonkart = ""
     detay_list += MenulerMod.objects.all()
@@ -30,7 +31,9 @@ def blogPage(request):
         if item not in sonsuz_elemanlar:
             carousel_list.append(item)
             sonsuz_elemanlar.add(item)
-            
+            if len(carousel_list2) < 6:
+                carousel_list2.append(item)
+
     for sonitem in detay_list:
         if sonitem not in carousel_list:
             sonkart = sonitem
@@ -39,6 +42,7 @@ def blogPage(request):
     
     context = {
         "carousel_list":carousel_list,
+        "carousel_list2":carousel_list2,
         "sonkart":sonkart,
     }
     return render(request, 'blog/bloganasayfa.html', context)

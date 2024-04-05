@@ -49,8 +49,6 @@
         <link rel="stylesheet" href="{% static 'blog.css' %}" />
     </head>
 <body>
-
-
 {% include 'partials/blog/_navbarblog.html' %}
 
   <div class="container">
@@ -187,7 +185,7 @@
 
     
       
-      {% for i in carousel_list %}
+      {% for i in carousel_list2 %}
       <div class="col col-xl-4 col-lg-6 col-md-6">
         <a href="detaylar/{{ i.slug }}">
            <div class="card p-3" style="height: 447px; width:356px;">

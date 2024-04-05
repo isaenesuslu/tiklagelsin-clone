@@ -342,6 +342,10 @@ footer hr{
     background-color: white;
     padding: 1rem;
 }
+.card-detail {
+    width: 356px;
+    height: 447px;
+}
 /** CAROUSEL BİTİŞ */
 
 .icerik {
@@ -469,7 +473,17 @@ footer hr{
         margin-top: 5rem;
     }
 } 
-
-@media only screen and (min-width:992px) and (max-width:1199) {
-
+@media only screen and (min-width:992px) {
+    .con-detay {
+        padding-left:0;
+    }.card-detail {
+        width: 306px;
+    }
+}
+@media only screen and (min-width:1200px) {
+    .con-detay {
+        padding-left: 4.3rem;
+    }.card-detail {
+        width: 356px;
+    }
 }
