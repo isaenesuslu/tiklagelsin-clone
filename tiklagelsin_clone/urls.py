@@ -32,6 +32,7 @@ urlpatterns = [
     path('trend-eglence', TrendEglence),
     path('detaylar/<slug>', BlogDetaylar),
     # HESAP AYARLARI
+    path('a', hesapgirisPage, name="hesapgirisPage"),
     path('hesabim', hesabimPage, name="hesabimPage"),
     path('adreslerim', adressPage, name="adressPage"),
     path('cuzdanim', cuzdanimPage, name="cuzdanimPage"),
