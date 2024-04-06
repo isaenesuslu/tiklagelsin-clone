@@ -468,4 +468,23 @@ button:focus:not(:focus-visible) {
     position: absolute;
     left: 10px;
 }
+.ab-main {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.account-box {
+    width: 525px;
+    height: 545px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 30px 30px;
+}.ab-headtitle {
+    font-weight: bold;
+    font-size: 22px;
+    padding-left: 10px;
+}
 /* accordion fn */

@@ -144,6 +144,10 @@ def burgerPage(request):
 
 # HESAP AYARLARI
 
+def hesapgirisPage(request):
+    context = {}
+    return render(request, 'hesabim/hesabimgiris.html', context)
+
 def hesabimPage(request):
     context = {}
     return render(request, 'hesabim/hesabim.html', context)
