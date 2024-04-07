@@ -486,10 +486,12 @@ button:focus:not(:focus-visible) {
     font-weight: bold;
     font-size: 22px;
     padding-left: 10px;
+    margin-bottom: 0;
+    margin-bottom: 7px;
 }.ab-line {
     position: relative;
     width: 100%;
-    height: fit-content;
+    height: 5px;
 }.ab-whiteline {
     background-color: #f2f2f2;
     width: 461px;
@@ -505,5 +507,16 @@ button:focus:not(:focus-visible) {
     border-top-left-radius: 5px;
     position: absolute;
     z-index: 1;
+}.country-select {
+    border: 0;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: 0px;
+    border-radius: var(--bs-border-radius);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}.country-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-bottom: 10px;
 }
 /* accordion fn */
