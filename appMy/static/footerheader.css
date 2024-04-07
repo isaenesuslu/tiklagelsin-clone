@@ -486,5 +486,24 @@ button:focus:not(:focus-visible) {
     font-weight: bold;
     font-size: 22px;
     padding-left: 10px;
+}.ab-line {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+}.ab-whiteline {
+    background-color: #f2f2f2;
+    width: 461px;
+    height: 5px;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px
+}.ab-redline {
+    background-color: #e91d34;
+    width: 301px;
+    height: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: absolute;
+    z-index: 1;
 }
 /* accordion fn */
