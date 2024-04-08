@@ -518,5 +518,29 @@ button:focus:not(:focus-visible) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     padding-bottom: 10px;
+}.ab-button {
+    background-color: #e91d34;
+    margin-bottom: 1rem;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+}.ab-social {
+    list-style: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 26px 10px 20px;
+    border-radius: 40px;
+    margin-top: 10px;
+}.ab-social:nth-child(1) {
+    background-color: black;
+    color: white;
+}.ab-social:nth-child(2) {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    color: #757575;
+}.ab-social:nth-child(3) {
+    background-color: #3b5998;
+    color: white;
 }
 /* accordion fn */
