@@ -7,6 +7,10 @@ def Anasayfa(request):
     context = {}
     return render(request, 'anasayfa/anasayfa.html', context)
 
+def ozelMenuler(request):
+    context = {}
+    return render(request, 'anasayfa/ozelmenuler.html', context)
+
 def blogPage(request):
     
     import random
