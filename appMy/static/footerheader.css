@@ -548,3 +548,44 @@ button:focus:not(:focus-visible) {
     border: 2px solid black;
 }
 /* accordion fn */
+
+/* ÖZEL MENÜLER */
+.menu-img {
+    width: fit-content;
+    background-color: white;
+    border: 2px solid white;
+    padding-bottom: 20px;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 15px;
+}.menu-img img {
+    border-radius: 15px;
+}.menu-text {
+    font-weight: 700;
+    margin-top: 1.5rem;
+}.ab-line-menu {
+    position: relative;
+    width: 100%;
+    height: 5px;
+}.ab-whiteline-menu {
+    background-color: #e0dfdf;;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px
+}.ab-redline-menu {
+    background-color: #e91d34;
+    width: 20%;
+    height: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    position: absolute;
+    z-index: 1;
+}.menu-marka {
+    background-color: white;
+    padding: 0.3rem 0.5rem;
+    width: fit-content;
+}.menu-marka-text span{
+    color: black !important;
+}
