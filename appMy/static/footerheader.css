@@ -584,7 +584,7 @@ button:focus:not(:focus-visible) {
     z-index: 1;
 }.menu-marka {
     background-color: white;
-    padding: 0.3rem 0.5rem;
+    padding: 0px 0.8rem;
     width: fit-content;
 }.menu-marka-text span{
     color: black !important;
