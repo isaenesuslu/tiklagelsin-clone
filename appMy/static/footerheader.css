@@ -588,4 +588,10 @@ button:focus:not(:focus-visible) {
     width: fit-content;
 }.menu-marka-text span{
     color: black !important;
+}.menu-card-price {
+    color: #e91d34;
+    font-weight: 700;
+    font-size: 16px;
+}.menu-card {
+    border: 0;
 }
