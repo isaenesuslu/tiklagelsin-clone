@@ -183,3 +183,7 @@ def tiklaparamPage(request):
 def settingsPage(request):
     context = {}
     return render(request, 'hesabim/settings.html', context)
+
+def sepetimPage(request):
+    context = {}
+    return render(request, 'hesabim/sepetim.html', context)
