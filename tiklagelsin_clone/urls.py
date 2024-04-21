@@ -43,4 +43,5 @@ urlpatterns = [
     path('tiklaparam', tiklaparamPage, name="tiklaparamPage"),
     path('ayarlarim', settingsPage, name="settingsPage"),
     path('sepetim', sepetimPage, name="sepetimPage"),
+    path('siparislerim', siparislerimPage, name="siparislerimPage"),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
