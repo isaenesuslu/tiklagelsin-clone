@@ -650,4 +650,10 @@ button:focus:not(:focus-visible) {
     align-items: center;
     font-weight: 600;
     color: #666;
+}.siparislerim-card {
+    width: 100%;
+    background-color: #fcfcfc;
+    border-radius: 10px;
+}.aktif-siparis {
+    color: #e91d34;
 }
