@@ -187,3 +187,7 @@ def settingsPage(request):
 def sepetimPage(request):
     context = {}
     return render(request, 'hesabim/sepetim.html', context)
+
+def siparislerimPage(request):
+    context = {}
+    return render(request, 'hesabim/siparislerim.html', context)

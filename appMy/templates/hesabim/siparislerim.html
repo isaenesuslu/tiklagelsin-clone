@@ -1,0 +1,120 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    data-purpose="Layout StyleSheet"
+    title="Web Awesome"
+    href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+  >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    >
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+        body{
+            background-color: #f2f2f2 !important;
+        }
+    </style>
+<link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between">
+          <div class="left d-flex me-5">
+              <div class="pe-5"><a href="{% url 'Anasayfa' %}"><img src="https://www.tiklagelsin.com/static/tgLogoRed-2e68a5b6e5c0f2f37c792597e8e820f6.png" alt="tiklalogo" class="h-logo"></a></div>
+          </div>
+          <div class="right d-flex justify-content-center align-items-center ms-5">
+              <a href="#" class="kampanya pe-4 d-flex align-items-center">
+                  <i class="fa-light fa-gift fa-lg h-icons" style="color: #333;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Kampanyalar</p>
+              </a>
+              <a href="{% url 'hesabimPage' %}" class="hesabim pe-4 d-flex align-items-center">
+                  <i class="fa-solid fa-user fa-lg h-icons" style="color: #E91D34;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Hesabım</p>
+              </a>
+              <a href="{% url 'sepetimPage' %}" class="sepetim d-flex align-items-center">
+                  <i class="fa-light fa-basket-shopping fa-lg" style="color: #ffffff; z-index: 1;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#ffffff">Sepetim</p>
+              </a>
+          </div>
+        </div>
+      </header>
+
+<div class="container">
+  <nav aria-label="breadcrumb" class="breadcrumb-yapi mt-3">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-menu"> 
+            <a class="a" href="{% url 'Anasayfa' %}" style="text-decoration: underline; color:#666;">Anasayfa</a>
+        </li>
+        <li class="breadcrumb-menu">
+            <i class="fa-solid fa-angle-right ms-2" style="color: #666;"></i>
+            <a class="a" href="{% url 'hesabimPage' %}" style="text-decoration: underline; color:#666;">Hesabım</a>
+        </li>
+        <li class="breadcrumb-menu" style="color: #666;">
+            <i class="fa-solid fa-angle-right ms-2" style="color: #666;"></i>
+            Siparişlerim
+        </li>
+    </ol>
+</nav>
+<h3>Siparişlerim</h3>
+<div class="siparislerim-card mt-4 pb-5 mb-3">
+  <div class="d-flex justify-content-around pt-5" style="font-weight:700">
+    <p class="aktif-siparis">Aktif Siparişlerim</p>
+    <p>Önceki Siparişlerim</p>
+  </div>
+  <div class="ab-line d-flex justify-content-center">
+    <div class="ab-redline" style="left:9px; width:50%; border-radius: 0;"></div>
+    <div class="ab-whiteline" style="width: 95%; border-radius: 0;"></div>
+  </div>
+  <div class="d-flex flex-column justify-content-center align-items-center mt-5">
+    <img src="{% static 'img/moto.gif' %}" alt="#" width="70" height="70">
+    <p style="color: #666;">Aktif Siparişin Bulunmuyor.</p>
+    <p style="color: #E91D34;">Hemen Sipariş Ver</p>
+  </div>
+</div>
+</div>
+
+    {% include 'partials/anasayfa/_footer.html' %}
+</body>
+</html>
