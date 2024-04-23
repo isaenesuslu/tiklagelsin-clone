@@ -1,0 +1,223 @@
+<!DOCTYPE html> {% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Font Awesome -->
+    <link
+    rel="stylesheet"
+    data-purpose="Layout StyleSheet"
+    title="Web Awesome"
+    href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+  >
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    >
+
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    >
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <style>
+        body{
+            background-color: #f2f2f2 !important;
+        }
+    </style>
+<link rel="stylesheet" href="{% static 'footerheader.css' %}">
+</head>
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between">
+          <div class="left d-flex me-5">
+              <div class="pe-5"><a href="{% url 'Anasayfa' %}"><img src="https://www.tiklagelsin.com/static/tgLogoRed-2e68a5b6e5c0f2f37c792597e8e820f6.png" alt="tiklalogo" class="h-logo"></a></div>
+          </div>
+          <div class="right d-flex justify-content-center align-items-center ms-5">
+              <a href="#" class="kampanya pe-4 d-flex align-items-center">
+                  <i class="fa-light fa-gift fa-lg h-icons" style="color: #333;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Kampanyalar</p>
+              </a>
+              <a href="{% url 'hesabimPage' %}" class="hesabim pe-4 d-flex align-items-center">
+                  <i class="fa-light fa-user fa-lg h-icons" style="color: #333;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Hesabım</p>
+              </a>
+              <a href="#" class="sepetim d-flex align-items-center">
+                  <i class="fa-light fa-basket-shopping fa-lg" style="color: #ffffff; z-index: 1;"></i>
+                  <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#ffffff">Sepetim</p>
+              </a>
+          </div>
+        </div>
+      </header>
+
+    <div class="arka-yapi">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="son-siparislerim mt-3">
+                        <div>
+                            <h5>Son Siparişlerim</h5>
+                            <div class="d-flex justify-content-between mt-4">
+                                <div class="ss-icon"><i class="fa-light fa-user-headset fa-xl" style="color: #e91d34;"></i></div>
+                                <div class="tum-s">Tüm Siparişlerim <i class="fa-regular fa-chevron-right fa-lg" style="color: #e91d34;"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;" class="align-items-center justify-content-center">
+                        <div class="yan-carousel mt-4">
+                        <div class="yan-carousel-2">
+                            <div id="carouselExampleInterval4" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+                                <div class="carousel-inner carousel-inner-yan">
+                                    <div class="carousel-item active" data-mdb-interval="10000">
+                                        <img src="https://d3vkdqr0qjxhag.cloudfront.net/SUB_Tiklagelsine_Ozel_Subway_Menu_960x380px_01_b16e2de2a5.jpg" class="cut-pic d-block w-100" alt="Wild Landscape"/>
+                                        <p class="m-0 marka">MARKA</p>
+                                    </div>
+                                    <div class="carousel-item" data-mdb-interval="2000">
+                                        <img src="https://d3vkdqr0qjxhag.cloudfront.net/UP_3lu_Kampanya_960x380px_7e5ffaebdc.jpg" class="cut-pic d-block w-100" alt="Camera"/>
+                                        <p class="m-0 marka">MARKA</p>
+                                    </div>
+                                    <div div class="carousel-item" data-mdb-interval="2000">
+                                        <img src="https://d3vkdqr0qjxhag.cloudfront.net/AE_Dana_Pastirma_Kampanya_Tikla_Gelsin_960x380px_52a8ab86a5.jpg" class="cut-pic d-block w-100" alt="Exotic Fruits"/>
+                                        <p class="m-0 marka">MARKA</p>
+                                    </div>
+                                </div>
+                                 <!-- CAROUSEL INDICATORS -->
+                                 <div class="carousel-indicators carousel-indicators-yan">
+                                    <button type="button" data-mdb-target="#carouselExampleInterval4" data-mdb-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-mdb-target="#carouselExampleInterval4" data-mdb-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-mdb-target="#carouselExampleInterval4" data-mdb-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                </div>
+                                <button class="carousel-control-prev control-none" data-mdb-target="#carouselExampleInterval2" type="button" data-mdb-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next control-none" data-mdb-target="#carouselExampleInterval2" type="button" data-mdb-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div> 
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-9">
+                    <nav aria-label="breadcrumb" class="breadcrumb-yapi mt-3">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-menu"> 
+                                <a class="a" href="{% url 'Anasayfa' %}" style="color: #666; text-decoration: underline;">Anasayfa</a>
+                            </li>
+                            <li class="breadcrumb-menu"> 
+                                <i class="fa-solid fa-angle-right ms-1" style="color: #666;"></i>
+                                <a class="a" href="{% url 'sepetimPage' %}" style="color: #666; text-decoration: underline;">Sepetim</a>
+                            </li>
+                            <li class="breadcrumb-menu" style="color: #666;">
+                                <i class="fa-solid fa-angle-right ms-1" style="color: #666;"></i>
+                                Sipariş Onay
+                            </li>
+                        </ol>
+                    </nav>
+                    <h5>Sipariş Onay</h5>
+                    <div class="sepetim-page pt-3 mt-3">
+                        <div class="d-flex justify-content-between">
+                            <h6>Teslim edilecek adres</h6>
+                            <a href="#" style="color: #e91d34; font-weight: 600;">Adres değiştir<i class="fa-solid fa-angle-right ms-1"></i></a>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fa-light fa-location-dot" style="color: #e91d34;"></i>
+                            <p class="m-0 ms-2">ADRESS GELECEK</p>
+                          </div>
+                          <hr>
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="d-flex align-items-center">
+                                <i class="fa-duotone fa-hand" style="--fa-primary-color: #e91d34; --fa-secondary-color: #e91d34;"></i>
+                                <div class="ms-3">
+                                    <h6>Temassız</h6>
+                                    <p style="font-size: 14px; color: #666;">Siparişim kapıma bırakılsın</p>
+                                </div>
+                              </div>
+                              <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                              </label>
+                          </div>
+                          <hr>
+                          <div class="d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fa-regular fa-bell-slash" style="color: #e91d34;"></i>
+                              <div class="ms-3">
+                                  <h6>Zili Çalma</h6>
+                                  <p style="font-size: 14px; color: #666;">Siparişim geldiğinde kapı zilim çalınmasın</p>
+                              </div>
+                            </div>
+                            <label class="switch">
+                              <input type="checkbox">
+                              <span class="slider round"></span>
+                            </label>
+                        </div>
+                        <hr>
+                        <h6>Sipariş Notu</h6>
+                          <hr>
+                          <div class="d-flex align-items-center">
+                            <i class="fa-light fa-file-lines" style="color: #e91d34;"></i>
+                            <p class="m-0 ms-2" style="font-weight: 600;">Sipariş Özeti</p>
+                          </div>
+                          <hr>
+                          <p style="color:#7c7c7c;">Sepet Tutarı</p>
+                          <hr>
+                          <div class="d-flex justify-content-between" style="font-weight:700;">
+                            <p>Toplam Tutar</p>
+                            <p>0,00 TL</p>
+                          </div>
+                        </div>
+                        <div class="mt-3" style="float: right;">
+                          <button class="sepetim-geri-btn">Geri</button>
+                          <button class="sepetim-odeme-btn ms-2">Onayla 0,00 TL</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!-- MDB -->
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
+></script>    
+</body>
+</html>
