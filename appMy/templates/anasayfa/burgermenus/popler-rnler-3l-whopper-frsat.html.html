@@ -48,13 +48,157 @@
           rel="stylesheet"
         />
         
-        <link rel="stylesheet" href="{% static 'template.css' %}">
-        <link rel="stylesheet" href="{% static 'footerheader.css' %}">
-        <link rel="stylesheet" href="{% static 'footer.css' %}">
+ 
+        <link rel="stylesheet" href="../css/footerheader.css">
+        <link rel="stylesheet" href="../footer.css">
+        <link rel="stylesheet" href="../css/template.css">
         
+        <style>
+          *{
+            box-sizing: border-box !important;
+          }
+            .header-panel{
+                background-color: white;
+                border-radius: 20px 20px 0;
+                text-align: center;
+                margin-top: .5rem;
+                padding: 1rem;
+                border-color: #fff6e3;
+                box-shadow: 0 0 8px 2px rgba(0,0,0,.15);
+            }
+            .col-lg-5, .col-lg-7{
+                position: relative;
+                width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .urun-div{
+                width: 445px;
+                height: 570px;
+
+            }
+            .header-panel .urun-title{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .header-panel .urun-title .title{
+                font-size: 20px;
+                font-weight: 700;
+                color: #333;
+                text-align: left;
+                float: left;
+            }
+            .urun-text{
+                font-size: 14px;
+                font-weight: 500;
+                color: #333;
+                text-align: left;
+            }
+            .header-panel .urun-text .urun-content{
+              margin: .5rem 0 .5rem;
+            }
+           .header-panel .urun-text .urun-content .urun-item {
+              color: #333;
+              display: flex !important;
+              font-size: 14px;
+              text-align: left !important;
+              font-weight: 500;
+            }
+            .header-panel .urun-text .urun-content .urun-item i{
+              font-size: 16px;
+              margin-right: .3rem;
+            }
+            .urun-cart-add .container{
+              display: flex;
+              justify-content: space-between;
+              flex-direction: row;
+              align-items: center ;
+              padding: 0;
+            }
+            .ekle-sil-text{
+              text-align: center;
+              width: 1rem;
+              font-size: 20px;
+              color: #333;
+              font-weight: 700;
+              padding: 8px;
+            }
+            .btn-danger{
+              font-size: 16px;
+              border-radius: 10px;
+              background-color:  red;
+              padding: 7px;
+              text-transform: capitalize;
+              cursor: pointer !important;
+            }
+            .btn-danger:hover{
+              background-color: #BA1729;
+            }
+            .option{
+                padding-bottom: 1rem;
+            }
+            .option:first-child{
+              margin-top: 0.5rem;
+            }
+            .option-panel{
+              margin-top: 1.5rem;
+            }
+            .option-panel h2{
+              color: #333;
+              font-weight: 700;
+              background-color: #F2F2F2;
+              border-top-left-radius: 20px;
+              border-top-right-radius: 20px;
+              padding: 12px 16px 16px;
+              margin: 0 0 -8px;
+            }
+            .option-panel .panel-title{
+              color: #333;
+              font-weight: 700;
+             margin: 0;
+            }
+            .panel-title{
+              font-size: 16px !important;
+            }
+            .option-panel .panel-body{
+              padding: 16px;
+              box-shadow: 0 0 8px 2px rgba(0,0,0,.15);
+            }
+            .row .input{
+              display: flex;
+            }
+            .form-check-input{
+              margin-top: 2px !important;
+            }
+            .ekle-eksilt .buton{
+              background-color: white !important;
+            }
+            .option-panels-2{
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+              align-items: center;
+              color: #333 !important;
+              border-bottom: 1px solid #f2f2f2;
+              border-top: 1px solid #f2f2f2;
+              padding: 1rem 0px;
+            }
+            .panel-body{
+              border-bottom-left-radius: 20px;
+              border-bottom-right-radius: 20px;
+              padding: 10px 20px 24px!important;
+            }
+            .form-select option{
+              color: #333 !important;
+              font-size: 18px;
+            }
+            
+        </style>
 
 </head>
 <body>
+  <!-- HEADER BAŞLANGIÇ -->
     <header style="z-index: 9999;" class="header">
         <div class="container d-flex justify-content-center">
           <div class="left d-flex me-5">
@@ -79,10 +223,10 @@
               </a>
           </div>
         </div>
-      </header>
-
-    
-      <div class="container">
+    </header>
+      <!-- HEADER BİTİŞ -->
+<!-- SOL KISIMDAKİ MENÜNÜ KARTININ DETAYLARI.  -->
+      <div class="container" style="padding: 20px;">
         <div class="container-inner" >
             <nav class="inner-container-menu">
                 <ol class="container-item">
@@ -90,49 +234,535 @@
                         <a href="../anasayfa.html">Anasayfa</a>
                         <i style="margin-left: 0.5rem; margin-right: 0.5rem;" class="fa-thin fa-chevron-right"></i>
                     </li>
-                    <li class="cont-item">
-                      <span>Burger King®</span> 
+                    <li class="cont-item" style="text-decoration: underline; cursor: pointer; color: #666;">
+                        <a href="burgerking.html"> <span style="cursor: pointer;">Burger King®</span> </a>
+                      <i style="margin-left: 0.5rem; margin-right: 0.5rem;" class="fa-thin fa-chevron-right"></i>
                     </li>
+                    <li class="cont-item">
+                        <span >3'lü Whopper® Fırsatı</span> 
+                      </li>
                 </ol>
             </nav>
         </div>
-        <div class="menus-container">
-            <div class="menu-tabs">
-                <a onclick="showMenu('Popüler Ürünler', this)" class="menu-tabs-link p-2 d-flex justify-content-center active" href="#">
-                    <h1>Popüler Ürünler</h1>
-                </a> 
-                <a onclick="showMenu('Menüler', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Menüler</span>
-                </a>
-                <a onclick="showMenu('Burgerler', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Burgerler</span>
-                </a>
-                <a onclick="showMenu('Kids Menüler', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Kids Menüler</span>
-                </a>
-                <a onclick="showMenu('Çıtır Lezzetler', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Çıtır Lezzetler</span>
-                </a>
-                <a onclick="showMenu('Tatlılar', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Tatlılar</span>
-                </a>
-                <a onclick="showMenu('Soslar', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>Soslar</span>
-                </a>
-                <a onclick="showMenu('İçecekler', this)" class="menu-tabs-link p-2 d-flex justify-content-center" href="#">
-                    <span>İçecekler</span>
-                </a>
-            </div>
-
-
-            <!-- BURASI SAĞDAKİ CARDS KISIMLARI -->
-                <div class="cards-menu " id="menu-cards">
-                   <!-- DİNAMİK OLARAK BURAYA CARDLAR EKLENİYOR -->
+        <div class="row d-flex" style="width: 1140px;">
+          <div class="col-lg-5 d-flex" style="width: 475px; height: 570;">
+            <div class="urun-div">
+                <div class="header-panel">
+                    <div class="urun-title">
+                        <h1 id="title" class="title">
+                            {{title}} 
+                        </h1>
+                    </div>
+                    <div class="urun-text">
+                        <span id="description" class="mb-1" style="text-align: left;">
+                            {{description}} 
+                        </span>
+                        <div class="mb-3">
+                            <span id="additionalInfo">
+                                {{additionalInfo}} 
+                            </span>
+                            <div class="urun-detaylari">
+                              <!-- Ürün açıklaması, görseli ve diğer detaylar -->
+                          
+                              <!-- İşte buraya product-details-container eklenecek -->
+                              <div id="product-details-container">
+                                  <!-- Ürün detayları içeriği buraya eklenecek -->
+                              </div>
+                          
+                              <!-- Diğer ürün detayları -->
+                          </div>
+                    <div class="urun-image">
+                        <img id="image" style="max-width: 100% !important; max-height: 100%; vertical-align: middle; margin: 0 0 8px;" src="" alt="">
+                    </div>
+                    <div class="urun-content row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div class="urun-item">
+                        <i class="fa-solid fa-burger"></i>
+                      <span>x3 Whopper® Jr.</span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <div class="urun-item">
+                                  <i class="fa-sharp fa-solid fa-french-fries"></i>
+                                  <span>x2 Patates Kızartması (Büyük)</span>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="urun-item">
+                                  <i class="fa-duotone fa-cup-togo"></i>
+                                  <span>1 L. İçecek</span>
+                                </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="urun-item">
+                                  <i class="fa-regular fa-wine-bottle"></i>
+                                  <span>x2 Sos</span>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="urun-cart-add">
+                          <div class="container d-flex">
+                            <span class="price-text" id="price">
+                               {{price}} 
+                            </span>
+                            <div class="d-flex cart-right">
+                              <div class="ekle-eksilt">
+                                <button type="button" class="buton" style="border: 0; cursor: pointer;" onclick="eksilt()">
+                                  <i style="font-size: 24px;" class="fa-light fa-circle-minus"></i>
+                                </button>
+                                <span id="quantity" class="ekle-sil-text">1</span>
+                                <button type="button" class="me-4 buton" style="border: 0; cursor: pointer;" onclick="arttir()">
+                                  <i style="font-size: 24px;" class="fa-regular fa-circle-plus"></i>
+                                </button>
+                                <button type="button" class="btn btn-danger"  data-mdb-ripple-init onclick="addToCart()">Sepete Ekle</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                 </div>
-
-            
+            </div>
         </div>
+<!-- SOL KISIMDAKİ MENÜNÜ KARTININ DETAYLARI BİTİŞ  -->
+
+
+        <!-- SAĞDAKİ MENÜLERİN SEÇME VE SEÇİMİ KALDIRMA KISMI BAŞLANGIÇ MENÜDEN MENÜYE DEĞİŞİKLİK GÖSTERİYOR. BACKEND YAPILACAK (ELLEME) -->
+        <div class="option col-lg-7 " style="width: 665px; height: fit-content;">
+          <div class="option-panel">
+            <h2 class="panel-title ">Sandviç</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select ">
+                <option selected>Whopper Jr®</option>
+              </select>
+              <div class="option-item-panel">
+                <div class="option-panel">
+                  <div class="option-panel-body">
+                      <div class="option-panels-1">
+                        <div class="option-panels-2">
+                          <b>Peynir</b>
+                          <div style="font-weight: 700;" id="infoText1"></div>
+                          <div class="d-flex cart-right">
+                            <div class="ekle-eksilt">
+                              <button type="button" class="buton" style="border: 0; cursor: pointer;" onclick="changePeynir1Quantity('decrease')">
+                                  <i style="font-size: 20px;" class="fa-light fa-circle-minus"></i>
+                              </button>
+                              <span id="quantityPeynir1" class="ekle-sil-text">0</span>
+                              <button type="button" class="me-4 buton" style="border: 0; cursor: pointer;" onclick="changePeynir1Quantity('increase')">
+                                  <i style="font-size: 20px;" class="fa-regular fa-circle-plus"></i>
+                              </button>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="panel-title">Garnitür</div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkboxNoLabel1" value="" aria-label="...">
+                                <label for="checkboxNoLabel1" onclick="toogleCheckBox()" for="">Domates</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox9" value="" aria-label="...">
+                                <label for="checkbox9" onclick="toogleCheckBox('checkbox9')" for="">Göbek Salata</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox10" value="" aria-label="...">
+                                <label for="checkbox10" onclick="toogleCheckBox('checkbox10')" for="">Soğan</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox11" value="" aria-label="...">
+                                <label for="checkbox11" onclick="toogleCheckBox('checkbox11')" for="">Turşu</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox12" value="" aria-label="...">
+                                <label for="checkbox12" onclick="toogleCheckBox('checkbox12')" for="">Ketçap</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox13" value="" aria-label="...">
+                                <label for="checkbox13" onclick="toogleCheckBox('checkbox13')" for="">Mayonez</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox14" value="" aria-label="...">
+                                <label for="checkbox14" onclick="toogleCheckBox('checkbox14')" for="">Acı Sos</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox15" value="" aria-label="...">
+                                <label for="checkbox15" onclick="toogleCheckBox('checkbox15')" for="">Hardal</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="option-panel">
+            <h2 class="panel-title">Sandviç</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select ">
+                <option selected>Whopper®</option>
+              </select>
+              <div class="option-item-panel">
+                <div class="option-panel">
+                  <div class="option-panel-body">
+                      <div class="option-panels-1">
+                        <div class="option-panels-2">
+                          <b>Peynir</b>
+                          <div style="font-weight: 700;" id="infoText2"></div>
+                          <div class="d-flex cart-right">
+                            <div class="ekle-eksilt">
+                              <button type="button" class="buton" style="border: 0; cursor: pointer;" onclick="changePeynir2Quantity('decrease')">
+                                  <i style="font-size: 20px;" class="fa-light fa-circle-minus"></i>
+                              </button>
+                              <span id="quantityPeynir2" class="ekle-sil-text">0</span>
+                              <button type="button" class="me-4 buton" style="border: 0; cursor: pointer;" onclick="changePeynir2Quantity('increase')">
+                                  <i style="font-size: 20px;" class="fa-regular fa-circle-plus"></i>
+                              </button>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="panel-title">Garnitür</div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="" aria-label="...">
+                                <label for="checkboxNoLabel" onclick="toogleCheckBox()" for="">Domates</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox1" value="" aria-label="...">
+                                <label for="checkbox1" onclick="toogleCheckBox('checkbox1')" for="">Göbek Salata</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox2" value="" aria-label="...">
+                                <label for="checkbox2" onclick="toogleCheckBox('checkbox2')" for="">Soğan</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox4" value="" aria-label="...">
+                                <label for="checkbox4" onclick="toogleCheckBox('checkbox4')" for="">Turşu</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox5" value="" aria-label="...">
+                                <label for="checkbox5" onclick="toogleCheckBox('checkbox5')" for="">Ketçap</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox6" value="" aria-label="...">
+                                <label for="checkbox6" onclick="toogleCheckBox('checkbox6')" for="">Mayonez</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox7" value="" aria-label="...">
+                                <label for="checkbox7" onclick="toogleCheckBox('checkbox7')" for="">Acı Sos</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox8" value="" aria-label="...">
+                                <label for="checkbox8" onclick="toogleCheckBox('checkbox8')" for="">Hardal</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="option-panel">
+            <h2 class="panel-title">Sandviç</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select ">
+                <option selected>Whopper®</option>
+              </select>
+              <div class="option-item-panel">
+                <div class="option-panel">
+                  <div class="option-panel-body">
+                      <div class="option-panels-1">
+                        <div class="option-panels-2">
+                          <b>Peynir</b>
+                          <div style="font-weight: 700;" id="infoText3"></div>
+                          <div class="d-flex cart-right">
+                            <div class="ekle-eksilt">
+                              <button type="button" class="buton" style="border: 0; cursor: pointer;" onclick="changePeynir3Quantity('decrease')">
+                                  <i style="font-size: 20px;" class="fa-light fa-circle-minus"></i>
+                              </button>
+                              <span id="quantityPeynir3" class="ekle-sil-text">0</span>
+                              <button type="button" class="me-4 buton" style="border: 0; cursor: pointer;" onclick="changePeynir3Quantity('increase')">
+                                  <i style="font-size: 20px;" class="fa-regular fa-circle-plus"></i>
+                              </button>
+                          </div>
+                          </div>
+                        </div>
+                        <div class="panel-title">Garnitür</div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkboxNoLabel2" value="" aria-label="...">
+                                <label for="checkboxNoLabel2" onclick="toogleCheckBox()" for="">Domates</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox16" value="" aria-label="...">
+                                <label for="checkbox16" onclick="toogleCheckBox('checkbox1')" for="">Göbek Salata</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox17" value="" aria-label="...">
+                                <label for="checkbox17" onclick="toogleCheckBox('checkbox2')" for="">Soğan</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox18" value="" aria-label="...">
+                                <label for="checkbox18" onclick="toogleCheckBox('checkbox4')" for="">Turşu</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox19" value="" aria-label="...">
+                                <label for="checkbox19" onclick="toogleCheckBox('checkbox5')" for="">Ketçap</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox20" value="" aria-label="...">
+                                <label for="checkbox20" onclick="toogleCheckBox('checkbox6')" for="">Mayonez</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox21" value="" aria-label="...">
+                                <label for="checkbox21" onclick="toogleCheckBox('checkbox7')" for="">Acı Sos</label>
+                              </span>
+                            </div>
+                          </div>
+                          <div class="col-lg-4 col-6">
+                            <div style="width: 181px; height: 25px;">
+                              <span class="input">
+                                <input class="form-check-input" type="checkbox" id="checkbox22" value="" aria-label="...">
+                                <label for="checkbox22" onclick="toogleCheckBox('checkbox8')" for="">Hardal</label>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="option-panel" data-type="patates">
+            <h2 class="panel-title mb-0">Patetes Seçimi</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select" onchange="updateMenu('patates')" >
+                <option selected value="0">Patates Kızartması (Orta)</option>
+                <option value="0">Tırtıklı Patates (Orta)</option>
+                <option value="10">Patates Kızartması (Büyük) + 10 TL</option>
+                <option value="10">Tırtıklı Patates (Büyük) + 10 TL</option>
+                <option value="12">Patates Kızartması (King) + 12 TL</option>
+                <option value="12">Tırtıklı Patates (King) + 12 TL</option>
+                <option value="20">Patates Kızartması (Kova) + 20 TL</option>
+                <option value="20">Tırtıklı Patates (Kova) + 20 TL</option>
+                <option value="32">Patates Kızartması (Dev Kutu) + 32 TL</option>
+                <option value="32">Tırtıklı Patates (Dev Kutu) + 32 TL</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+        </div>
+          <div class="option-panel" data-type="icecek">
+            <h2 class="panel-title mb-0">İçecek</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select " onchange="updateMenu('icecek')" >
+                <option selected value="0">Coca - Cola Zero Sugar (33 ml.)</option>
+                <option value="0">Coca - Cola (33 cl.)</option>
+                <option value="0">Coca - Cola Light (33 cl.)</option>
+                <option value="0">Fuse Tea Limon (33 cl.)</option>
+                <option value="0">Fuse Tea Şeftali (33 cl.)</option>
+                <option value="0">Fanta (33 cl.)</option>
+                <option value="0">Sprite (33 cl.)</option>
+                <option value="0">Ayran (20 cl.)</option>
+                <option value="4">Ayran (30 cl.) + 4 TL</option>
+                <option value="8">Coca - Cola Zero Sugar (1 L.) + 8 TL</option>
+                <option value="8">Coca - Cola (1 L.) + 8 TL</option>
+                <option value="8">Coca - Cola Light (1 L.) + 8 TL</option>
+                <option value="8">Fuse Tea Limon (1 L.) + 8 TL</option>
+                <option value="8">Fuse Tea Şeftali (1 L.) + 8 TL</option>
+                <option value="8">Fanta (1 L.) + 8 TL</option>
+                <option value="8">Sprite (1 L.) + 8 TL</option>
+                <option value="0">Su (0,5 L.)</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+        </div>
+          <div class="option-panel" data-type="sossecim">
+            <h2 class="panel-title mb-0">Sos Seçimi</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select " onchange="updateMenu('sossecim')" >
+                <option selected value="0">Ketçap</option>
+                <option value="0">Acı Sos</option>
+                <option value="0">Sarımsaklı Mayonez</option>
+                <option value="0">Mayonez</option>
+                <option value="2">Acı Hardal + 2 TL</option>
+                <option value="0">Sos İstemiyorum</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+        </div>
+          <div class="option-panel" data-type="sossecimi">
+            <h2 class="panel-title mb-0">Sos Seçimi</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select " onchange="updateMenu('sossecimi')"  >
+                <option selected value="0">Ketçap</option>
+                <option value="0">Acı Sos</option>
+                <option value="0">Sarımsaklı Mayonez</option>
+                <option value="0">Mayonez</option>
+                <option value="2">Acı Hardal + 2 TL</option>
+                <option value="0">Sos İstemiyorum</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+        </div>
+          <div class="option-panel" data-type="promosyon">
+            <h2 class="panel-title mb-0">Promosyon</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select " onchange="updateMenu('promosyon')" >
+                <option selected value="0">Promosyon İstemiyorum</option>
+                <option value="19">Soğan Halkası (8'li) + 19 TL</option>
+                <option value="22">Soğan Halkası (12'li) + 22 TL</option>
+                <option value="24">Soğan Halkası (16'li) + 24 TL</option>
+                <option value="28">BK King Nuggets® (6'lı) + 28 TL</option>
+                <option value="35">BK King Nuggets® (9'lı) + 35 TL</option>
+                <option value="35">Çıtır Peynir (3'lü) + 35 TL </option>
+                <option value="38">Çıtır Çıtır Atıştır + 38 TL </option>
+                <option value="25">Chicken Tenders® (6'lı) + 25 TL</option>
+                <option value="40">Cheese Burger + 40 TL</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+        </div>
+          <div class="option-panel" data-type="promosyontatli">
+            <h2 class="panel-title mb-0">Promosyon Tatlı</h2>
+            <div class="panel-body">
+              <select class="form-select" aria-label="Default select " onchange="updateMenu('promosyontatli')" >
+                <option selected value="0">Promosyon Tatlı İstemiyorum</option>
+                <option value="33">Dondurmalı Çikolatalı Sufle + 33 TL</option>
+                <option value="27">Çikolatalı Sufle + 27 TL</option>
+                <option value="13">Elmalı Tatlı + 13 TL</option>
+                <option value="13">Vişneli Tatlı + 13 TL</option>
+                <option value="14">Çikolatalı Cookie + 14 TL</option>
+                <option value="14">Çikolata Parçacıklı Cookie + 14 TL </option>
+                <option value="25">Bkool® Limon Soslu + 25 TL </option>
+                <option value="25">Bkool® Çikolata Parçacıklı + 25 TL</option>
+                <option value="28">Algida Carte d'Or Mini Cup Çikolata Karnavalı (110 ml.) + 28 TL</option>
+                <option value="28">Algida Carte d'Or Mini Cup Çilekli Yoğurtlu (110 ml.) + 28 TL</option>
+                <option value="28">Algida Carte d'Or Mini Cup Meyve Rüyası (110 ml.) + 28 TL</option>
+                <option value="28">Algida Maraş Usulü Cup Dondurma (100 ml.) + 28 TL</option>
+                <option value="28">Algida Classics Cookie Cup (105 ml.) + 28 TL</option>
+                <option value="28">Algida Mini Nogger (60 ml.) + 28 TL</option>
+                <option value="30">Magnum Mini Düet Kırmızı Meyve + 30 TL</option>
+                <option value="30">Algida Magnum Mini Cookie (58 ml.) + 30 TL</option>
+                <option value="70">Algida Maraş Usulü Sade Dondurma (500 ml.) + 70 TL</option>
+                <option value="55">Algida Frigola (570 ml.) + 55 TL</option>
+              </select>
+              <div class="option-item-panel">
+              </div>
+            </div>
+          </div>
     </div>
+        <!-- SAĞDAKİ MENÜLERİN SEÇME VE SEÇİMİ KALDIRMA KISMI BİTİŞ  -->
+
+
     
     
     <!-- FOOTER BAŞLANGIÇ -->
@@ -311,248 +941,464 @@
                   Ata Express® 2023. Tüm hakları saklıdır.
                 </div>
               </div>
-
         </div>
     </div>
+  </div>
     <!-- FOOTER BİTİŞ -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
     <script>
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
-    var activeMenuLink = null;
-
-    var menuData = {
-        'Popüler Ürünler': [
-            {
-                title: 'Tıkla Gelsin® Özel Big King® Menü',
-                image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/tikla_gelsin_ozel_big_king_menu_0e66d0e424.webp',
-                price: '180.00 TL',
-                description: 'Burger King® eşsiz lezzeti Tıkla Gelsin® Özel Big King® Menü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-                additionalInfo: 'Big King® + Patates Kızartması (Orta) + Kutu İçecek',
-
-            },
-            {
-                title: '3`lü Whopper® Fırsatı',
-                image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/3lu_whopper_firsati_b77b9c5a7e.webp',
-                price: '300.00 TL',
-                description: ' Burger King® eşsiz lezzeti 3`lü Whopper® Fırsatı şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-                additionalInfo: '3 Adet Whopper Jr.® + Patates Kızartması (Büyük) + 1L. İçecek (Whopper Jr.® seçimleri için geçerlidir. Double Whopper® Jr. seçimlerinde 30 TL, Whopper® ve Plant Based Whopper® seçimlerinde 40 TL, Double Whopper® seçimlerinde 90 TL ve Triple Whopper® seçimlerinde 140 TL fark alınmaktadır.)',
-
-            },
-            {
-                title: 'Tıkla Gelsin® Benim İkilim',
-                image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/tikla_gelsin_ozel_benim_ikilim_2cede7df9a.webp',
-                price: '160.00 TL',
-                description: 'Burger King® eşsiz lezzeti Tıkla Gelsin® Benim İkilim şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-                additionalInfo: '2 Adet Tavukburger® Sandviç + Patates Kızartması (Orta) + BK King Nuggets® (4`lü) yada Soğan Halkası (8`li) + 1L. İçecek',
-
-            },
-        ],
-        'Menüler': [
-        {
-            title: 'Fenerbahçe Menüsü',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/fenerbahce_menusu_73c02c4003.webp',
-            price: '380.00 TL',
-            description: 'Burger King® eşsiz lezzeti Fenerbahçe Menüsü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo: '2 Adet Whopper® + Patates Kızartması (Büyük) + 1 L. İçecek (Her aldığın menü ile Fenerbahçe`ye destek ol, takımın kazansın!)',
-            icerik1: 'x2 Whopper®',
-            icerik2: 'Patates Kızartması (Büyük)',
-            icerik3: '1 L. İçecek',
-            icerik4: 'x2 Sos',
-
-
-        },
-        {
-            title: 'Galatasaray Menüsü',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/galatasaray_menusu_df4ce26266.webp',
-            price: '380.00 TL',
-            description: 'Burger King® eşsiz lezzeti Galatasaray Menüsü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo: '2 Adet Whopper® + Patates Kızartması (Büyük) + 1 L. İçecek (Her aldığın menü ile Galatasaray`a destek ol, takımın kazansın!)',
-        },
-            // Menülerle ilgili kartlar
-        ],
-        'Burgerler': [
-        {
-            title: 'Whopper®',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/whopper_90d608faab.webp',
-            description: 'Burger King® eşsiz lezzeti Whopper® şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo: 'Whopper® eti (dana), 5" ekmek, turşu, ketçap, mayonez, göbek salata, domates, soğan',
-            price: '170.00 TL',
-        },
-            // Burgerlerle ilgili kartlar
-        ],
-        'Kids Menüler': [
-        {
-            title: 'Kids Hamburger Menü',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/kids_hamburger_menu_2c1ce99039.webp',
-            price: '130.00 TL',
-            description: 'Burger King® eşsiz lezzeti Kids Hamburger Menü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo: 'Kids Hamburger + Küçük Boy Patates + Ayran (195 ml.) + Sürpriz Oyuncak',
-        },
-        // Burgerlerle ilgili kartlar
-        ],
-        'Çıtır Lezzetler': [
-        {
-            title: 'Çıtır Çıtır Atıştır',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/citir_citir_atistir_d0153d6c4e.webp',
-            description:'Burger King® eşsiz lezzeti Çıtır Çıtır Atıştır şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo:'2 Çıtır Peynir + 2 BK King Nuggets® + 4 Soğan Halkası',
-            price: '55.00 TL',
-        },
-        // Burgerlerle ilgili kartlar
-        ],
-        'Tatlılar': [
-        {
-            title: 'Muffin',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/bk_muffin_3b7b7511f1.webp',
-            description: 'Burger King® eşsiz lezzeti Muffin şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo: 'Tatlıya Doyasıya Doyun !',
-            price: '15.00 TL',
-        },
-        // Burgerlerle ilgili kartlar
-        ],
-        'Soslar': [
-        {
-            title: 'Ketçap',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/ketcap_32f8f33054.webp',
-            description:'Burger King® eşsiz lezzeti Ketçap şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo:'-',
-            price: '4 TL',
-        },
-        // Burgerlerle ilgili kartlar
-        ],
-        'İçecekler': [
-        {
-            title: 'Coca - Cola Zero Suger (33 cl.)',
-            image: 'https://d3vkdqr0qjxhag.cloudfront.net/burger-king/coca_cola_zero_sugar_33_cl_baf77227e6.webp',
-            description:'Burger King® eşsiz lezzeti Coca - Cola Zero Sugar (33 cl.) şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
-            additionalInfo:'-',
-            price: '30.00 TL',
-        },
-        // Burgerlerle ilgili kartlar
-            
-        ],
-        
-            
-        // Diğer menü kategorileri
-    };
-
-
-    function showMenu(category, clickedElement) {
-        console.log('Tıklanan Kategori: ' + category);
+        // KARTLARIN DOĞRU DÜRÜST ÇALIŞABİLMESİ İÇİN YAZILAN KOD BLOĞU
+      var activeMenuLink = null;
     
-        // Sayfa yeniden yüklenmesini önle
-        event.preventDefault();
+      function toggleCheckBox(checkboxId) {
+        var checkbox = document.getElementById(checkboxId);
+        checkbox.checked = !checkbox.checked;
+      }
     
-        if (activeMenuLink) {
-            activeMenuLink.classList.remove('active');
-        }
+      document.addEventListener("DOMContentLoaded", function () {
+        var checkbox = document.getElementById('checkboxNoLabel');
+        checkbox.checked = true;
+      });
     
-        clickedElement.classList.add('active');
-        activeMenuLink = clickedElement;
-    
-        generateMenuCards(category);
+      function generateProductDetails(product) {
+        return `
+          <div class="col-lg-5 d-flex" style="width: 475px; height: 570;">
+            <!-- ... diğer içerik ... -->
+            <div class="urun-div">
+              <div class="header-panel">
+                <div class="urun-title">
+                  <h1 id="title" class="title">
+                  ${product.title} <b> | ${product.additionalInfo}</b>
+                  </h1>
+                </div>
+                <div class="urun-text">
+                  <span id="price" class="mb-1" style="text-align: left;">
+                    ${product.description}
+                  </span>
+                  <!-- ... diğer içerik ... -->
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    // KARTLARIN DOĞRU DÜRÜST ÇALIŞABİLMESİ İÇİN YAZILAN KOD BLOĞU BİTİŞİ
+
+
+
+
+/* BURASI MENÜ VE PEYNİR ARTTIRMA AZALTMA */
+var quantity = 1;
+var basePrice = 300.00;
+var cheesePricePerUnit1 = 5.00;
+var cheesePricePerUnit2 = 5.00;
+var cheesePricePerUnit3 = 5.00;
+var menuPrice = basePrice;
+var previousSelectionsTotalPrice = menuPrice;
+var optionTypePrices = {};  // Her bir optionType için toplam fiyatı takip etmek için
+var selectedOptions = [];  // Tüm seçimleri takip etmek için
+
+function arttir() {
+  quantity++;
+  updateDisplay();
+}
+
+function eksilt() {
+  if (quantity > 1) {
+    quantity--;
+    updateDisplay();
+  }
+}
+
+function initializePage() {
+  updatePeynirQuantity('peynir1', 'decrease', 'infoText1', 'quantityPeynir1', cheesePricePerUnit1);
+  updatePeynirQuantity('peynir2', 'decrease', 'infoText2', 'quantityPeynir2', cheesePricePerUnit2);
+  updatePeynirQuantity('peynir3', 'decrease', 'infoText3', 'quantityPeynir3', cheesePricePerUnit3);
+}
+initializePage();
+
+
+function changePeynir1Quantity(operation) {
+  changeQuantity('peynir1', operation);
+  updatePeynirQuantity('peynir1', operation, 'infoText1', 'quantityPeynir1', cheesePricePerUnit1);
+}
+
+function changePeynir2Quantity(operation) {
+  changeQuantity('peynir2', operation);
+  updatePeynirQuantity('peynir2', operation, 'infoText2', 'quantityPeynir2', cheesePricePerUnit2);
+}
+function changePeynir3Quantity(operation) {
+  changeQuantity('peynir3', operation);
+  updatePeynirQuantity('peynir3', operation, 'infoText3', 'quantityPeynir3', cheesePricePerUnit3);
+}
+
+
+function changeQuantity(optionType, operation) {
+  var optionTypeTotalPrice = optionTypePrices[optionType] || 0;
+
+  if (operation === 'increase') {
+    optionTypeTotalPrice += getCheesePrice(optionType);
+  } else if (operation === 'decrease') {
+    optionTypeTotalPrice -= getCheesePrice(optionType);
+
+    // Negatif değerleri engellemek için kontrol ekle
+    if (optionTypeTotalPrice < 0) {
+      optionTypeTotalPrice = 0;
     }
-    function menuLinkClicked(event) {
-        var clickedElement = event.currentTarget; // Tıklanan öğeyi al
-    
-        // Tıklanan menü linkine "active" sınıfını ekle, diğerlerinden kaldır
-        document.querySelectorAll('.menu-tabs-link').forEach(function (item) {
-            item.classList.remove('active');
-        });
-        clickedElement.classList.add('active');
-    
-        // showMenu fonksiyonu ilgili kartlar
-        showMenu(clickedElement.textContent.trim(), clickedElement);
-    }
-    
+  }
 
-    document.querySelectorAll('.menu-tabs-link').forEach(function (menuItem) {
-        menuItem.addEventListener('click', menuLinkClicked);
-    });
-    
-    // Sayfa yüklendiğinde varsayılan olarak "Popüler Ürünler" menüsünü ve kartları göster
-    document.addEventListener('DOMContentLoaded', function () {
-        var defaultMenuLink = document.querySelector('.menu-tabs-link.active');
-        showMenu(defaultMenuLink.textContent.trim(), defaultMenuLink);
-    });
-    
-    
-    // Kartları oluştur
-    function generateMenuCards(category) {
-        var cardsContainer = document.getElementById('menu-cards');
-        cardsContainer.innerHTML = '';
-    
-        var cards = menuData[category];
-    
-        if (cards && cards.length > 0) {
-            cards.forEach(function (card) {
-                var cardElement = document.createElement('div');
-                cardElement.className = 'col-lg-6 col-md-6 col-sm-6 col-12 mb-3';
-    
-                var cardHTML = `
-                <a href="#" onclick="redirectToPage('${card.title}', '${card.category}', '${category}', '${card.description}', '${card.additionalInfo}', '${card.image}', '${card.price}')">
-                    <div class="card product-card">
-                        <div class="card-body">
-                            <div id="title" class="card-title">
-                                <h3>${card.title}</h3>
-                            </div>
-                            <div class="card-img">
-                                <img id="image" width="100%" height="150px" src="${card.image}" alt="">
-                            </div>
-                            <div class="card-bottom">
-                                <div class="card-price">
-                                    <span id="price" class="price-text">${card.price}</span>
-                                    <button type="button" class="sepet-button"><span><i class="fa-regular fa-basket-shopping"></i></span></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            `;
-    
-                cardElement.innerHTML = cardHTML;
-                cardsContainer.appendChild(cardElement);
-            });
-        } else {
-            cardsContainer.innerHTML = `<p>${category} kategorisinde henüz menü bulunmuyor.</p>`;
-        }
-    }
+  // Güncellenen fiyatı optionTypePrices'a kaydet
+  optionTypePrices[optionType] = optionTypeTotalPrice;
+
+  // Sayfadaki görüntüyü güncelleyin
+  updateDisplay();
+}
+
+function updatePeynirQuantity(optionType, operation, infoTextId, quantityId, cheesePricePerUnit) {
+  var quantityElement = document.getElementById(quantityId);
+
+  if (!quantityElement) {
+    console.error('Quantity bulunamadı' + optionType);
+    return;
+  }
+
+  var currentQuantity = parseInt(quantityElement.textContent) || 0;
+
+  // Maksimum peynir sayısını kontrol et
+  if (operation === 'increase' && currentQuantity < 9) {
+    currentQuantity++;
+    menuPrice += 5.00;  // Artırma işlemi yapıldığında 5 TL ekleyin
+  } else if (operation === 'decrease' && currentQuantity > 0) {
+    currentQuantity--;
+    menuPrice -= 5.00;  // Azaltma işlemi yapıldığında 5 TL çıkarın
+  }
+
+  quantityElement.textContent = currentQuantity;
+
+  var infoTextElement = document.getElementById(infoTextId);
+
+  if (!infoTextElement) {
+    console.error('Infotext bulunamadı ' + optionType);
+    return;
+  }
+
+  var totalPrice = (cheesePricePerUnit * currentQuantity).toFixed(2);
+
+  if (currentQuantity > 0) {
+    infoTextElement.textContent = "+ " + totalPrice + " TL";
+  } else {
+    infoTextElement.textContent = "";  // Miktar 0 ise boş bırak
+  }
+
+  // Sayfadaki görüntüyü güncelleyin
+  updateDisplay();
+}
 
 
+function getCheesePrice(optionType) {
+  // Her bir peynir tipinin fiyatını döndür
+  if (optionType === 'peynir1') {
+    return 5.00;  // Örnek bir fiyat, gerektiğinde değiştirin
+  } 
+  else if (optionType === 'peynir2') {
+    return 5.00;  // Örnek bir fiyat, gerektiğinde değiştirin
+  }
+  else if(optionType === 'peynir3'){
+    return 5.00;
+  }
+
+  return 0;  // Bilinmeyen peynir tipi
+}
+
+function addToCart() {
+  var currentOptions = getAllSelectedOptions();
+  var peynirCount = parseInt(document.getElementById('quantityPeynir1').textContent) + parseInt(document.getElementById('quantityPeynir2').textContent) + parseInt(document.getElementById('quantityPeynir3').textContent);
+
+  if (currentOptions.length > 0) {
+    selectedOptions = selectedOptions.concat(currentOptions);
+    var totalPrice = calculateTotalPrice();
     
-    function cleanSpecialCharacters(str) {
-        return str.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase();
-    }
+    // Peynir sayısını miktarları üzerinden al
+
+    // Alert kısmında peynir sayısını göster
+    alert("Sepete Eklendi:\n" + selectedOptions.join("\n") + "\nToplam Fiyat: " + totalPrice.toFixed(2) + " TL\nMenü Peynir Sayısı: " + peynirCount);
+
+    // Sepete eklendikten sonra seçimleri ve menü fiyatını sıfırla
+    clearSelections();
+  } else {
+    alert("Sepete eklemek için en az bir seçenek seçmelisiniz.");
+  }
+}
 
 
-    function redirectToPage(title, category, mainCategory, description, additionalInfo, image, price) {
-        var cleanedTitle = cleanSpecialCharacters(title);
-        var cleanedCategory = cleanSpecialCharacters(category);
-        var cleanedMainCategory = cleanSpecialCharacters(mainCategory);
-        var pageURL = encodeURL(cleanedTitle, cleanedMainCategory) + '.html' +
-            '?title=' + encodeURIComponent(title) +
-            '&category=' + encodeURIComponent(category) +
-            '&description=' + encodeURIComponent(description) +
-            '&additionalInfo=' + encodeURIComponent(additionalInfo) +
-            '&image=' + encodeURIComponent(image) +
-            '&price=' + encodeURIComponent(price);
-    
-            window.location.href = pageURL;
-            return false; // Bu satırı ekleyin
-            
-    }
-    
-    
-    function encodeURL(title, category) {
-        return encodeURIComponent(category.toLowerCase().replace(/\s+/g, '-') + '-' + title.toLowerCase().replace(/\s+/g, '-') + '.html');
-    }
 
-  </script>
 
+// Sepete ekle kısmına bastığında seçimleri ve menü fiyatını sıfırlama kısmı
+function clearPeynirQuantities() {
+  var quantityPeynir1Element = document.getElementById('quantityPeynir1');
+  var quantityPeynir2Element = document.getElementById('quantityPeynir2');
+  var quantityPeynir3Element = document.getElementById('quantityPeynir3');
+  var infoText1Element = document.getElementById('infoText1');
+  var infoText2Element = document.getElementById('infoText2');
+  var infoText3Element = document.getElementById('infoText3');
+
+  if (quantityPeynir1Element) {
+    quantityPeynir1Element.textContent = '0';
+  }
+
+  if (quantityPeynir2Element) {
+    quantityPeynir2Element.textContent = '0';
+  }
+
+  if (quantityPeynir3Element) {
+    quantityPeynir3Element.textContent = '0';
+  }
+
+  if (infoText1Element) {
+    infoText1Element.textContent = '';
+  }
+
+  if (infoText2Element) {
+    infoText2Element.textContent = '';
+  }
+
+  if (infoText3Element) {
+    infoText3Element.textContent = '';
+  }
+}
+
+
+
+function clearSelections() {
+  quantity = 1;
+  menuPrice = basePrice;
+  selectedOptions = [];
+
+  // Her bir optionType için toplam fiyatı sıfırla
+  for (var optionType in optionTypePrices) {
+    optionTypePrices[optionType] = 0;
+  }
+
+  // Tüm panel seçimlerini sıfırla
+  var optionPanels = document.querySelectorAll('.form-select');
+  optionPanels.forEach(function (panel) {
+    panel.selectedIndex = 0;
+  });
+
+  // Peynir sayılarını sıfırla
+  clearPeynirQuantities();
+
+  updateDisplay(); // Görüntüyü güncelle
+}
+// -----------
+
+function getAllSelectedOptions() {
+  var allSelectedOptions = [];
+  var optionTypes = ['patates', 'icecek', 'sossecim', 'sossecimi', 'promosyon', 'promosyontatli'];
+
+  optionTypes.forEach(function (optionType) {
+    var selectedOptions = getSelectedOptions(optionType);
+    allSelectedOptions = allSelectedOptions.concat(selectedOptions);
+  });
+
+  return allSelectedOptions;
+}
+
+function updateDisplay() {
+  var displayQuantity = document.getElementById('quantity');
+  var displayPrice = document.querySelector('.price-text');
+
+  displayQuantity.textContent = quantity;
+  displayPrice.textContent = (menuPrice * quantity).toFixed(2) + " TL";
+}
+
+
+function calculateTotalPrice() {
+  var totalPrice = basePrice * quantity;
+
+  for (var optionType in optionTypePrices) {
+    totalPrice += optionTypePrices[optionType];
+  }
+
+  document.getElementById('price').textContent = totalPrice.toFixed(2) + " TL";
+  return totalPrice;
+}
+
+function updateInfo(quantity, infoTextElement, cheesePrice) {
+  var totalPrice = (cheesePrice * quantity).toFixed(2) + " TL";
   
+  // NaN kontrolü cheesePrice üzerinden yapılıyor
+  if (!isNaN(cheesePrice)) {
+    infoTextElement.textContent = "+ " + totalPrice;
+  } else {
+    infoTextElement.textContent = "+ 0.00 TL";
+  }
+
+  // Burada ayrıca peynir fiyatını optionTypePrices'e ekleyerek güncelleyebiliriz
+  optionTypePrices['peynir'] = cheesePrice * quantity;
+}
+
+
+function updateMenu(optionType) {
+  var currentOptions = getSelectedOptions(optionType);
+
+  if (currentOptions.length > 0) {
+    selectedOptions = selectedOptions.concat(currentOptions);
+
+    // optionType fiyatını güncelle
+    var optionTypeTotalPrice = currentOptions.reduce(function (acc, option) {
+      var optionParts = option.split('-');
+      if (optionParts.length >= 2) {
+        var optionPrice = parseFloat(optionParts[1].trim());
+        if (!isNaN(optionPrice) && optionPrice > 0) {
+          return acc + optionPrice;
+        }
+      }
+      return acc;
+    }, 0);
+
+    // Her bir optionType için toplam fiyatı güncelle
+    optionTypePrices[optionType] = optionTypeTotalPrice;
+
+    // Sayfadaki görüntüyü güncelleyin
+    updateDisplay();
+  }
+}
+
+function getPanelByType(optionType) {
+  var optionPanels = document.querySelectorAll('.option-panel');
+  
+  for (var i = 0; i < optionPanels.length; i++) {
+    var panel = optionPanels[i];
+    var panelType = panel.getAttribute('data-type');
+    
+    if (panelType === optionType) {
+      console.log("Panel found for optionType:", optionType);
+      return panel;
+    }
+  }
+
+  console.error("Panel not found for optionType:", optionType);
+  return null;  // Belirtilen türde panel bulunamadı
+}
+
+function getSelectedOptions(optionType) {
+  var selectedOptions = [];
+  var optionPanel = getPanelByType(optionType);
+
+  if (optionPanel) {
+    var panelTitleElement = optionPanel.querySelector('.panel-title');
+
+    if (panelTitleElement) {
+      var panelTitle = panelTitleElement.textContent;
+      var selectedOptionElements = optionPanel.querySelectorAll('.form-select option:checked');
+
+      // Seçenek tipine özel bir toplam fiyat takibi yapılmalı
+      var optionTypeTotalPrice = 0;
+
+      selectedOptionElements.forEach(function (selectedOption) {
+        var optionText = selectedOption.textContent;
+        var optionPrice = parseFloat(selectedOption.value);
+
+        // Her seçeneği yalnızca bir kez ekleyin
+        var isAlreadyAdded = selectedOptions.some(function (option) {
+          return option.includes(optionText);
+        });
+
+        if (!isAlreadyAdded) {
+          selectedOptions.push(panelTitle + ": " + optionText + " - " + optionPrice.toFixed(2) + " TL");
+
+          // Seçenek fiyatını toplam fiyata ekleyin
+          optionTypeTotalPrice += optionPrice;
+        }
+      });
+
+      // Sadece bir kere güncelleme yapmak için kontrol ekleyin
+      if (optionTypeTotalPrice > 0) {
+        // Önceki seçimlerin toplam fiyatına şu anki seçenek tipinin fiyatını ekleyin
+        menuPrice += optionTypeTotalPrice;
+
+        // Sayfadaki görüntüyü güncelleyin
+        updateDisplay();
+      }
+    } else {
+      // Panel başlığı bulunamadı
+      console.error("Panel başlığı bulunamadı.");
+    }
+  } else {
+    // Panel bulunamadı
+    console.error("Panel bulunamadı. optionType:", optionType);
+  }
+
+  console.log(selectedOptions);
+
+  return selectedOptions;
+}
+
+
+
+
+/* BURASI MENÜ VE PEYNİR ARTTIRMA AZALTMA BİTİŞ */
+// <!--  OPTİON KISMINDAKİ SEÇİLEN YERLERİN FİYATLARINI HESAPLAYIP MENÜYE YAZDIRMA KISMI BİTİŞ -->
+//function calculateTotalPrice() {
+          //var menuPrice = basePrice * quantity;  // Temel menü fiyatı
+        
+          // Her bir ek seçeneğin toplam fiyatını hesapla
+          // var totalPricePeynir1 = parseInt(document.getElementById('quantityPeynir1').textContent) * cheesePricePerUnit1;
+          // var totalPricePeynir2 = parseInt(document.getElementById('quantityPeynir2').textContent) * cheesePricePerUnit2;
+        
+          // Toplam fiyatı güncelle
+          // var totalMenuPrice = menuPrice + totalPricePeynir1 + totalPricePeynir2;
+          // document.getElementById('price').textContent = totalMenuPrice.toFixed(2) + " TL";
+        
+          // return totalMenuPrice;
+        // }
+</script>
+
+
+
+// <!-- OPTİON KISMINDAKİ SEÇİLEN YERLERİN FİYATLARINI HESAPLAYIP MENÜYE YAZDIRMA KISMI BAŞLANGIÇ -->
+
+<script>
+  // burgerking.htmlden çekilen ürünlerin yerine yazılmasını sağlayan kod bloğu. ELLEME
+  document.addEventListener('DOMContentLoaded', function () {
+    showProductDetails();
+  });
+  
+    function showProductDetails() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var title = urlParams.get('title');
+        var category = urlParams.get('category');
+        var description = urlParams.get('description');
+        var additionalInfo = urlParams.get('additionalInfo');
+        var image = urlParams.get('image');
+        var price = urlParams.get('price');
+    
+        document.getElementById('title').innerText = 'Burger King® - ' + title + ' | Tıkla Gelsin';
+        document.getElementById('description').innerText = description;
+        document.getElementById('additionalInfo').innerText = additionalInfo;
+    
+        // Price'ın değerini kontrol et ve undefined değilse fiyatı göster
+        if (price !== undefined) {
+            document.getElementById('price').innerText = price;
+        } else {
+            document.getElementById('price').innerText = 'Fiyat bilgisi bulunamadı';
+        }
+    
+        var imageElement = document.getElementById('image');
+    
+        if (image) {
+            imageElement.src = image;
+        } else {
+            imageElement.src = 'varsayilan-resim-yolu.jpg';
+        }
+    
+        console.log('Image URL:', image);
+        console.log('Title: ', title)
+    }
+    
+    </script>
+    
 </body>
 </html>

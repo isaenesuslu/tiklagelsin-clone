@@ -63,5 +63,22 @@ function handleTouchMove(event) {
 
 var carousel = document.getElementById('carouselExample');
 
-carousel.addEventListener('touchstart', handleTouchStart);
-carousel.addEventListener('touchmove', handleTouchMove);
+// carousel.addEventListener('touchstart', handleTouchStart);
+// carousel.addEventListener('touchmove', handleTouchMove);
+
+let aSiparis = document.querySelector(".aktif-siparis");
+let oSiparis = document.querySelector(".onceki-siparis");
+let abredline = document.querySelector(".ab-redline");
+
+aSiparis.addEventListener("click",()=>{
+  aSiparis.style.color="#e91d34"
+  oSiparis.style.color="#333"
+  abredline.style.right=""
+  abredline.style.left="9px"
+});
+oSiparis.addEventListener("click",()=>{
+  oSiparis.style.color="#e91d34"
+  aSiparis.style.color="#333"
+  abredline.style.left=""
+  abredline.style.right="9px"
+});
