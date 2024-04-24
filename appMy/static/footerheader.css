@@ -720,3 +720,13 @@ button:focus:not(:focus-visible) {
   .slider.round:before {
     border-radius: 50%;
   }
+
+.siparis-check[type="checkbox"]:checked {
+   color: #dc1a2f;
+}
+
+.pay-box {
+    width: 100%;
+    border: 2px solid rgb(231, 231, 231);
+    border-radius: 10px;
+}
