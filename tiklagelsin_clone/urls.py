@@ -45,5 +45,6 @@ urlpatterns = [
     path('sepetim', sepetimPage, name="sepetimPage"),
     path('siparislerim', siparislerimPage, name="siparislerimPage"),
     path('siparis-onay', siparisonayPage, name="siparisonayPage"),
-    path('fener', fenerPage,),
+    path('menudetay/<dt>', menuDetayPage),
+    path('adres-ekle', adreseklePage, name="adreseklePage"),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

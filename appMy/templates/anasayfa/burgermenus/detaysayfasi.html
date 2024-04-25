@@ -240,12 +240,12 @@
                       <i style="margin-left: 0.5rem; margin-right: 0.5rem;" class="fa-thin fa-chevron-right"></i>
                     </li>
                     <li class="cont-item">
-                        <span>Fenerbahçe Menüsü</span> 
+                        <span>Menü</span> 
                       </li>
                 </ol>
             </nav>
         </div>
-        <div class="row d-flex" style="width: 1140px;">
+        <div class="row d-flex" style="width: 1140px;" >
           <div class="col-lg-5 d-flex" style="width: 475px; height: 570;">
             <div class="urun-div">
                 <div class="header-panel">
@@ -259,50 +259,40 @@
                             {{description}}
                         </span>
                         <div class="mb-3">
-                            <span id="additionalInfo">
-                                {{additionalInfo}} 
-                            </span>
-                            <div class="urun-detaylari">
-                              <!-- Ürün açıklaması, görseli ve diğer detaylar -->
-                          
-                              <!-- İşte buraya product-details-container eklenecek -->
-                              <div id="product-details-container">
-                                  <!-- Ürün detayları içeriği buraya eklenecek -->
-                              </div>
-                          
-                              <!-- Diğer ürün detayları -->
-                          </div>
+                          <span id="additionalInfo">
+                            {{additionalInfo}} 
+                        </span>
                     <div class="urun-image">
                         <img id="image" style="max-width: 100% !important; max-height: 100%; vertical-align: middle; margin: 0 0 8px;" src="" alt="">
                     </div>
                     <div class="urun-content row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                      <div class="urun-item">
-                        <i class="fa-solid fa-burger"></i>
-                      <span>
-                        asdasdsa
-                      </span>
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="urun-item">
+                          <i class="fa-solid fa-burger"></i>
+                        <span id="icerik1">
+                          {{icerik1}}
+                        </span>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
-                      <div class="urun-item">
+                      <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                        <div class="urun-item">
                                   <i class="fa-sharp fa-solid fa-french-fries"></i>
-                                  <span>asdasfgdf</span>
+                                  <span id="icerik2">{{icerik2}}</span>
                                 </div>
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                                 <div class="urun-item">
                                   <i class="fa-duotone fa-cup-togo"></i>
-                                  <span>hfghdfghfdg</span>
+                                  <span id="icerik3">{{icerik3}}</span>
                                 </div>
                               </div>
                               <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                                 <div class="urun-item">
                                   <i class="fa-regular fa-wine-bottle"></i>
-                                  <span>fghfgdhfh</span>
+                                  <span id="icerik4">{{icerik4}}</span>
                                 </div>
                               </div>
-                            </div>
+                          </div>
                         </div>
                         <hr>
                         <div class="urun-cart-add">
@@ -328,6 +318,7 @@
                 </div>
             </div>
         </div>
+
 <!-- SOL KISIMDAKİ MENÜNÜ KARTININ DETAYLARI BİTİŞ  -->
 
 
@@ -829,6 +820,7 @@
         </div>
     </div>
   </div>
+</div>
     <!-- FOOTER BİTİŞ -->
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
@@ -846,7 +838,11 @@
         var checkbox = document.getElementById('checkboxNoLabel');
         checkbox.checked = true;
       });
-    
+
+
+
+
+    // KART BAŞLANGIÇ ------------------------------------
       function generateProductDetails(product) {
         return `
           <div class="col-lg-5 d-flex" style="width: 475px; height: 570;">
@@ -870,7 +866,7 @@
                       <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                         <div class="urun-item">
                           <i class="fa-solid fa-burger"></i>
-                        <span>
+                        <span id="icerik1">
                           ${product.icerik1}
                         </span>
                         </div>
@@ -878,7 +874,7 @@
                       <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                         <div class="urun-item">
                           <i class="fa-solid fa-burger"></i>
-                        <span>
+                        <span id="icerik2">
                           ${product.icerik2}
                         </span>
                         </div>
@@ -886,7 +882,7 @@
                       <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                         <div class="urun-item">
                           <i class="fa-solid fa-burger"></i>
-                        <span>
+                        <span id="icerik3">
                           ${product.icerik3}
                         </span>
                         </div>
@@ -894,7 +890,7 @@
                       <div class="col-lg-6 col-md-6 col-sm-6 col-6">
                         <div class="urun-item">
                           <i class="fa-solid fa-burger"></i>
-                        <span>
+                        <span id="icerik4">
                           ${product.icerik4}
                         </span>
                         </div>
@@ -907,51 +903,26 @@
           </div>
         `;
       }
+      // burgerking.htmlden çekilen ürünlerin yerine yazılmasını sağlayan kod bloğu. ELLEME
+      document.addEventListener('DOMContentLoaded', function () {
+       showProductDetails();
+     });
     // KARTLARIN DOĞRU DÜRÜST ÇALIŞABİLMESİ İÇİN YAZILAN KOD BLOĞU BİTİŞİ
 
 
-
-
-
-
-
-
-/* BURASI MENÜ VE PEYNİR ARTTIRMA AZALTMA BİTİŞ */
-// <!--  OPTİON KISMINDAKİ SEÇİLEN YERLERİN FİYATLARINI HESAPLAYIP MENÜYE YAZDIRMA KISMI BİTİŞ -->
-//function calculateTotalPrice() {
-          //var menuPrice = basePrice * quantity;  // Temel menü fiyatı
-        
-          // Her bir ek seçeneğin toplam fiyatını hesapla
-          // var totalPricePeynir1 = parseInt(document.getElementById('quantityPeynir1').textContent) * cheesePricePerUnit1;
-          // var totalPricePeynir2 = parseInt(document.getElementById('quantityPeynir2').textContent) * cheesePricePerUnit2;
-        
-          // Toplam fiyatı güncelle
-          // var totalMenuPrice = menuPrice + totalPricePeynir1 + totalPricePeynir2;
-          // document.getElementById('price').textContent = totalMenuPrice.toFixed(2) + " TL";
-        
-          // return totalMenuPrice;
-        // }
-</script>
-
-
-
-// <!-- OPTİON KISMINDAKİ SEÇİLEN YERLERİN FİYATLARINI HESAPLAYIP MENÜYE YAZDIRMA KISMI BAŞLANGIÇ -->
-
-<script>
-  // burgerking.htmlden çekilen ürünlerin yerine yazılmasını sağlayan kod bloğu. ELLEME
-  document.addEventListener('DOMContentLoaded', function () {
-    showProductDetails();
-  });
-
-
+// İçeriklerin çekildiği kısım -------------------
   var urlParams = new URLSearchParams(window.location.search);
   var title = urlParams.get('title');
   var category = urlParams.get('category');
   var description = urlParams.get('description');
   var additionalInfo = urlParams.get('additionalInfo');
   var image = urlParams.get('image');
+  var icerik1 = urlParams.get('icerik1');
+  var icerik2 = urlParams.get('icerik2');
+  var icerik3 = urlParams.get('icerik3');
+  var icerik4 = urlParams.get('icerik4');
   var price = urlParams.get('price');
-  console.log(price)
+
 
 
 
@@ -961,6 +932,10 @@
         document.getElementById('title').innerText = 'Burger King® - ' + title + ' | Tıkla Gelsin';
         document.getElementById('description').innerText = description;
         document.getElementById('additionalInfo').innerText = additionalInfo;
+        document.getElementById('icerik1').innerText = icerik1;
+        document.getElementById('icerik2').innerText = icerik2;
+        document.getElementById('icerik3').innerText = icerik3;
+        document.getElementById('icerik4').innerText = icerik4;
     
         // Price'ın değerini kontrol et ve undefined değilse fiyatı göster
         if (price !== undefined) {
@@ -977,10 +952,14 @@
             imageElement.src = 'varsayilan-resim-yolu.jpg';
         }
     
-        console.log('Image URL:', image);
+        console.log('Image:', image);
+        console.log('İÇERİK1:', icerik1);
         console.log('Title: ', title)
+        console.log(price)
     }
- 
+// İçeriklerin Çekildiği Kısım -------------------------------
+
+
     var quantity = 1;
     var basePrice = price;
     var cheesePricePerUnit1 = 5.00;

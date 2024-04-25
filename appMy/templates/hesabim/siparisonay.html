@@ -201,12 +201,13 @@
                           <a href="#" style="color: #e91d34; font-weight: 600;">Değiştir<i class="fa-solid fa-angle-right ms-1"></i></a>
                         </div>
                         <div>
-                          <div class="pay-box">
+                          <div class="pay-box mt-4">
                             <div class="d-flex align-items-center mt-3 ms-3">
                               <p style="font-weight: 600; font-size:15px;" class="m-0">Online Ödeme</p>
                               <i class="fa-solid fa-credit-card-blank ms-3" style="color: #e91d34;"></i><p class="m-0 ms-2">Kredi Kartı</p>
                             </div>
-                            <div class="m-0 mt-2"></div>
+                            <div class="m-0 mt-2 mb-2" style="border-bottom: 2px solid rgb(231, 231, 231);"></div>
+                            <p>ÖDEME EKRANI</p>
                           </div>
                         </div>
                         <hr>
@@ -225,7 +226,10 @@
                             <p class="m-0 ms-2" style="font-weight: 600;">Sipariş Özeti</p>
                           </div>
                           <hr>
-                          <p style="color:#7c7c7c;">Sepet Tutarı</p>
+                          <div class="d-flex justify-content-between" style="color:#7c7c7c;">
+                            <p>Sepet Tutarı</p>
+                            <p>0,00 TL</p>
+                          </div>
                           <hr>
                           <div class="d-flex justify-content-between" style="font-weight:700;">
                             <p>Toplam Tutar</p>
@@ -234,13 +238,14 @@
                         </div>
                         <div class="mt-3" style="float: right;">
                           <button class="sepetim-geri-btn">Geri</button>
-                          <button class="sepetim-odeme-btn ms-2">Onayla 0,00 TL</button>
+                          <button class="sepetim-odeme-btn ms-2 mb-5">Onayla 0,00 TL</button>
                         </div>
                 </div>
             </div>
         </div>
     </div>
 
+    {% include 'partials/anasayfa/_footer.html' %}
 
 <!-- MDB -->
 <script

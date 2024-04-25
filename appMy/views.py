@@ -195,7 +195,12 @@ def siparislerimPage(request):
 def siparisonayPage(request):
     context = {}
     return render(request, 'hesabim/siparisonay.html', context)
-def fenerPage(request):
+
+def menuDetayPage(request, dt):
     context = {}
-    return render(request, 'anasayfa/burgermenus/menler-fenerbahe-mens.html', context)
+    return render(request, 'anasayfa/burgermenus/detaysayfasi.html', context)
+
+def adreseklePage(request):
+    context = {}
+    return render(request, 'hesabim/adresekle.html', context)
 
