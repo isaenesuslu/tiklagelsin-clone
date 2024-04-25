@@ -729,4 +729,8 @@ button:focus:not(:focus-visible) {
     width: 100%;
     border: 2px solid rgb(231, 231, 231);
     border-radius: 10px;
+}.adres-box {
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
 }

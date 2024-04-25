@@ -126,10 +126,9 @@
 
 
             <!-- BURASI SAĞDAKİ CARDS KISIMLARI -->
-                <div class="cards-menu " id="menu-cards">
+                <div class="cards-menu " id="menu-cards" onclick="redirectToProductDetail(menuData)">
                    <!-- DİNAMİK OLARAK BURAYA CARDLAR EKLENİYOR -->
-                </div>
-
+            </div>
             
         </div>
     </div>
@@ -324,6 +323,8 @@
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
     var activeMenuLink = null;
 
+
+
     var menuData = {
         'Popüler Ürünler': [
             {
@@ -332,6 +333,10 @@
                 price: '180.00 TL',
                 description: 'Burger King® eşsiz lezzeti Tıkla Gelsin® Özel Big King® Menü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
                 additionalInfo: 'Big King® + Patates Kızartması (Orta) + Kutu İçecek',
+                icerik1: 'x2 Whopper®',
+                icerik2: 'Patates Kızartması (Büyük)',
+                icerik3: '1 L. İçecek',
+                icerik4: 'x2 Sos',
 
             },
             {
@@ -340,6 +345,10 @@
                 price: '300.00 TL',
                 description: ' Burger King® eşsiz lezzeti 3`lü Whopper® Fırsatı şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
                 additionalInfo: '3 Adet Whopper Jr.® + Patates Kızartması (Büyük) + 1L. İçecek (Whopper Jr.® seçimleri için geçerlidir. Double Whopper® Jr. seçimlerinde 30 TL, Whopper® ve Plant Based Whopper® seçimlerinde 40 TL, Double Whopper® seçimlerinde 90 TL ve Triple Whopper® seçimlerinde 140 TL fark alınmaktadır.)',
+                icerik1: 'x2 Whopper®',
+                icerik2: 'Patates Kızartması (Büyük)',
+                icerik3: '1 L. İçecek',
+                icerik4: 'x2 Sos',
 
             },
             {
@@ -348,6 +357,10 @@
                 price: '160.00 TL',
                 description: 'Burger King® eşsiz lezzeti Tıkla Gelsin® Benim İkilim şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
                 additionalInfo: '2 Adet Tavukburger® Sandviç + Patates Kızartması (Orta) + BK King Nuggets® (4`lü) yada Soğan Halkası (8`li) + 1L. İçecek',
+                icerik1: 'x2 Whopper®',
+                icerik2: 'Patates Kızartması (Büyük)',
+                icerik3: '1 L. İçecek',
+                icerik4: 'x2 Sos',
 
             },
         ],
@@ -371,6 +384,11 @@
             price: '380.00 TL',
             description: 'Burger King® eşsiz lezzeti Galatasaray Menüsü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
             additionalInfo: '2 Adet Whopper® + Patates Kızartması (Büyük) + 1 L. İçecek (Her aldığın menü ile Galatasaray`a destek ol, takımın kazansın!)',
+            icerik1: 'x2 Whopper®',
+            icerik2: 'Patates Kızartması (Büyük)',
+            icerik3: '1 L. İçecek',
+            icerik4: 'x2 Sos',
+
         },
             // Menülerle ilgili kartlar
         ],
@@ -381,6 +399,11 @@
             description: 'Burger King® eşsiz lezzeti Whopper® şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
             additionalInfo: 'Whopper® eti (dana), 5" ekmek, turşu, ketçap, mayonez, göbek salata, domates, soğan',
             price: '170.00 TL',
+            icerik1: 'x2 Whopper®',
+            icerik2: 'Patates Kızartması (Büyük)',
+            icerik3: '1 L. İçecek',
+            icerik4: 'x2 Sos',
+
         },
             // Burgerlerle ilgili kartlar
         ],
@@ -391,6 +414,11 @@
             price: '130.00 TL',
             description: 'Burger King® eşsiz lezzeti Kids Hamburger Menü şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
             additionalInfo: 'Kids Hamburger + Küçük Boy Patates + Ayran (195 ml.) + Sürpriz Oyuncak',
+            icerik1: 'x2 Whopper®',
+            icerik2: 'Patates Kızartması (Büyük)',
+            icerik3: '1 L. İçecek',
+            icerik4: 'x2 Sos',
+
         },
         // Burgerlerle ilgili kartlar
         ],
@@ -401,6 +429,11 @@
             description:'Burger King® eşsiz lezzeti Çıtır Çıtır Atıştır şimdi Tıklagelsin`de sende hemen sipariş ver yemeğin anında kapında olsun.',
             additionalInfo:'2 Çıtır Peynir + 2 BK King Nuggets® + 4 Soğan Halkası',
             price: '55.00 TL',
+            icerik1: 'x2 Whopper®',
+            icerik2: 'Patates Kızartması (Büyük)',
+            icerik3: '1 L. İçecek',
+            icerik4: 'x2 Sos',
+
         },
         // Burgerlerle ilgili kartlar
         ],
@@ -442,9 +475,9 @@
 
 
     function showMenu(category, clickedElement) {
-        console.log('Tıklanan Kategori: ' + category);
+
     
-        // Sayfa yeniden yüklenmesini önle
+        // Sayfa yeniden yüklenmesini önleme
         event.preventDefault();
     
         if (activeMenuLink) {
@@ -459,7 +492,7 @@
     function menuLinkClicked(event) {
         var clickedElement = event.currentTarget; // Tıklanan öğeyi al
     
-        // Tıklanan menü linkine "active" sınıfını ekle, diğerlerinden kaldır
+        // Tıklanan menü linkine "active" sınıfını ekle
         document.querySelectorAll('.menu-tabs-link').forEach(function (item) {
             item.classList.remove('active');
         });
@@ -494,7 +527,7 @@
                 cardElement.className = 'col-lg-6 col-md-6 col-sm-6 col-12 mb-3';
     
                 var cardHTML = `
-                <a href="#" onclick="redirectToPage('${card.title}', '${card.category}', '${category}', '${card.description}', '${card.additionalInfo}', '${card.image}', '${card.price}')">
+                <a href="#" onclick="redirectToPage('${card.title}', '${card.category}', '${category}', '${card.description}', '${card.additionalInfo}', '${card.image}','${card.icerik1}','${card.icerik2}','${card.icerik3}','${card.icerik4}', '${card.price}')">
                     <div class="card product-card">
                         <div class="card-body">
                             <div id="title" class="card-title">
@@ -524,32 +557,27 @@
 
 
     
-    function cleanSpecialCharacters(str) {
-        return str.replace(/[^\w\s]/gi, '').replace(/\s+/g, '-').toLowerCase();
-    }
 
+// özellikleri ile birlikte gönderilen yer
+    function redirectToPage(title, category, mainCategory, description, additionalInfo, image, icerik1, icerik2, icerik3, icerik4, price) {
+        var pageURL = `menudetay/${title}` +
+        '?title=' + encodeURIComponent(title) +
+        '&category=' + encodeURIComponent(category) +
+        '&description=' + encodeURIComponent(description) +
+        '&additionalInfo=' + encodeURIComponent(additionalInfo) +
+        '&image=' + encodeURIComponent(image) +
+        '&icerik1=' + encodeURIComponent(icerik1) +
+        '&icerik2=' + encodeURIComponent(icerik2) +
+        '&icerik3=' + encodeURIComponent(icerik3) +
+        '&icerik4=' + encodeURIComponent(icerik4) +
+        '&price=' + encodeURIComponent(price);
 
-    function redirectToPage(title, category, mainCategory, description, additionalInfo, image, price) {
-        var cleanedTitle = cleanSpecialCharacters(title);
-        var cleanedCategory = cleanSpecialCharacters(category);
-        var cleanedMainCategory = cleanSpecialCharacters(mainCategory);
-        var pageURL = encodeURL(cleanedTitle, cleanedMainCategory) + '.html' +
-            '?title=' + encodeURIComponent(title) +
-            '&category=' + encodeURIComponent(category) +
-            '&description=' + encodeURIComponent(description) +
-            '&additionalInfo=' + encodeURIComponent(additionalInfo) +
-            '&image=' + encodeURIComponent(image) +
-            '&price=' + encodeURIComponent(price);
     
             window.location.href = pageURL;
-            return false; // Bu satırı ekleyin
             
     }
     
     
-    function encodeURL(title, category) {
-        return encodeURIComponent(category.toLowerCase().replace(/\s+/g, '-') + '-' + title.toLowerCase().replace(/\s+/g, '-') + '.html');
-    }
 
   </script>
 
