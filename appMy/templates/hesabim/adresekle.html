@@ -134,29 +134,82 @@
       </header>
 <div class="container">
     <h4 class="mt-2">Adreslerim</h4>
-    <div class="adres-box">
+    <div class="adres-box mb-5">
         <div class="inputs">
-            <div class="container d-flex justify-content-center">
+            <div class="container d-flex justify-content-center pt-4 pb-5 mt-1">
                 <div class="row" style="width: 70%;">
-                    <div class="col-lg-6">
-                        <label for="adres-title">Adres Başlığı</label>
-                        <input type="text" name="adres-title">
+                    <div class="col-lg-6 pt-2 d-flex flex-column">
+                        <label class="adres-title" for="adres-title">Adres Başlığı</label>
+                        <input type="text" name="adres-title" class="form-control mt-1" placeholder="Adres Başlığı">
                     </div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-6"></div>
-                    <div class="col-lg-12"></div>
+                    <div class="col-lg-6 pt-2">
+                      <label class="adres-title" for="adres-tipi">Adres Tipi*</label>
+                      <select name="adres-tipi" id="" class="form-control adres-select mt-1">
+                        <option value="">Adres Tipi</option>
+                        <option value="">Ev</option>
+                        <option value="">İş</option>
+                        <option value="">Arkadaş/aile</option>
+                        <option value="">Diğer</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 pt-2">
+                      <label class="adres-title" for="">İl*</label>
+                      <select name="" id="" class="form-control adres-select mt-1">
+                        <option value="">Seçim Yapmalısın</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 pt-2">
+                      <label class="adres-title" for="">İlçe*</label>
+                      <select name="" id="" class="form-control adres-select mt-1">
+                        <option value="">Seçim Yapmalısın</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 pt-2">
+                      <label class="adres-title" for="">Mahalle*</label>
+                      <select name="" id="" class="form-control adres-select mt-1">
+                        <option value="">Seçim Yapmalısın</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 pt-2 d-flex flex-column">
+                      <label class="adres-title" for="adres-title">Cadde*</label>
+                      <input type="text" name="adres-title" class="form-control mt-1" placeholder="Cadde">
+                    </div>
+                    <div class="col-lg-6 d-flex flex-column pt-2">
+                      <label class="adres-title" for="adres-title">Sokak</label>
+                      <input type="text" name="adres-title" class="form-control mt-1" placeholder="Sokak">
+                    </div>
+                    <div class="col-lg-6 pt-2">
+                      <div class="row">
+                        <div class="col-lg-6">
+                          <label class="adres-title" for="adres-title">Bina No.*</label>
+                      <input type="text" name="adres-title" class="form-control mt-1" placeholder="Bina No.">
+                        </div>
+                        <div class="col-lg-6">
+                          <label class="adres-title" for="adres-title">Daire No.*</label>
+                      <input type="text" name="adres-title" class="form-control mt-1" placeholder="Daire No.">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 pt-2">
+                      <label class="adres-title" for="adres-title">Bina Adı</label>
+                      <input type="text" name="adres-title" class="form-control mt-1" placeholder="Bina Adı">
+                    </div>
+                    <div class="col-lg-6 pt-2"></div>
+                    <div class="col-lg-12">
+                      <label class="adres-title" for="adres-title">Adres Tarifi</label>
+                      <input type="text" name="adres-title" class="form-control mt-1 pb-5" placeholder="Adresi tarif et">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+{% include 'partials/anasayfa/_footer.html' %}
 </body>
 </html>
