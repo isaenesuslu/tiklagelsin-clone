@@ -298,7 +298,7 @@
                         <div class="urun-cart-add">
                           <div class="container d-flex">
                             <span class="price-text" id="price">
-                               {{price}} 
+                               {{price}}
                             </span>
                             <div class="d-flex cart-right">
                               <div class="ekle-eksilt">
@@ -921,10 +921,10 @@
   var icerik2 = urlParams.get('icerik2');
   var icerik3 = urlParams.get('icerik3');
   var icerik4 = urlParams.get('icerik4');
-  var price = urlParams.get('price');
-
-
-
+  var price = parseFloat(urlParams.get('price'));
+  function formatPrice(price) {
+    return parseInt(price).toLocaleString('tr-TR') + '.00 TL';
+}
 
     function showProductDetails() {
 
@@ -939,10 +939,10 @@
     
         // Price'ın değerini kontrol et ve undefined değilse fiyatı göster
         if (price !== undefined) {
-            document.getElementById('price').innerText = price;
-        } else {
-            document.getElementById('price').innerText = 'Fiyat bilgisi bulunamadı';
-        }
+          document.getElementById('price').innerText = formatPrice(price);
+      } else {
+          document.getElementById('price').innerText = 'Fiyat bilgisi bulunamadı';
+      }
     
         var imageElement = document.getElementById('image');
     
@@ -958,21 +958,32 @@
         console.log(price)
     }
 // İçeriklerin Çekildiği Kısım -------------------------------
-
+function getCheeseQuantity(cheeseType) {
+  // Her bir peynir tipinin miktarını al
+  var quantityElement = document.getElementById('quantity' + cheeseType.charAt(cheeseType.length-1));
+  return parseInt(quantityElement.textContent) || 0;
+}
 
     var quantity = 1;
     var basePrice = price;
+    var peynirTotalPrice = 5.00;
     var cheesePricePerUnit1 = 5.00;
     var cheesePricePerUnit2 = 5.00;
-    var menuPrice = basePrice;
+    var menuPrice = basePrice * quantity;
     var previousSelectionsTotalPrice = menuPrice;
     var optionTypePrices = {};  // Her bir optionType için toplam fiyatı takip etmek için
     var selectedOptions = [];  // Tüm seçimleri takip etmek için
-
+  function updateTotalPrice() {
+    var totalPrice = basePrice * quantity;
+    totalPrice += peynirTotalPrice;
+    document.getElementById('totalPrice').innerText = formatPrice(totalPrice);
+  }
 
 
     
 /* BURASI MENÜ VE PEYNİR ARTTIRMA AZALTMA */
+
+
 
 function arttir() {
   quantity++;
@@ -1029,19 +1040,17 @@ function updatePeynirQuantity(optionType, operation, infoTextId, quantityId, che
   var quantityElement = document.getElementById(quantityId);
 
   if (!quantityElement) {
-    console.error('Quantity bulunamadı' + optionType);
-    return;
+      console.error('Quantity bulunamadı' + optionType);
+      return;
   }
 
   var currentQuantity = parseInt(quantityElement.textContent) || 0;
 
   // Maksimum peynir sayısını kontrol et
   if (operation === 'increase' && currentQuantity < 9) {
-    currentQuantity++;
-    menuPrice += 5.00;  // Artırma işlemi yapıldığında 5 TL ekleyin
+      currentQuantity++;
   } else if (operation === 'decrease' && currentQuantity > 0) {
-    currentQuantity--;
-    menuPrice -= 5.00;  // Azaltma işlemi yapıldığında 5 TL çıkarın
+      currentQuantity--;
   }
 
   quantityElement.textContent = currentQuantity;
@@ -1049,20 +1058,20 @@ function updatePeynirQuantity(optionType, operation, infoTextId, quantityId, che
   var infoTextElement = document.getElementById(infoTextId);
 
   if (!infoTextElement) {
-    console.error('Infotext bulunamadı' + optionType);
-    return;
+      console.error('Infotext bulunamadı' + optionType);
+      return;
   }
 
   var totalPrice = (cheesePricePerUnit * currentQuantity).toFixed(2);
 
   if (currentQuantity > 0) {
-    infoTextElement.textContent = "+ " + totalPrice + " TL";
+      infoTextElement.textContent = "+ " + totalPrice + " TL";
   } else {
-    infoTextElement.textContent = "";  // Miktar 0 ise boş bırak
+      infoTextElement.textContent = "";  // Miktar 0 ise boş bırak
   }
 
-  // Sayfadaki görüntüyü güncelleyin
-  updateDisplay();
+  // Her bir peynirin fiyatını toplam fiyata ekleyin
+  updateTotalPrice();
 }
 
 function getCheesePrice(optionType) {
@@ -1179,19 +1188,21 @@ function calculateTotalPrice() {
   document.getElementById('price').textContent = totalPrice.toFixed(2) + " TL";
   return totalPrice;
 }
-
 function updateInfo(quantity, infoTextElement, cheesePrice) {
-  var totalPrice = (cheesePrice * quantity).toFixed(2) + " TL";
-  
+  var totalPrice = (cheesePrice * quantity).toFixed(2); // Peşin toplam fiyat
+
   // NaN kontrolü cheesePrice üzerinden yapılıyor
   if (!isNaN(cheesePrice)) {
-    infoTextElement.textContent = "+ " + totalPrice;
+      infoTextElement.textContent = "+ " + totalPrice + " TL";
   } else {
-    infoTextElement.textContent = "+ 0.00 TL";
+      infoTextElement.textContent = "+ 0.00 TL";
   }
 
-  // Burada ayrıca peynir fiyatını optionTypePrices'e ekleyerek güncelleyebiliriz
-  optionTypePrices['peynir'] = cheesePrice * quantity;
+  // Her bir peynir tipinin toplam fiyatını peynirTotalPrice'e ekle
+  peynirTotalPrice += cheesePrice * quantity;
+
+  // Sayfadaki görüntüyü güncelleyin
+  updateDisplay();
 }
 
 

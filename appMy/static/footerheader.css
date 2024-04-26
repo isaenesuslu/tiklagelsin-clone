@@ -733,4 +733,9 @@ button:focus:not(:focus-visible) {
     width: 100%;
     background-color: white;
     border-radius: 10px;
+}.adres-title {
+    font-size: 14px;
+    color: #666
+}.adres-select {
+    color: #666;
 }
