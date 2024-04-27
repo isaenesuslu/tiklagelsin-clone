@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -37,3 +38,23 @@ class TrendEglenceMod(models.Model):
     date = models.DateField(("Tarih"), auto_now=False, auto_now_add=True, null=True)
     def __str__(self) -> str:
         return self.title
+    
+class SepetimMod(models.Model):
+    user = models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
+    title = models.CharField(("Menü Başlık"), max_length=150)
+    additionalinfo = models.CharField(("Menü İçerik"), max_length=150)
+    price = models.CharField(("Fiyat"), max_length=50)
+    
+class AdresMod(models.Model):
+    user = models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
+    title = models.CharField(("Adres Başlığı"), max_length=50)
+    adrestype = models.CharField(("Adres Tipi"), max_length=50)
+    il = models.CharField(("İl"), max_length=50)
+    ilce = models.CharField(("İlce"), max_length=50)
+    mahalle = models.CharField(("Mahalle"), max_length=50)
+    cadde = models.CharField(("Cadde"), max_length=50)
+    sokak = models.CharField(("Sokak"), max_length=50)
+    binano = models.CharField(("Bina No"), max_length=50)
+    daireno = models.CharField(("Daire No"), max_length=50)
+    bina = models.CharField(("Bina Adı"), max_length=50)
+    adrestarif = models.CharField(("Adres Tarifi"), max_length=50)
