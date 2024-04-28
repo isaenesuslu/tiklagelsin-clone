@@ -738,4 +738,8 @@ button:focus:not(:focus-visible) {
     color: #666
 }.adres-select {
     color: #666;
+}.toast-2 {
+    position: fixed !important;
+    right: 0 !important;
+    top: 100px !important;
 }

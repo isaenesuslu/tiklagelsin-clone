@@ -55,6 +55,51 @@
         body{
             background-color: #f2f2f2 !important;
         }
+        .sepet-title{
+          padding: 1rem;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          flex-direction: row;
+          justify-content: space-between;
+          border-radius: 10px 10px 0px 0px;
+          background-color: #f2f2f2;
+          margin-top: 1rem;
+        }
+        .sepet-body{
+          background-color: #fff;
+          padding: 1rem;
+          border-radius: 0px 0px 10px 10px;
+        }
+        .sepet-row{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-bottom: .5rem;
+        }
+        .ekle-eksilt{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          max-width: fit-content;
+        }
+        .ekle-sil-text{
+          font-size: 16px;
+          font-weight: bold;
+          margin: .5rem;
+        }
+        .sepet-icerik{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 2rem;
+          font-size: 14px;
+          width: 100%;
+          font-weight: 400;
+          text-align: left;
+          border-radius: 0px 0px 10px 10px;
+        }
+
     </style>
 <link rel="stylesheet" href="{% static 'footerheader.css' %}">
 </head>
@@ -73,7 +118,7 @@
                   <i class="fa-light fa-user fa-lg h-icons" style="color: #333;"></i>
                   <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Hesabım</p>
               </a>
-              <a href="#" class="sepetim d-flex align-items-center">
+              <a href="{% url 'sepetimPage' %}" class="sepetim d-flex align-items-center">
                   <i class="fa-light fa-basket-shopping fa-lg" style="color: #ffffff; z-index: 1;"></i>
                   <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#ffffff">Sepetim</p>
               </a>
@@ -166,8 +211,52 @@
                               <i class="fa-light fa-trash-can ms-1" style="color: #e91d34;"></i>
                             </a>
                           </div>
-                          <div class="siparis-list">
-                          </div>
+                          <div class="siparis-list mb-3" style="box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .15); border-radius: 10px 10px 10px 10px;">
+                            <div class="sepet-title">
+                              <div>
+                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Bk_Logo501x542_4e2be66b64.png" alt="" width="40px">
+                                  Burger King®
+                              </div>
+                            </div>
+                              <div class="sepet-body">
+                                <div class="row" style="display: flex; flex-wrap: wrap; margin-right: -20px; margin-left: -20px;">
+                                  <div class="col" style="flex-basis: 0; flex-grow: 1; max-width: 100%;">
+                                    <div class="sepet-row">
+                                        <div class="ekle-eksilt">
+                                          <button type="button" class="buton" style="border: 0; cursor: pointer; background-color: transparent;" onclick="eksilt()">
+                                            <i style="font-size: 24px;" class="fa-light fa-circle-minus"></i>
+                                          </button>
+                                          <span id="quantity" class="ekle-sil-text">1</span>
+                                          <button type="button" class="me-4 buton" style="border: 0; cursor: pointer; background-color: transparent;" onclick="arttir()">
+                                            <i style="font-size: 24px; " class="fa-regular fa-circle-plus"></i>
+                                          </button>
+                                        </div>
+                                        <div class="sepet-icerik">
+                                           <div class="sepeturun-title" style="margin-right: 2rem;">
+                                            <!-- buraya ürünün title'ı gelecek.  -->{{ title }}
+                                           </div>
+                                          <span class="sepet-icerik-price" style="color: #333; min-width: fit-content;"> {{ total_price }} TL</span>
+                                        </div>
+                                    </div>   
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col">
+                                    <div class="sepet-row">
+                                      <div class="sepet-options" style="color: #666; font-size: 14px; font-weight: 400;">
+                                       {{options}} 
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                              <div class="urun-ekle d-flex flex-row-reverse" >
+                                <button type="button" class="text-button" style="border: 0; background-color: transparent;">
+                                  <span style="color: #e91d34; font-size: 14px; font-weight: 700;">Ürün Ekle</span>
+                                </button>
+                              </div>
+
                           <div class="sepetim-none">
                             <i class="fa-regular fa-message-dots fa-lg" style="color: #e91d34;"></i>
                             <p class="mt-3">Sepetinizde ürün bulunamadı!</p>
@@ -200,6 +289,34 @@
 <script
   type="text/javascript"
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
-></script>    
+>
+localStorage.setItem('selectedMenu', JSON.stringify(menuData));
+
+document.addEventListener('DOMContentLoaded', function () {
+  // URL'den sorgu parametrelerini al
+  const urlParams = new URLSearchParams(window.location.search);
+  const options = urlParams.get('options');
+
+  // Eğer options parametresi varsa ve içeriği boş değilse
+  if (options && options.trim() !== '') {
+      // Seçenekleri sepetim.html içeriğine yerleştir
+      const optionsElement = document.getElementById('selectedOptions');
+      optionsElement.textContent = options;
+  }
+});
+
+function arttir() {
+  quantity++;
+  updateDisplay();
+  }
+  
+  function eksilt() {
+  if (quantity > 1) {
+    quantity--;
+    updateDisplay();
+  }
+  }
+
+</script>    
 </body>
 </html>

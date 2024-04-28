@@ -69,7 +69,7 @@
               <i class="fa-light fa-gift fa-lg h-icons" style="color: #333;"></i>
               <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#383838">Kampanyalar</p>
           </a>
-          <a href="#" class="sepetim d-flex align-items-center">
+          <a href="{% url 'sepetimPage' %}" class="sepetim d-flex align-items-center">
               <i class="fa-light fa-basket-shopping fa-lg" style="color: #ffffff; z-index: 1;"></i>
               <p class="m-0 ps-2" style="font-weight: 700; font-size: 15px; color:#ffffff">Sepetim</p>
           </a>
@@ -84,19 +84,15 @@
           <div class="ab-redline"></div>
           <div class="ab-whiteline"></div>
         </div>
-        <p style="color: #999; font-size: 14px;" class="mt-3">Telefon Numarası*</p>
-        <form>
-          <div class="d-flex">
-            <div>
-              <select name="" id="" class="h-100 country-select"> 
-                <option value="Turkey">Turkey</option>
-              </select>
-            </div>
-            <input type="tel" class="form-control country-input">
+        <p style="color: #999; font-size: 14px;" class="mt-3">E-Posta Adresi*</p>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="d-flex flex-column">
+            <input type="email" name="email" class="form-control">
+          <button type="submit" name="submit" value="kayit-ol" class="ab-button text-white w-100 mt-3">İlerle</button>
           </div>
-          <button type="submit" class="ab-button text-white w-100 mt-3">İlerle</button>
         </form>
-        <p style="border-bottom: 1px solid #99999938;" class="pb-4">*ilerle demenizin ardından <b>güvenlik teyidi amacıyla cep telefonunuza SMS yoluyla bir şifre</b> gelecektir.</p>
+        <p style="border-bottom: 1px solid #99999938;" class="pb-4">*ilerle demenizin ardından <b>güvenlik teyidi amacıyla e-mail adresinize bir kod</b> gelecektir.</p>
         <div class="ab-social-head mt-4">
           <ul class="d-flex flex-column align-items-center">
             <li class="ab-social"><i class="fa-brands fa-apple fa-lg me-3" style="color: #fafafa;"></i> Apple ile Giriş yap</li>
@@ -106,6 +102,38 @@
         </div>
      </div>   
     </main>
+
+    
+ 
+ {% for i in messages %}
+ <div class="modal fade show" style="display: block;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="false">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h1 class="modal-title fs-5" id="exampleModalLabel">Doğrulama Kodu</h1>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         <p class="text-{{i.tags}}">
+           {{i.message}}
+         </p>
+         <br><p class="mt-2"><i class="fa-regular fa-triangle-exclamation" style="color: #e91d34;"></i> Dikkat, karakterler büyük-küçük harflere duyarlıdır!</p>
+         <form method="POST">
+          {% csrf_token %}
+          <input type="text" name="onay-kodu" class="p-2" style="border-radius: 10px; border: 1px solid gray;" placeholder="Kodu buraya giriniz.">
+          <hr>
+       </div>
+       <div class="modal-footer">
+         <button type="submit" name="submit" value="kayit-onay" class="btn btn-danger">Devam Et</button>
+       </div>
+      </form>
+     </div>
+   </div>
+ </div>
+ {% endfor %}
+  
+
+      
 
 {% include 'partials/anasayfa/_footer.html' %}
 <!-- MDB -->
