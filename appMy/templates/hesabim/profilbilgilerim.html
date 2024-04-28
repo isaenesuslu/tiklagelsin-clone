@@ -45,124 +45,120 @@
                     </div>
                     <div class="ana-site">
                         <div class="container">
-                            <div class="justify-content-md-center row">
-                                <div class="col-lg-4 col-12">
-                                    <div class="form-grup">
-                                        <div class="form-label">Ad</div>
-                                        <input type="text" class="form-kontrol" value="">
+                            <form method="POST">
+                                {% csrf_token %}
+                                <div class="justify-content-md-center row">
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-grup">
+                                            <div class="form-label">Ad</div>
+                                            <input type="text" name="fname" class="form-kontrol" value="{{ request.user.first_name }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-grup">
+                                            <div class="form-label">Soyad</div>
+                                            <input type="text" name="lname" class="form-kontrol" value="{{ request.user.last_name }}">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-12">
-                                    <div class="form-grup">
-                                        <div class="form-label">Soyad</div>
-                                        <input type="text" class="form-kontrol" value="">
+    
+                                <div class="justify-content-md-center row">
+                                    <div class="col-lg-8 col-12">
+                                        <div class="form-grup">
+                                            <div class="form-label">E-posta adresi</div>
+                                            <input type="text" name="email" class="form-kontrol" value="{{ request.user.email }}">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="justify-content-md-center row">
-                                <div class="col-lg-8 col-12">
-                                    <div class="form-grup">
-                                        <div class="form-label">E-posta adresi</div>
-                                        <input type="text" class="form-kontrol" value="">
+    
+                                <div class="justify-content-md-center row">
+                                    <div class="col-lg-4 col-12">
+                                        <div class="telefon-input">
+                                            <div class="form-label">Telefon Numarası*</div>
+                                            <div class="TelefonInput">
+                                              <input type="tel" name="tel" class="form-kontrol">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-12">
+                                        <div class="form-grup">
+                                            <div class="form-label">Doğum Tarihi</div>
+                                            <div class="date-box">
+                                                <input type="date" name="date">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="justify-content-md-center row">
-                                <div class="col-lg-4 col-12">
-                                    <div class="telefon-input">
-                                        <div class="form-label">Telefon Numarası*</div>
-                                        <div class="TelefonInput">
-                                            <div class="TelefonInputUlkeler">
-                                                <select name="telefonNumaraUlkeler" class="TelefonInputUlkeSecimi">
-                                                    <option value="">England</option>
-                                                    <option value="">France</option>
-                                                    <option value="">Russia</option>
-                                                    <option value="">Romania</option>
-                                                    <option value="">Saint Helena</option>
-                                                    <option value="">Turkey</option>
+    
+                                <div class="justify-content-md-center row">
+                                    <div class="col-lg-4 col-12">
+                                        <div class="">
+                                            <div class="form-label">Cinsiyet</div>
+                                            <div class="cins-box">
+                                                <select name="" id="">
+                                                    <option value="">Erkek</option>
+                                                    <option value="">Kadın</option>
+                                                    <option value="">Belirtmek İstemiyorum</option>
                                                 </select>
-                                                <div class="TelefonInputUlkeIcon">
-                                                    <img class="TelefonInputUlkeIconImg"
-                                                        src="https://purecatamphetamine.github.io/country-flag-icons/3x2/TR.svg"
-                                                        alt="Turkey">
-                                                </div>
-                                                <div class="TelefonInputUlkeIconSecimOku">
-                                                    <i class="fa-duotone fa-arrow-down fa-2xs"
-                                                        style="--fa-primary-color: #000000; --fa-secondary-color: #ffffff;"></i>
+                                                <div class="red-arrow">
+                                                    <i class="fa-duotone fa-arrow-down-long fa-2xl"
+                                                        style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
                                                 </div>
                                             </div>
-                                            <input type="tel" autocomplete="tel" id="phoneNumber" maxlength="17"
-                                                class="TelefonInputInput" value="">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 col-12">
-                                    <div class="form-grup">
-                                        <div class="form-label">Doğum Tarihi</div>
-                                        <div class="date-box">
-                                            <input type="date">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="justify-content-md-center row">
-                                <div class="col-lg-4 col-12">
-                                    <div class="">
-                                        <div class="form-label">Cinsiyet</div>
-                                        <div class="cins-box">
-                                            <select name="" id="">
-                                                <option value="">Erkek</option>
-                                                <option value="">Kadın</option>
-                                                <option value="">Belirtmek İstemiyorum</option>
-                                            </select>
-                                            <div class="red-arrow">
-                                                <i class="fa-duotone fa-arrow-down-long fa-2xl"
-                                                    style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
+                                    <div class="col-lg-4 col-12 mb-3">
+                                        <div class="">
+                                            <div class="form-label">Takım</div>
+                                            <div class="cins-box">
+                                                <select name="" id="">
+                                                    <option value="">Boluspor</option>
+                                                    <option value="">Gençler Birliği</option>
+                                                    <option value="">Altay</option>
+                                                    <option value="">Göztepe</option>
+                                                    <option value="">Altınordu</option>
+                                                </select>
+                                                <div class="red-arrow">
+                                                    <i class="fa-duotone fa-arrow-down-long fa-2xl"
+                                                        style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4 col-12 mb-3">
-                                    <div class="">
-                                        <div class="form-label">Takım</div>
-                                        <div class="cins-box">
-                                            <select name="" id="">
-                                                <option value="">Boluspor</option>
-                                                <option value="">Gençler Birliği</option>
-                                                <option value="">Altay</option>
-                                                <option value="">Göztepe</option>
-                                                <option value="">Altınordu</option>
-                                            </select>
-                                            <div class="red-arrow">
-                                                <i class="fa-duotone fa-arrow-down-long fa-2xl"
-                                                    style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
-                                            </div>
-                                        </div>
+
+
+                                <div class="justify-content-md-center row">
+                                    <div class="col-lg-8 col-12">
+                                        <p class="profil-text">
+                                            Yukarıda yer verilen cinsiyet, doğum tarihi ve tutulan takım bilgilerini
+                                            doldurarak, TıklaGelsin'in sizi daha iyi tanıyabilmesi için sunulan hizmetlerin
+                                            size uygun şekilde özelleştirilmesi ile ilgili bilgilerinizin işlenmesine açık
+                                            rıza vermiş olursunuz. Aydınlatma metnini okumak için Açık rızanızı dilediğiniz
+                                            zaman profil bilgilerim sayfasından değiştirebilirsiniz.
+                                        </p>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="justify-content-md-center row">
-                                <div class="col-lg-8 col-12">
-                                    <p class="profil-text">
-                                        Yukarıda yer verilen cinsiyet, doğum tarihi ve tutulan takım bilgilerini
-                                        doldurarak, TıklaGelsin'in sizi daha iyi tanıyabilmesi için sunulan hizmetlerin
-                                        size uygun şekilde özelleştirilmesi ile ilgili bilgilerinizin işlenmesine açık
-                                        rıza vermiş olursunuz. Aydınlatma metnini okumak için Açık rızanızı dilediğiniz
-                                        zaman profil bilgilerim sayfasından değiştirebilirsiniz.
-                                    </p>
+    
+                                <div class="row">
+                                    <div class="profil-buton-container col-lg-10 col-12">
+                                        <button type="submit" class="profil-buton">Profilimi Güncelle</button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+        
 
-                            <div class="row">
-                                <div class="profil-buton-container col-lg-10 col-12">
-                                    <button type="button" class="profil-buton">Profilimi Güncelle</button>
+
+                            {% for i in messages %}
+                            <div class="toast toast-2 align-items-center text-bg-{{i.tags}} border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+                                <div class="d-flex">
+                                  <div class="toast-body">
+                                    {{ i.message }}
+                                  </div>
+                                  <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
                                 </div>
-                            </div>
-
+                              </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

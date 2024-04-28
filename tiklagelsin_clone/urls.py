@@ -47,4 +47,5 @@ urlpatterns = [
     path('siparis-onay', siparisonayPage, name="siparisonayPage"),
     path('menudetay/<dt>', menuDetayPage),
     path('adres-ekle', adreseklePage, name="adreseklePage"),
+    path('logout', logoutUser, name="logoutPage"),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

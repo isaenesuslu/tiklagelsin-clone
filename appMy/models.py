@@ -58,3 +58,9 @@ class AdresMod(models.Model):
     daireno = models.CharField(("Daire No"), max_length=50)
     bina = models.CharField(("Bina Adı"), max_length=50)
     adrestarif = models.CharField(("Adres Tarifi"), max_length=50)
+    
+class ekbilgiMod(models.Model):
+    user = models.OneToOneField(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
+    tel = models.CharField(("Telefon Numarası"), max_length=50)
+    cinsiyet = models.CharField(("Cinsiyet"), max_length=50)
+    takim = models.CharField(("Takım"), max_length=50)

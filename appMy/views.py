@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from appMy.models import *
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.core.mail import send_mail
+from tiklagelsin_clone.settings import EMAIL_HOST_USER
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -149,49 +154,141 @@ def burgerPage(request):
 # HESAP AYARLARI
 
 def hesapgirisPage(request):
+    submit = request.POST.get("submit")
+    code = ""
+    if request.method == "POST":
+        email = request.POST.get("email")
+        import random
+        alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if submit == "kayit-ol":
+                if email: 
+                    request.session['email'] = email
+                    while(len(code) < 6):
+                        while(len(code) < 3):
+                            code += random.choice(alphabet)
+                        rastgeleSayi = random.randint(0,9)
+                        code += str(rastgeleSayi)
+                        request.session['code'] = code
+                        print(code)
+                    # send_mail(
+                    #     "Kayıt olmak için kodunuz",
+                    #     code,
+                    #     EMAIL_HOST_USER,
+                    #     [email],
+                    #     fail_silently=False,
+                    # )
+                    messages.success(request, "Giriş yapmak için oluşturulan kodunuz mail adresinize başarıyla gönderilmiştir. Lütfen kodu giriniz:")
+                    return redirect("hesapgirisPage")  
+        if submit == "kayit-onay":
+            onaykodu = request.POST.get("onay-kodu")
+            code = request.session.get('code')
+            email = request.session.get('email')
+            print(onaykodu)
+            if onaykodu == code:
+                    if not User.objects.filter(email=email).exists():
+                        user = User(username=email, email=email)
+                        user.save()
+                        ekbilgi = ekbilgiMod(user=user)
+                        ekbilgi.save()
+                        login(request,user)
+                        messages.success(request,"Başarıyla kayıt oldunuz. Profil bilgilerinizi güncelleyebilirsiniz.")
+                        return redirect("profilPage")
+                    else:
+                        user = User.objects.get(email=email)
+                        login(request,user)
+                        messages.success(request, "Başarıyla giriş yaptınız.")
+                        return redirect("Anasayfa")
+            else:
+                messages.warning(request, "HATALI KOD GİRDİNİZ! LÜTFEN TEKRAR GİRİNİZ.")
+    
     context = {}
     return render(request, 'hesabim/hesabimgiris.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def hesabimPage(request):
     context = {}
     return render(request, 'hesabim/hesabim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def adressPage(request):
     context = {}
     return render(request, 'hesabim/adress.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def cuzdanimPage(request):
     context = {}
     return render(request, 'hesabim/cuzdanim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def kuponlarimPage(request):
     context = {}
     return render(request, 'hesabim/kuponlarim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def odemePage(request):
     context = {}
     return render(request, 'hesabim/odemebilgilerim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def profilPage(request):
+    
+    if request.method == "POST":
+        fname = request.POST.get("fname")
+        lname = request.POST.get("lname")
+        email = request.POST.get("email")
+        tel = request.POST.get("tel")
+        
+        if fname or lname or email or tel:
+            if fname:
+                request.user.first_name = fname
+                request.user.save()
+            if lname:
+                request.user.last_name = lname
+                request.user.save()
+            if email:
+                if "@" and ".com" not in email:
+                   messages.warning(request, "Lütfen geçerli bir mail giriniz.") 
+                else:
+                    request.user.email = email
+                    request.user.save()
+            if tel:
+                request.user.ekbilgimod.tel = tel   
+                request.user.ekbilgimod.save()   
+
+            
+    
     context = {}
     return render(request, 'hesabim/profilbilgilerim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def tiklaparamPage(request):
     context = {}
     return render(request, 'hesabim/tiklaparam.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def settingsPage(request):
     context = {}
     return render(request, 'hesabim/settings.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def sepetimPage(request):
-    context = {}
+    title = request.GET.get('title')
+    total_price = request.GET.get('total_price')
+    options = request.GET.get('options')
+
+    context = {
+        'title': title,
+        'total_price': total_price,
+        'options': options,
+    }
     return render(request, 'hesabim/sepetim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def siparislerimPage(request):
     context = {}
     return render(request, 'hesabim/siparislerim.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def siparisonayPage(request):
     context = {}
     return render(request, 'hesabim/siparisonay.html', context)
@@ -200,7 +297,13 @@ def menuDetayPage(request, dt):
     context = {}
     return render(request, 'anasayfa/burgermenus/detaysayfasi.html', context)
 
+@login_required(login_url='hesapgirisPage')
 def adreseklePage(request):
     context = {}
     return render(request, 'hesabim/adresekle.html', context)
 
+@login_required(login_url='hesapgirisPage')
+def logoutUser(request):
+    logout(request)
+    messages.success(request, "Başarıyla çıkış yapıldı.")
+    return redirect("Anasayfa")
