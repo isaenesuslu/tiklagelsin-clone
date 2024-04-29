@@ -237,25 +237,35 @@ def profilPage(request):
         lname = request.POST.get("lname")
         email = request.POST.get("email")
         tel = request.POST.get("tel")
-        
-        if fname or lname or email or tel:
+        cinsiyet = request.POST.get("cinsiyet")
+        takim = request.POST.get("takim")
+
+        if fname or lname or email or tel or cinsiyet or takim:
             if fname:
                 request.user.first_name = fname
-                request.user.save()
             if lname:
                 request.user.last_name = lname
-                request.user.save()
             if email:
-                if "@" and ".com" not in email:
-                   messages.warning(request, "Lütfen geçerli bir mail giriniz.") 
-                else:
+                if "@" in email and ".com" in email:
                     request.user.email = email
-                    request.user.save()
+                else:
+                    messages.warning(request, "Lütfen geçerli bir mail giriniz.")
             if tel:
-                request.user.ekbilgimod.tel = tel   
-                request.user.ekbilgimod.save()   
-
-            
+                if len(tel) >= 10 and tel.isdigit():
+                    request.user.ekbilgimod.tel = tel
+                else:
+                    messages.warning(request, "Lütfen geçerli bir telefon numarası giriniz.")
+            if cinsiyet:
+                request.user.ekbilgimod.cinsiyet = cinsiyet
+            if takim:
+                request.user.ekbilgimod.takim = takim
+                
+            request.user.save()
+            request.user.ekbilgimod.save()
+            return redirect("profilPage")
+        else:
+            messages.warning(request, "Lütfen en az bir alanı doldurun.")
+                
     
     context = {}
     return render(request, 'hesabim/profilbilgilerim.html', context)

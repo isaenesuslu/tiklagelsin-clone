@@ -76,7 +76,7 @@
                                         <div class="telefon-input">
                                             <div class="form-label">Telefon Numarası*</div>
                                             <div class="TelefonInput">
-                                              <input type="tel" name="tel" class="form-kontrol">
+                                                <input type="tel" id="phone" name="tel" maxlength="10" value="{{ request.user.ekbilgimod.tel }}" class="form-kontrol" placeholder="5xxxxxxxxx">
                                             </div>
                                         </div>
                                     </div>
@@ -95,11 +95,18 @@
                                         <div class="">
                                             <div class="form-label">Cinsiyet</div>
                                             <div class="cins-box">
-                                                <select name="" id="">
-                                                    <option value="">Erkek</option>
-                                                    <option value="">Kadın</option>
-                                                    <option value="">Belirtmek İstemiyorum</option>
+                                                <select name="cinsiyet">
+                                                    <option value="Belirtmek İstemiyorum" {% if request.user.ekbilgimod.cinsiyet == "Belirtmek İstemiyorum" %} selected {% endif %}>Belirtmek İstemiyorum</option>
+                                                    <option value="Erkek" {% if request.user.ekbilgimod.cinsiyet == "Erkek" %} selected {% endif %}>Erkek</option>
+                                                    <option value="Kadın" {% if request.user.ekbilgimod.cinsiyet == "Kadın" %} selected {% endif %}>Kadın</option>
                                                 </select>
+                                                
+                                                
+                                                
+                                                    
+                                                
+                                                    
+                                                
                                                 <div class="red-arrow">
                                                     <i class="fa-duotone fa-arrow-down-long fa-2xl"
                                                         style="--fa-primary-color: #e91d34; --fa-secondary-color: #ffffff;"></i>
@@ -111,12 +118,13 @@
                                         <div class="">
                                             <div class="form-label">Takım</div>
                                             <div class="cins-box">
-                                                <select name="" id="">
-                                                    <option value="">Boluspor</option>
-                                                    <option value="">Gençler Birliği</option>
-                                                    <option value="">Altay</option>
-                                                    <option value="">Göztepe</option>
-                                                    <option value="">Altınordu</option>
+                                                <select name="takim">
+                                                    <option value="Takım Tutmuyorum" {% if request.user.ekbilgimod.takim == "Takım Tutmuyorum" %} selected {% endif %}>Takım Tutmuyorum</option>
+                                                    <option value="Boluspor" {% if request.user.ekbilgimod.takim == "Boluspor" %} selected {% endif %}>Boluspor</option>
+                                                    <option value="Gençler Birliği" {% if request.user.ekbilgimod.takim == "Gençler Birliği" %} selected {% endif %}>Gençler Birliği</option>
+                                                    <option value="Altay" {% if request.user.ekbilgimod.takim == "Altay" %} selected {% endif %}>Altay</option>
+                                                    <option value="Göztepe" {% if request.user.ekbilgimod.takim == "Göztepe" %} selected {% endif %}>Göztepe</option>
+                                                    <option value="Altınordu" {% if request.user.ekbilgimod.takim == "Altınordu" %} selected {% endif %}>Altınordu</option>
                                                 </select>
                                                 <div class="red-arrow">
                                                     <i class="fa-duotone fa-arrow-down-long fa-2xl"
