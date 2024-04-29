@@ -41,9 +41,8 @@ class TrendEglenceMod(models.Model):
     
 class SepetimMod(models.Model):
     user = models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
-    title = models.CharField(("Menü Başlık"), max_length=150)
-    additionalinfo = models.CharField(("Menü İçerik"), max_length=150)
-    price = models.CharField(("Fiyat"), max_length=50)
+    title = models.CharField(("Menü Başlık"), max_length=150, blank=True)
+    price = models.CharField(("Fiyat"), max_length=50, blank=True)
     
 class AdresMod(models.Model):
     user = models.ForeignKey(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
@@ -58,6 +57,11 @@ class AdresMod(models.Model):
     daireno = models.CharField(("Daire No"), max_length=50)
     bina = models.CharField(("Bina Adı"), max_length=50)
     adrestarif = models.CharField(("Adres Tarifi"), max_length=50)
+    aktif = models.BooleanField(("Aktif Adres"), null=True)
+    
+    def __str__(self):
+        return self.title
+    
     
 class ekbilgiMod(models.Model):
     user = models.OneToOneField(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)

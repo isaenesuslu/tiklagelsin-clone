@@ -5,6 +5,7 @@ from django.contrib.auth import login, logout, authenticate
 from django.core.mail import send_mail
 from tiklagelsin_clone.settings import EMAIL_HOST_USER
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
 
 # Create your views here.
 
@@ -170,13 +171,13 @@ def hesapgirisPage(request):
                         code += str(rastgeleSayi)
                         request.session['code'] = code
                         print(code)
-                    # send_mail(
-                    #     "Kayıt olmak için kodunuz",
-                    #     code,
-                    #     EMAIL_HOST_USER,
-                    #     [email],
-                    #     fail_silently=False,
-                    # )
+                    send_mail(
+                        "Kayıt olmak için kodunuz",
+                        code,
+                        EMAIL_HOST_USER,
+                        [email],
+                        fail_silently=False,
+                    )
                     messages.success(request, "Giriş yapmak için oluşturulan kodunuz mail adresinize başarıyla gönderilmiştir. Lütfen kodu giriniz:")
                     return redirect("hesapgirisPage")  
         if submit == "kayit-onay":
@@ -190,6 +191,8 @@ def hesapgirisPage(request):
                         user.save()
                         ekbilgi = ekbilgiMod(user=user)
                         ekbilgi.save()
+                        sepet = sepetimPage(user=user)
+                        sepet.save()
                         login(request,user)
                         messages.success(request,"Başarıyla kayıt oldunuz. Profil bilgilerinizi güncelleyebilirsiniz.")
                         return redirect("profilPage")
@@ -211,7 +214,11 @@ def hesabimPage(request):
 
 @login_required(login_url='hesapgirisPage')
 def adressPage(request):
-    context = {}
+    
+    adress_list = AdresMod.objects.filter(user=request.user)
+    context = {
+        "adress_list":adress_list,
+    }
     return render(request, 'hesabim/adress.html', context)
 
 @login_required(login_url='hesapgirisPage')
@@ -284,12 +291,24 @@ def settingsPage(request):
 def sepetimPage(request):
     title = request.GET.get('title')
     total_price = request.GET.get('total_price')
-    options = request.GET.get('options')
-
+    user_adres = AdresMod.objects.filter(Q(aktif=True) & Q(user=request.user))
+    user_sepet = SepetimMod.objects.filter(user=request.user)
+    
+    if not SepetimMod.objects.filter(title=title).exists():
+        if title and total_price:    
+            userSave = SepetimMod(user=request.user, title=title, price=total_price)
+            userSave.save()
+            user_sepet = SepetimMod.objects.filter(Q(user=request.user) & Q(title=title) & Q(price=total_price))
+        
+    user_sepet = list(user_sepet)
+    user_sepet.pop(0)
+    print(user_sepet)
+    
     context = {
         'title': title,
         'total_price': total_price,
-        'options': options,
+        'user_adres': user_adres,
+        'user_sepet': user_sepet,
     }
     return render(request, 'hesabim/sepetim.html', context)
 
@@ -309,6 +328,28 @@ def menuDetayPage(request, dt):
 
 @login_required(login_url='hesapgirisPage')
 def adreseklePage(request):
+    
+    if request.method == "POST":
+        adrestitle = request.POST.get("adres-title")
+        adrestype = request.POST.get("adres-tipi")
+        il = request.POST.get("il")
+        ilce = request.POST.get("ilce")
+        mahalle = request.POST.get("mahalle")
+        cadde = request.POST.get("cadde")
+        sokak = request.POST.get("sokak")
+        binano = request.POST.get("binano")
+        daireno = request.POST.get("daireno")
+        binaadi = request.POST.get("binaadi")
+        adrestarifi = request.POST.get("adrestarifi")
+        
+        if adrestitle and adrestype and il and ilce and mahalle and cadde and sokak and binano and daireno and binaadi and adrestarifi:
+            userSave = AdresMod(user=request.user, title=adrestitle, adrestype=adrestype, il=il, ilce=ilce, mahalle=mahalle, cadde=cadde, sokak=sokak, binano=binano, daireno=daireno, bina=binaadi, adrestarif=adrestarifi)
+            userSave.save()
+            messages.success(request, "Adresiniz başarıyla eklenmiştir.")
+            return redirect("adressPage")
+        else:
+            messages.warning(request, "Bütün alanlar dolu olmak zorundadır!")
+    
     context = {}
     return render(request, 'hesabim/adresekle.html', context)
 

@@ -288,7 +288,7 @@
                                 <button type="button" class="me-4 buton" style="border: 0; cursor: pointer;" onclick="arttir()">
                                   <i style="font-size: 24px;" class="fa-regular fa-circle-plus"></i>
                                 </button>
-                                <button type="button" class="btn btn-danger" data-mdb-ripple-init onclick="addToCart('{{ product.title }}', '{{ totalPrice }}')">Sepete Ekle</button>
+                                <button type="button" class="btn btn-danger" data-mdb-ripple-init onclick="addToCartAndRedirect('{{ product.title }}', '{{ totalPrice }}')">Sepete Ekle</button>
                               </div>
                             </div>
                           </div>
@@ -307,7 +307,7 @@
             <h2 class="panel-title">Sandviç</h2>
             <div class="panel-body">
               <select class="form-select" aria-label="Default select ">
-                <option selected value="0">Tavukburger®</option>
+                <option selected value="0">Whopper®</option>
               </select>
               <div class="option-item-panel">
                 <div class="option-panel">
@@ -409,7 +409,7 @@
             <h2 class="panel-title">Sandviç</h2>
             <div class="panel-body">
               <select class="form-select" aria-label="Default select ">
-                <option selected value="0">Tavukburger®</option>
+                <option selected value="0">Whopper®</option>
               </select>
               <div class="option-item-panel">
                 <div class="option-panel">
@@ -511,7 +511,7 @@
           <h2 class="panel-title mb-0">Patetes Seçimi</h2>
           <div class="panel-body">
             <select class="form-select" aria-label="Default select" onchange="updateMenu('patates')" >
-              <option selected value="0">Patates Kızartması (Orta)</option>
+              <option id="defaultSelectedOptions" selected value="0">Patates Kızartması (Orta)</option>
               <option value="0">Tırtıklı Patates (Orta)</option>
               <option value="10">Patates Kızartması (Büyük) + 10 TL</option>
               <option value="10">Tırtıklı Patates (Büyük) + 10 TL</option>
@@ -530,7 +530,7 @@
           <h2 class="panel-title mb-0">İçecek</h2>
           <div class="panel-body">
             <select class="form-select" aria-label="Default select " onchange="updateMenu('icecek')" >
-              <option selected value="0">Coca - Cola Zero Sugar (33 ml.)</option>
+              <option id="defaultSelectedOptions" selected value="0">Coca - Cola Zero Sugar (33 ml.)</option>
               <option value="0">Coca - Cola (33 cl.)</option>
               <option value="0">Coca - Cola Light (33 cl.)</option>
               <option value="0">Fuse Tea Limon (33 cl.)</option>
@@ -556,7 +556,7 @@
           <h2 class="panel-title mb-0">Sos Seçimi</h2>
           <div class="panel-body">
             <select class="form-select" aria-label="Default select " onchange="updateMenu('sossecim')" >
-              <option selected value="0">Ketçap</option>
+              <option id="defaultSelectedOptions" selected value="0">Ketçap</option>
               <option value="0">Acı Sos</option>
               <option value="0">Sarımsaklı Mayonez</option>
               <option value="0">Mayonez</option>
@@ -571,7 +571,7 @@
           <h2 class="panel-title mb-0">Promosyon</h2>
           <div class="panel-body">
             <select class="form-select" aria-label="Default select " onchange="updateMenu('promosyon')" >
-              <option selected value="0">Promosyon İstemiyorum</option>
+              <option id="defaultSelectedOptions" selected value="0">Promosyon İstemiyorum</option>
               <option value="19">Soğan Halkası (8'li) + 19 TL</option>
               <option value="22">Soğan Halkası (12'li) + 22 TL</option>
               <option value="24">Soğan Halkası (16'li) + 24 TL</option>
@@ -590,7 +590,7 @@
           <h2 class="panel-title mb-0">Promosyon Tatlı</h2>
           <div class="panel-body">
             <select class="form-select" aria-label="Default select " onchange="updateMenu('promosyontatli')" >
-              <option selected value="0">Promosyon Tatlı İstemiyorum</option>
+              <option id="defaultSelectedOptions" selected value="0">Promosyon Tatlı İstemiyorum</option>
               <option value="33">Dondurmalı Çikolatalı Sufle + 33 TL</option>
               <option value="27">Çikolatalı Sufle + 27 TL</option>
               <option value="13">Elmalı Tatlı + 13 TL</option>
@@ -841,7 +841,6 @@ if (operation === 'increase') {
 // Güncellenen fiyatı optionTypePrices'a kaydet
 optionTypePrices[optionType] = optionTypeTotalPrice;
 
-// Sayfadaki görüntüyü güncelleyin
 updateDisplay();
 }
 function updateTotalPrice() {
@@ -1004,20 +1003,15 @@ function getSelectedOptions(optionType) {
           selectedOptions.push(optionText + " - " + optionPrice.toFixed(2) + " TL");
         }
 
-        // Seçenek fiyatını toplam seçenek fiyatına ekleyin
+        // Seçenek fiyatını toplam seçenek fiyatına ekle
         totalOptionPrice += optionPrice;
       }
     });
 
-    // Menü fiyatını güncelleyin
     menuPrice = basePrice * quantity + totalOptionPrice;
 
-    // Güncellenmiş menü fiyatını konsola yazdırın
-    console.log("Güncellenmiş menü fiyat:", menuPrice.toFixed(2));
   }
 
-  // Seçili seçenekleri döndür
-  console.log("Seçili seçenekler:", selectedOptions);
   return selectedOptions;
 }
 
@@ -1034,9 +1028,9 @@ function calculateTotalOptionsPrice() {
 
 
 function updateTotalPriceWithSelectedOptions() {
-  var totalPrice = parseFloat(price); // Menü fiyatıyla başlayın
+  var totalPrice = parseFloat(price); 
 
-  // Her bir seçili seçenek için fiyatı toplam fiyata ekleyin
+  // Her bir seçili seçenek için fiyatı toplam fiyata ekle
   var selectedOptions = document.querySelectorAll('.form-select option:checked');
   selectedOptions.forEach(function(option) {
     var optionPrice = parseFloat(option.value);
@@ -1051,23 +1045,24 @@ function updateTotalPriceWithSelectedOptions() {
     totalPriceElement.textContent = totalPrice.toFixed(2) + " TL";
   }
 }
-function addToCart() {
-  var currentOptions = getAllSelectedOptions();
+function addToCartAndRedirect() {
+  var selectedOptions = getAllSelectedOptions();
   var peynirCount = parseInt(document.getElementById('quantityPeynir1').textContent) + parseInt(document.getElementById('quantityPeynir2').textContent);
   var totalOptionsPrice = calculateTotalOptionsPrice(); // Seçeneklerin toplam fiyatını al
   var totalPrice = basePrice * quantity + totalOptionsPrice; // Menü fiyatı ve seçeneklerin toplam fiyatını topla
-  
-  // totalPrice değişkeninin değerini kontrol et, eğer NaN ise uygun bir mesaj göster
-  if (isNaN(totalPrice)) {
-    alert("Sepete eklemek için en az bir seçenek seçmelisiniz.");
-    console.error("Total price is NaN. Base price:", basePrice, "Quantity:", quantity, "Total options price:", totalOptionsPrice);
-    return;
-  }
-
-  var optionsString = currentOptions.join(', ');
     
+  // totalPrice değişkeninin değerini kontrol et, eğer NaN ise hatayı göster
+  if (isNaN(totalPrice)) {
+      alert("Sepete eklemek için en az bir seçenek seçmelisiniz.");
+      console.error("Total price is NaN. Base price:", basePrice, "Quantity:", quantity, "Total options price:", totalOptionsPrice);
+      return;
+  }
+  var optionsString = selectedOptions.join(', ');
+
   // Kullanıcıyı sepetim.html sayfasına yönlendir
-  window.location.href = '/sepetim?title=' + encodeURIComponent(title) + '&total_price=' + encodeURIComponent(totalPrice.toFixed(2)) + '&options=' + encodeURIComponent(optionsString);
+  setTimeout(function() {
+      window.location.href = '/sepetim?title=' + encodeURIComponent(title) + '&total_price=' + encodeURIComponent(totalPrice.toFixed(2)) + '&options=' + encodeURIComponent(optionsString);
+  }, 1000); 
 
   // Sepete eklendikten sonra seçimleri ve menü fiyatını sıfırla
   clearSelections();
@@ -1075,11 +1070,16 @@ function addToCart() {
   // Sepetteki toplam fiyatı güncelle
   updateTotalPriceWithSelectedOptions();
 }
+
 function addSelectedOption(option) {
   selectedOptions.push(option);
 }
-// OPTİONS KISMI SEPETİM.HTML KISMINA GÖNDERİLECEK ONLAR BOZULDU.
-// SEPETİM KISMI KOMPLE TAMAMLANACAK
+
+
+
+
+
+
 
 
 function calculateOptionsTotalPrice(selectedOptions) {
