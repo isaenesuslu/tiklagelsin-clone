@@ -1,70 +1,122 @@
 <!DOCTYPE html> {% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+      rel="stylesheet"
+    />
     <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+      rel="stylesheet"
+    />
     <!-- Font Awesome -->
-    <link rel="stylesheet" data-purpose="Layout StyleSheet" title="Web Awesome"
-        href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css">
-    <link rel="stylesheet" href="{% static 'hesabim.css' %}">
-    <link rel="stylesheet" href="{% static 'footerheader.css' %}">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      data-purpose="Layout StyleSheet"
+      title="Web Awesome"
+      href="/css/app-wa-9846671ed7c9dd69b10c93f6b04b31fe.css?vsn=d"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-thin.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-light.css"
+    />
+    <link rel="stylesheet" href="{% static 'hesabim.css' %}" />
+    <link rel="stylesheet" href="{% static 'footerheader.css' %}" />
+  </head>
+  <body>
     {% include 'partials/anasayfa/_navbar.html' %}
     <div id="arka-yapi">
-        <div class="container-yapi container">
-            <div class="min-50 row">
-                <div class="min-50 col-12">
-                    <nav aria-label="breadcrumb" class="breadcrumb-yapi">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-menu"> 
-                                <a class="a" href="{% url 'Anasayfa' %}">Anasayfa</a>
-                            </li>
-                            <li class="breadcrumb-menu">
-                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
-                                <a class="a" href="{% url 'hesabimPage' %}">Hesabım</a>
-                            </li>
-                            <li class="breadcrumb-menu" style="color: #666;">
-                                <i class="fa-solid fa-angle-right" style="color: #666;"></i>
-                                Adreslerim
-                            </li>
-                        </ol>
-                    </nav>
-                    <div class="ust-title">
-                        <div class="alt-title">Adreslerim</div>
-                    </div>
-                    <div class="ana-site">
-                        <div class="adres-yok">
-                            <i class="fa-thin fa-message-dots"></i>
-                            <div>Kayıtlı adresin bulunmamakta</div>
-                        </div>
-                    </div>
-                    <div class="adress-button">
-                        <button type="button" class="yeni-adres">
-                            Yeni Adres Ekle
-                        </button>
-                    </div>
-                </div>
+      <div class="container-yapi container">
+        <div class="min-50 row">
+          <div class="min-50 col-12">
+            <nav aria-label="breadcrumb" class="breadcrumb-yapi">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-menu">
+                  <a class="a" href="{% url 'Anasayfa' %}">Anasayfa</a>
+                </li>
+                <li class="breadcrumb-menu">
+                  <i class="fa-solid fa-angle-right" style="color: #666"></i>
+                  <a class="a" href="{% url 'hesabimPage' %}">Hesabım</a>
+                </li>
+                <li class="breadcrumb-menu" style="color: #666">
+                  <i class="fa-solid fa-angle-right" style="color: #666"></i>
+                  Adreslerim
+                </li>
+              </ol>
+            </nav>
+            <div class="ust-title">
+              <div class="alt-title">Adreslerim</div>
             </div>
+            <div class="ana-site">
+              {% if adress_list %} {% for i in adress_list %}
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="adres-baslik"><i class="fa-light fa-house fa-xl" {% if i.aktif == True %} style="color:#d91d34;" {% endif %}></i> <span class="ms-2">{{ i.title }}</div>
+                <div class="adres">{{ i.il }} <span>/</span> {{ i.ilce }} <span>/</span> {{ i.mahalle }}</div>
+                <i class="fa-regular fa-x fa-lg" style="color: #7a7a7a;"></i>
+              </div>
+              <hr>
+              {% endfor %} {% else %}
+              <div class="adres-yok">
+                <i class="fa-thin fa-message-dots"></i>
+                <div>Kayıtlı adresin bulunmamakta</div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="adress-button">
+              <a
+                href="{% url 'adreseklePage' %}"
+                type="button"
+                class="yeni-adres d-flex align-items-center"
+              >
+                Yeni Adres Ekle
+              </a>
+            </div>
+          </div>
         </div>
+      </div>
+      {% for i in messages %}
+      <div class="toast toast-2 align-items-center text-bg-{{i.tags}} border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="d-flex">
+            <div class="toast-body">
+              {{ i.message }}
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+        </div>
+      {% endfor %}
     </div>
     {% include 'partials/anasayfa/_footer.html' %}
 
     <!-- MDB -->
-    <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-crossorigin="anonymous"></script>
-</body>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
