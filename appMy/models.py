@@ -62,5 +62,5 @@ class AdresMod(models.Model):
 class ekbilgiMod(models.Model):
     user = models.OneToOneField(User, verbose_name=("Kullanıcı"), on_delete=models.CASCADE)
     tel = models.CharField(("Telefon Numarası"), max_length=50)
-    cinsiyet = models.CharField(("Cinsiyet"), max_length=50)
-    takim = models.CharField(("Takım"), max_length=50)
+    cinsiyet = models.CharField(("Cinsiyet"), max_length=50, blank=True)
+    takim = models.CharField(("Takım"), max_length=50, blank=True)
