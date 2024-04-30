@@ -159,7 +159,7 @@
                                 <h5 class="yan-card-title">Markanı Seç, Siparişini ver</h5>
                             </div>
                           <div class="yan-card-text">
-                              <p class="">Siparişlerine ulaşmak ve yeni sipariş vermek için giriş yap.</p>
+                              <p {% if request.user.is_authenticated %} style="display: none;" {% endif %} >Siparişlerine ulaşmak ve yeni sipariş vermek için giriş yap.</p>
                           </div>
                           <div class="yan-card-btn-box">
                               <a href="#!" class="yan-card-btn btn w-100 fit-content" data-mdb-ripple-init>Kullanmaya Başla</a>
@@ -173,15 +173,12 @@
                             <div class="carousel-inner carousel-inner-yan">
                                 <div class="carousel-item active" data-mdb-interval="10000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/SUB_Tiklagelsine_Ozel_Subway_Menu_960x380px_01_b16e2de2a5.jpg" class="cut-pic d-block w-100" alt="Wild Landscape"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                                 <div class="carousel-item" data-mdb-interval="2000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/UP_3lu_Kampanya_960x380px_7e5ffaebdc.jpg" class="cut-pic d-block w-100" alt="Camera"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                                 <div div class="carousel-item" data-mdb-interval="2000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/AE_Dana_Pastirma_Kampanya_Tikla_Gelsin_960x380px_52a8ab86a5.jpg" class="cut-pic d-block w-100" alt="Exotic Fruits"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                             </div>
                             <!-- CAROUSEL INDICATORS -->
@@ -212,15 +209,12 @@
                             <div class="carousel-inner carousel-inner-yan">
                                 <div class="carousel-item active" data-mdb-interval="10000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/SUB_Tiklagelsine_Ozel_Subway_Menu_960x380px_01_b16e2de2a5.jpg" class="cut-pic d-block w-100" alt="Wild Landscape"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                                 <div class="carousel-item" data-mdb-interval="2000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/UP_3lu_Kampanya_960x380px_7e5ffaebdc.jpg" class="cut-pic d-block w-100" alt="Camera"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                                 <div div class="carousel-item" data-mdb-interval="2000">
                                     <img src="https://d3vkdqr0qjxhag.cloudfront.net/AE_Dana_Pastirma_Kampanya_Tikla_Gelsin_960x380px_52a8ab86a5.jpg" class="cut-pic d-block w-100" alt="Exotic Fruits"/>
-                                    <p class="m-0 marka">MARKA</p>
                                 </div>
                             </div>
                              <!-- CAROUSEL INDICATORS -->
@@ -344,136 +338,20 @@
             <!-- Carousel Bitiş  -->
             <h5 class="mt-3 mb-4" style="font-size: 17px; color: #1b1007; font-weight: 700;">Sipariş verebileceğiniz restoranlar</h5>
                 <div class="cards row">
+
                     <div class="box col-md-3 col-sm-4 col-6">
-                        <div class="min-box">
-                            <a href="">
+                        <a href="{% url 'burgerPage' %}">
+                          <div class="min-box">
                                 <div class="image">
-                                    <a href="burgerking.html"> <img src="https://d3vkdqr0qjxhag.cloudfront.net/Bk_Logo501x542_4e2be66b64.png" class="card-img-top" alt="Sunset Over the Sea"/></a>
+ <img src="https://d3vkdqr0qjxhag.cloudfront.net/Bk_Logo501x542_4e2be66b64.png" class="card-img-top" alt="Sunset Over the Sea"/>
                                 </div>
                                 <div class="card-body">
                                     <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
                                     <p class="card-text">Her alışverişte %5 Tıkla Para kazan!</p>
                                 </div>
-                            </a>
-                        </div>
-                </div>
-                <div class="box col-md-3 col-sm-4 col-6">
-                        <div class="min-box">
-                            <a href="">
-                                <div class="image">
-                                    <img src="https://d3vkdqr0qjxhag.cloudfront.net/PP_Yazi_Damga_Logo_01_01_de61e369c9.png" class="card-img-top" alt="Sunset Over the Sea"/>
-                                </div>
-                                <div class="card-body">
-                                    <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                    <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                                </div>
-                            </a>
-
-                        </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Arby_s_1f0acfbe7b" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                            </div>
+                            
+                        </div>   
                         </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Sbarro_73abc388cc" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Usta_Doenerci_7d3d543fb9" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Logolar_UP_964bb28b29.png" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/amasya_et_urunleri_logo_80b4376abd.png" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %1 Tıkla Para kazan!</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/milgo_tek_3x_addbfcc0cd.png" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %1 Tıkla Para kazan!</p>
-                            </div>
-                        </a>
-
-                    </div>
-                </div>
-                    
-                <div class="box col-md-3 col-sm-4 col-6">
-                    <div class="min-box">
-                        <a href="">
-                            <div class="image">
-                                <img src="https://d3vkdqr0qjxhag.cloudfront.net/Untitled_1_02_801ea4cc7b.png" class="card-img-top" alt="Sunset Over the Sea"/>
-                            </div>
-                            <div class="card-body">
-                                <i class="star fa-solid fa-star fa-sm" style="color: #ffffff;"></i>
-                                <p class="card-text">Her alışverişte %7 Tıkla Para kazan!</p>
-                            </div>
-                        </a> 
-                    </div>
                 </div>
             </div>
         </div>

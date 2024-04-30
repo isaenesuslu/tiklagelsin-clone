@@ -25,7 +25,7 @@ urlpatterns = [
     path('', Anasayfa, name="Anasayfa"),
     path('ozel-menuler', ozelMenuler, name="ozelMenuler"),
     path('template', TemplatePage),
-    path('burger', burgerPage),
+    path('burger', burgerPage, name="burgerPage"),
     # BLOG
     path('blog', blogPage, name="blogPage"),
     path('menuler', Menuler),

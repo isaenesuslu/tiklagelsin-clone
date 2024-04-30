@@ -170,21 +170,19 @@ def hesapgirisPage(request):
                         rastgeleSayi = random.randint(0,9)
                         code += str(rastgeleSayi)
                         request.session['code'] = code
-                        print(code)
                     send_mail(
-                        "Kayıt olmak için kodunuz",
+                        "Devam etmek için kodunuz",
                         code,
                         EMAIL_HOST_USER,
                         [email],
                         fail_silently=False,
                     )
-                    messages.success(request, "Giriş yapmak için oluşturulan kodunuz mail adresinize başarıyla gönderilmiştir. Lütfen kodu giriniz:")
+                    messages.success(request, "Devam etmek için oluşturulan kodunuz mail adresinize başarıyla gönderilmiştir. Lütfen kodu giriniz:")
                     return redirect("hesapgirisPage")  
         if submit == "kayit-onay":
             onaykodu = request.POST.get("onay-kodu")
             code = request.session.get('code')
             email = request.session.get('email')
-            print(onaykodu)
             if onaykodu == code:
                     if not User.objects.filter(email=email).exists():
                         user = User(username=email, email=email)
@@ -214,6 +212,22 @@ def hesabimPage(request):
 
 @login_required(login_url='hesapgirisPage')
 def adressPage(request):
+    
+    
+    if request.method == "POST":
+        submit = request.POST.get("submit")
+        if AdresMod.objects.filter(aktif=True).exists():
+            eskiadres = AdresMod.objects.get(aktif=True)
+            eskiadres.aktif = False
+            eskiadres.save()
+        adres = AdresMod.objects.get(title=submit)
+        adres.aktif = True
+        adres.save()
+        messages.success(request, "Adresiniz başarıyla güncellenmiştir.")
+        return redirect("adressPage")
+        
+        
+    
     
     adress_list = AdresMod.objects.filter(user=request.user)
     context = {
@@ -299,16 +313,24 @@ def sepetimPage(request):
             userSave = SepetimMod(user=request.user, title=title, price=total_price)
             userSave.save()
             user_sepet = SepetimMod.objects.filter(Q(user=request.user) & Q(title=title) & Q(price=total_price))
-        
     user_sepet = list(user_sepet)
-    user_sepet.pop(0)
-    print(user_sepet)
+    if user_sepet[0].price:
+        pass
+    else:
+        user_sepet.pop(0)
+    
+    toplam_fiyat = 0
+    for p in user_sepet:
+       toplam_fiyat += float(p.price)
+
+    print(toplam_fiyat)
     
     context = {
         'title': title,
         'total_price': total_price,
         'user_adres': user_adres,
         'user_sepet': user_sepet,
+        'toplam_fiyat': toplam_fiyat,
     }
     return render(request, 'hesabim/sepetim.html', context)
 
@@ -319,7 +341,22 @@ def siparislerimPage(request):
 
 @login_required(login_url='hesapgirisPage')
 def siparisonayPage(request):
-    context = {}
+    user_adres = AdresMod.objects.filter(Q(aktif=True) & Q(user=request.user))
+    user_sepet = SepetimMod.objects.filter(user=request.user)
+    user_sepet = list(user_sepet)
+    if user_sepet[0].price:
+        pass
+    else:
+        user_sepet.pop(0)
+    
+    toplam_fiyat = 0
+    for p in user_sepet:
+       toplam_fiyat += float(p.price)
+    
+    context = {
+        "user_adres" : user_adres,
+        "toplam_fiyat" : toplam_fiyat,
+    }
     return render(request, 'hesabim/siparisonay.html', context)
 
 def menuDetayPage(request, dt):
