@@ -927,7 +927,6 @@ function getSelectedOptionsText() {
       selectedOptionsText += option.textContent.trim() + ", ";
     });
   });
-  // Son virgülü kaldır
   selectedOptionsText = selectedOptionsText.slice(0, -2);
   return selectedOptionsText;
 }
@@ -1087,7 +1086,6 @@ function calculateOptionsTotalPrice(selectedOptions) {
 
   // Her bir seçeneğin fiyatını toplam fiyata ekleyin
   selectedOptions.forEach(function(option) {
-    // option nesnesinin fiyatını totalPrice'a ekleyin
     totalPrice += parseFloat(option.price);
   });
 
